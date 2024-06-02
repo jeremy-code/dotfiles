@@ -1,0 +1,142 @@
+{
+  /* Visit https://code.visualstudio.com/docs/getstarted/settings to read more about this file */
+
+  // Text Editor
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "explicit",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "editor.guides.bracketPairs": "active",
+  "editor.inlineSuggest.enabled": true,
+  "editor.linkedEditing": true,
+  "editor.rulers": [80],
+  "editor.scrollbar.verticalScrollbarSize": 12,
+  "editor.smoothScrolling": true,
+  "editor.suggest.preview": false,
+  "editor.suggestSelection": "recentlyUsedByPrefix",
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+
+  // Files
+  "files.autoSave": "afterDelay",
+  "files.autoSaveWhenNoErrors": true,
+  "files.autoGuessEncoding": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+
+  // Workbench
+  "workbench.colorCustomizations": {
+    "[One Dark Pro Darker]": {
+      "editorInlayHint.background": "#2d313c", // Equivalent to `editor.lineHighlightBackground`
+      "editorInlayHint.foreground": "#7f848e" // Equivalent to `comments`
+    }
+  },
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.commandPalette.experimental.suggestCommands": false,
+  "workbench.iconTheme": "eq-material-theme-icons",
+  "workbench.list.smoothScrolling": true,
+  "workbench.productIconTheme": "fluent-icons",
+  "workbench.tree.renderIndentGuides": "always",
+
+  // File Explorer
+  "explorer.compactFolders": false,
+  "explorer.incrementalNaming": "smart",
+
+  // Search
+  "search.useGlobalIgnoreFiles": true,
+
+  // Terminal
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.smoothScrolling": true,
+
+  // Telemetry
+  "telemetry.telemetryLevel": "off",
+
+  // Security
+  "security.workspace.trust.untrustedFiles": "open",
+
+  /** Extensions **/
+
+  // Copilot
+  "github.copilot.enable": {
+    "plaintext": "true",
+    "markdown": "true",
+    "scminput": "true"
+  },
+
+  // CSS
+  "css.format.spaceAroundSelectorSeparator": true,
+  "css.lint.boxModel": "warning",
+  "css.lint.duplicateProperties": "warning",
+  "css.lint.float": "warning",
+  "css.lint.important": "warning",
+  "css.lint.zeroUnits": "warning",
+
+  // ES React/React-Native/Redux snippets
+  "reactSnippets.settings.importReactOnTop": false,
+  "reactSnippets.settings.prettierEnabled": true,
+
+  // ESLint
+  "eslint.lintTask.enable": true,
+
+  // Git
+  "git.autofetch": true,
+  "git.autoStash": true,
+  "git.enableCommitSigning": true,
+  "git.mergeEditor": true,
+
+  // Prettier
+  "prettier.trailingComma": "all",
+
+  // Prisma
+  "prisma.showPrismaDataPlatformNotification": false,
+
+  // Python
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+
+  // Rewrap
+  "rewrap.reformat": true,
+  "rewrap.wrappingColumn": 80,
+
+  // Markdown
+  "markdown.occurrencesHighlight.enabled": true,
+  "markdown.preview.typographer": true,
+  "markdown.updateLinksOnFileMove.enabled": "prompt",
+  "markdown.validate.enabled": true,
+
+  // JavaScript
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterNames.enabled": "literals",
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  // TypeScript
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "literals",
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // Language-Specific Configuration Overrides
+  "[javascript][javascriptreact][typescript][typescriptreact][json][jsonc][graphql][handlebars]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  }
+}
