@@ -57,6 +57,7 @@ vscode "bierner.markdown-preview-github-styles" # Changes VS Code's built-in mar
 vscode "bradlc.vscode-tailwindcss" # Intelligent Tailwind CSS tooling for VS Code
 vscode "dbaeumer.vscode-eslint" # Integrates ESLint JavaScript into VS Code.
 vscode "editorconfig.editorconfig" # EditorConfig Support for VS Code
+vscode "ericadamski.carbon-now-sh" # A Code package to open the current editor content in carbon.now.sh
 vscode "dsznajder.es7-react-js-snippets" # Extensions for React, React-Native and Redux in JS/TS with ES7+ syntax
 vscode "esbenp.prettier-vscode" # Code formatter using prettier
 vscode "github.vscode-github-actions" # GitHub Actions workflows and runs for github.com hosted repositories
@@ -82,6 +83,7 @@ vscode "ms-vscode.remote-repositories" # Remotely browse and edit git repositori
 vscode "ms-vsliveshare.vsliveshare" # Real-time collaborative development from the comfort of your favorite tools
 vscode "quicktype.quicktype"# Copy JSON, paste as Go, TypeScript, C#, C++ and more
 vscode "stkb.rewrap" # Hard word wrapping for comments and other text at a given column
+vscode "streetsidesoftware.code-spell-checker" # Spelling checker for source code
 vscode "visualstudioexptteam.intellicode-api-usage-examples" # See relevant code examples from GitHub for over 100K different APIs right in your editor.
 vscode "vscodevim.vim" # Vim emulation for VS Code
 vscode "waderyan.gitblame" # See git blame information in the status bar

@@ -850,7 +850,9 @@
       "mk12.better-git-line-blame": null,
       "waderyan.gitblame": null,
       "ms-vscode.azure-repos": null,
-      "ms-vscode.remote-repositories": null
+      "ms-vscode.remote-repositories": null,
+      "ericadamski.carbon-now-sh": null,
+      "streetsidesoftware.code-spell-checker": null
     }
   },
   "system": {
