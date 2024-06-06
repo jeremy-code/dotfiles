@@ -3,14 +3,16 @@
 
   // Text Editor
   "editor.codeActionsOnSave": {
+    "source.addMissingImports": "always",
     "source.fixAll.eslint": "explicit"
+    // Avoid using "source.organizeImports" since it may conflict with ESLint or Prettier
   },
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "explicit",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.find.autoFindInSelection": "multiline",
   "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
-  "editor.fontLigatures": true,
+  "editor.fontLigatures": "'calt', 'cv19', 'cv23', 'ss02', 'ss03', 'ss05'",
   "editor.fontSize": 14,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
@@ -48,15 +50,25 @@
     }
   },
   "workbench.colorTheme": "One Dark Pro Darker",
-  "workbench.commandPalette.experimental.suggestCommands": false,
+  "workbench.commandPalette.experimental.suggestCommands": true,
   "workbench.editor.highlightModifiedTabs": true,
-  "workbench.iconTheme": "eq-material-theme-icons",
+  "workbench.experimental.share.enabled": true,
+  "workbench.iconTheme": "helium-icon-theme",
   "workbench.list.smoothScrolling": true,
   "workbench.productIconTheme": "fluent-icons",
   "workbench.tree.renderIndentGuides": "always",
 
   // File Explorer
   "explorer.compactFolders": false,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.env": "$(capture).env.*",
+    "*.module.ts": "$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts",
+    "*.ts": "$(capture).test.ts, $(capture).spec.ts",
+    "*.tsx": "$(capture).test.tsx, $(capture).spec.tsx",
+    "Brewfile": "Brewfile.lock.json",
+    "Dockerfile": "docker-compose.yml, .dockerignore"
+  },
   "explorer.incrementalNaming": "smart",
 
   // Search
@@ -81,7 +93,7 @@
   /** Extensions **/
 
   // Carbon
-  "carbon.backgroundColor": "rgba(255,255,255,0)",
+  "carbon.backgroundColor": "rgba(255,255,255,0)", // Transparent
   "carbon.dropShadowBlurRadius": 0,
   "carbon.dropShadowOffset": 0,
   "carbon.fontFamily": "Fira Code",
@@ -105,10 +117,6 @@
   "css.lint.important": "warning",
   "css.lint.zeroUnits": "warning",
 
-  // ES React/React-Native/Redux snippets
-  "reactSnippets.settings.importReactOnTop": false,
-  "reactSnippets.settings.prettierEnabled": true,
-
   // ESLint
   "eslint.lintTask.enable": true,
 
@@ -122,9 +130,6 @@
   // Prettier
   "prettier.trailingComma": "all",
 
-  // Prisma
-  "prisma.showPrismaDataPlatformNotification": false,
-
   // Python
   "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
 
@@ -133,6 +138,7 @@
   "rewrap.wrappingColumn": 80,
 
   // Markdown
+  "markdown.experimental.updateLinksOnPaste": true,
   "markdown.occurrencesHighlight.enabled": true,
   "markdown.preview.typographer": true,
   "markdown.updateLinksOnFileMove.enabled": "prompt",
@@ -145,22 +151,20 @@
   "tailwindCSS.classAttributes": ["class", "className", "ngClass", "tw"],
 
   // JavaScript
+  "javascript.experimental.updateImportsOnPaste": true,
   "javascript.inlayHints.enumMemberValues.enabled": true,
-  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
   "javascript.inlayHints.parameterNames.enabled": "literals",
   "javascript.inlayHints.parameterTypes.enabled": true,
-  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "javascript.inlayHints.variableTypes.enabled": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
 
   // TypeScript
   "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.experimental.updateImportsOnPaste": true,
   "typescript.inlayHints.enumMemberValues.enabled": true,
-  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
   "typescript.inlayHints.parameterNames.enabled": "literals",
   "typescript.inlayHints.parameterTypes.enabled": true,
-  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "typescript.suggest.completeFunctionCalls": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
 
   // Language-Specific Configuration Overrides

@@ -6,6 +6,7 @@ brew "git" # Distributed revision control system
 brew "git-lfs" # Git extension for versioning large files
 brew "gnupg" # GNU Pretty Good Privacy (PGP) package
 brew "node" # Platform built on V8 to build network applications
+brew "pinentry-mac" # Pinentry for GPG on Mac
 brew "pkg-config" # Manage compile and link flags for libraries
 brew "python" # Interpreted, interactive, object-oriented programming language
 brew "stow" # Organize software neatly under a single directory tree (e.g. /usr/local)
@@ -48,17 +49,17 @@ mas "Things 3", id: 904_280_696
 # VSCode Extensions
 
 ## Theming
-vscode "equinusocio.vsc-material-theme-icons" # Material Theme Icons
+vscode "helgardrichard.helium-icon-theme" # Helium and Material Design Icons for VS Code
 vscode "miguelsolorio.fluent-icons" # Fluent product icons for VS Code
 vscode "zhuangtongfa.material-theme" # Atom's iconic One Dark theme
 
 ## Language/Library Support
 vscode "bierner.markdown-preview-github-styles" # Changes VS Code's built-in markdown preview to match Github's style
 vscode "bradlc.vscode-tailwindcss" # Intelligent Tailwind CSS tooling for VS Code
+vscode "burkeholland.simple-react-snippets" # Dead simple React snippets you will actually use
 vscode "dbaeumer.vscode-eslint" # Integrates ESLint JavaScript into VS Code.
 vscode "editorconfig.editorconfig" # EditorConfig Support for VS Code
 vscode "ericadamski.carbon-now-sh" # A Code package to open the current editor content in carbon.now.sh
-vscode "dsznajder.es7-react-js-snippets" # Extensions for React, React-Native and Redux in JS/TS with ES7+ syntax
 vscode "esbenp.prettier-vscode" # Code formatter using prettier
 vscode "github.vscode-github-actions" # GitHub Actions workflows and runs for github.com hosted repositories
 vscode "mikestead.dotenv" # Support for dotenv file syntax
@@ -83,7 +84,6 @@ vscode "ms-vscode.remote-repositories" # Remotely browse and edit git repositori
 vscode "ms-vsliveshare.vsliveshare" # Real-time collaborative development from the comfort of your favorite tools
 vscode "quicktype.quicktype"# Copy JSON, paste as Go, TypeScript, C#, C++ and more
 vscode "stkb.rewrap" # Hard word wrapping for comments and other text at a given column
-vscode "streetsidesoftware.code-spell-checker" # Spelling checker for source code
 vscode "visualstudioexptteam.intellicode-api-usage-examples" # See relevant code examples from GitHub for over 100K different APIs right in your editor.
 vscode "vscodevim.vim" # Vim emulation for VS Code
 vscode "waderyan.gitblame" # See git blame information in the status bar
