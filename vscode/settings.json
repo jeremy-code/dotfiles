@@ -3,7 +3,6 @@
 
   // Text Editor
   "editor.codeActionsOnSave": {
-    "source.addMissingImports": "always",
     "source.fixAll.eslint": "explicit"
     // Avoid using "source.organizeImports" since it may conflict with ESLint or Prettier
   },
@@ -16,7 +15,6 @@
   "editor.fontSize": 14,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.guides.bracketPairs": "active",
   "editor.inlayHints.padding": true,
   "editor.inlineSuggest.enabled": true,
@@ -119,6 +117,7 @@
 
   // ESLint
   "eslint.lintTask.enable": true,
+  "eslint.workingDirectories": [{ "mode": "auto" }],
 
   // Git
   "git.autofetch": true,
