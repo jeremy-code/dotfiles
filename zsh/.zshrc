@@ -2,12 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=robbyrussell
 plugins=(
-  brew
-  dotenv
   git
-  macos
-  npm
-  vscode
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-nvm
@@ -41,9 +36,9 @@ export FORCE_COLOR=1 # https://force-color.org
 export GPG_TTY=$(tty);
 
 # Homebrew
+export HOMEBREW_BUNDLE_FILE_GLOBAL="$HOME/.dotfiles/Brewfile"
 export HOMEBREW_NO_EMOJI=1
 export HOMEBREW_NO_ENV_HINTS=1
-export HOMEBREW_BUNDLE_FILE_GLOBAL="$HOME/.dotfiles/Brewfile"
 
 # NPM
 export ADBLOCK=1

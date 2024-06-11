@@ -133,7 +133,6 @@
   "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
 
   // Rewrap
-  "rewrap.reformat": true,
   "rewrap.wrappingColumn": 80,
 
   // Markdown
@@ -150,18 +149,14 @@
   "tailwindCSS.classAttributes": ["class", "className", "ngClass", "tw"],
 
   // JavaScript
-  "javascript.experimental.updateImportsOnPaste": true,
   "javascript.inlayHints.enumMemberValues.enabled": true,
   "javascript.inlayHints.parameterNames.enabled": "literals",
-  "javascript.inlayHints.parameterTypes.enabled": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
 
   // TypeScript
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "typescript.experimental.updateImportsOnPaste": true,
   "typescript.inlayHints.enumMemberValues.enabled": true,
   "typescript.inlayHints.parameterNames.enabled": "literals",
-  "typescript.inlayHints.parameterTypes.enabled": true,
   "typescript.preferences.preferTypeOnlyAutoImports": true,
   "typescript.suggest.completeFunctionCalls": true,
   "typescript.updateImportsOnFileMove.enabled": "always",

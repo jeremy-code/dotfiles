@@ -6,7 +6,7 @@ These are my dotfiles. There are many like these, but these ones are mine.
 
 ```bash
 git clone https://github.com/jeremy-code/dotfiles.git ~/.dotfiles
-cd dotfiles
+cd ~/.dotfiles
 ```
 
 ## Usage
@@ -14,7 +14,7 @@ cd dotfiles
 ```bash
 ./install.sh # Run initial installation script
 
-brew bundle # Install Brew bundle dependencies
+brew bundle --global # Install Homebrew bundled dependencies
 ```
 
 ## License

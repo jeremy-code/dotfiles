@@ -24,6 +24,7 @@ brew "yt-dlp" # Feature-rich command-line audio/video downloader
 ## Development Tools
 cask "firefox@developer-edition" # Web browser
 cask "font-fira-code" # Free monospaced font with programming ligatures
+cask "google-chrome" # Web browser
 cask "visual-studio-code" # Open-source code editor
 
 ## Utilities & Applications
@@ -31,8 +32,10 @@ cask "appcleaner" # Application uninstaller
 cask "bartender" # Menu bar icon organiser
 cask "discord" # Voice and text chat software
 cask "iina" # Free and open-source media player
+cask "logi-options-plus" # Software for Logitech devices
 cask "maccy"  # Clipboard manager
 cask "meetingbar" # Shows the next meeting in the menu bar
+cask "obsidian" # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "onyx" # Verify system files structure, run miscellaneous maintenance and more
 cask "raycast" # Control your tools with a few keystrokes
 cask "rectangle" # Move and resize windows using keyboard shortcuts or snap areas
@@ -62,6 +65,7 @@ vscode "editorconfig.editorconfig" # EditorConfig Support for VS Code
 vscode "ericadamski.carbon-now-sh" # A Code package to open the current editor content in carbon.now.sh
 vscode "esbenp.prettier-vscode" # Code formatter using prettier
 vscode "github.vscode-github-actions" # GitHub Actions workflows and runs for github.com hosted repositories
+vscode "ipatalas.vscode-postfix-ts" # Postfix templates for TypeScript/JavaScript
 vscode "mikestead.dotenv" # Support for dotenv file syntax
 vscode "ms-python.black-formatter" # Formatting support for Python files using the Black formatter.
 vscode "ms-python.debugpy" # Python Debugger extension using debugpy

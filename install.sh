@@ -2,7 +2,7 @@
 
 echo "Starting setup..."
 
-# Set Zsh as default shell
+# Set zsh as default shell
 chsh -s `which zsh`
 
 # Check for Homebrew and install if it doesn't exist
@@ -20,4 +20,5 @@ brew bundle --file ./Brewfile
 
 # Activate symlinks
 stow config git zsh
+# Since the `vscode` directory is not in the HOME directory, manually specify target directory for `stow`
 stow -t "$HOME/Library/Application Support/Code/User" vscode

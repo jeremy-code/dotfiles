@@ -823,7 +823,7 @@
         }
       },
       "raycast": {
-        "version": "1.75.2",
+        "version": "1.76.0",
         "options": {
           "full_name": "raycast"
         }
@@ -850,6 +850,24 @@
         "version": "6.0.11.35001",
         "options": {
           "full_name": "zoom"
+        }
+      },
+      "google-chrome": {
+        "version": "125.0.6422.142",
+        "options": {
+          "full_name": "google-chrome"
+        }
+      },
+      "logi-options-plus": {
+        "version": "1.72.568951",
+        "options": {
+          "full_name": "logi-options-plus"
+        }
+      },
+      "obsidian": {
+        "version": "1.6.3",
+        "options": {
+          "full_name": "obsidian"
         }
       }
     },
@@ -913,13 +931,14 @@
       "ericadamski.carbon-now-sh": null,
       "streetsidesoftware.code-spell-checker": null,
       "helgardrichard.helium-icon-theme": null,
-      "burkeholland.simple-react-snippets": null
+      "burkeholland.simple-react-snippets": null,
+      "ipatalas.vscode-postfix-ts": null
     }
   },
   "system": {
     "macos": {
       "sonoma": {
-        "HOMEBREW_VERSION": "4.3.3",
+        "HOMEBREW_VERSION": "4.3.4",
         "HOMEBREW_PREFIX": "/opt/homebrew",
         "Homebrew/homebrew-core": "api",
         "CLT": "15.3.0.0.1.1708646388",
