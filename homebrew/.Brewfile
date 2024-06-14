@@ -22,9 +22,11 @@ brew "yt-dlp" # Feature-rich command-line audio/video downloader
 # Casks
 
 ## Development Tools
+cask "devtoys" # Utilities designed to make common development tasks easier
 cask "firefox@developer-edition" # Web browser
 cask "font-fira-code" # Free monospaced font with programming ligatures
 cask "google-chrome" # Web browser
+cask "iterm2" # Terminal emulator as alternative to Apple's Terminal app
 cask "visual-studio-code" # Open-source code editor
 
 ## Utilities & Applications
@@ -52,8 +54,8 @@ mas "Things 3", id: 904_280_696
 # VSCode Extensions
 
 ## Theming
-vscode "helgardrichard.helium-icon-theme" # Helium and Material Design Icons for VS Code
 vscode "miguelsolorio.fluent-icons" # Fluent product icons for VS Code
+vscode "pkief.material-icon-theme" # Material Design Icons for VS Code
 vscode "zhuangtongfa.material-theme" # Atom's iconic One Dark theme
 
 ## Language/Library Support
@@ -65,7 +67,6 @@ vscode "editorconfig.editorconfig" # EditorConfig Support for VS Code
 vscode "ericadamski.carbon-now-sh" # A Code package to open the current editor content in carbon.now.sh
 vscode "esbenp.prettier-vscode" # Code formatter using prettier
 vscode "github.vscode-github-actions" # GitHub Actions workflows and runs for github.com hosted repositories
-vscode "ipatalas.vscode-postfix-ts" # Postfix templates for TypeScript/JavaScript
 vscode "mikestead.dotenv" # Support for dotenv file syntax
 vscode "ms-python.black-formatter" # Formatting support for Python files using the Black formatter.
 vscode "ms-python.debugpy" # Python Debugger extension using debugpy
@@ -73,6 +74,7 @@ vscode "ms-python.python" # Python language support
 vscode "ms-python.vscode-pylance" # A performant, feature-rich language server for Python in VS Code
 vscode "ms-vscode.makefile-tools" # Provide makefile support in VS Code
 vscode "ms-vscode.vscode-js-profile-flame" # Flame graph visualizer for Heap and CPU profiles taken from the JavaScript debugger
+vscode "orta.vscode-jest" # Use Facebook's Jest With Pleasure
 vscode "prisma.prisma" # Adds syntax highlighting, formatting, auto-completion, jump-to-definition and linting for .prisma files
 vscode "tamasfe.even-better-toml" # Fully-featured TOML support
 

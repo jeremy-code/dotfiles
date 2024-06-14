@@ -1,0 +1,141 @@
+{
+  "Profiles": [
+    {
+      "Name": "One Dark Pro Darker",
+      "Guid": "C6F4549A-6E10-4392-B709-D067DB179AC2",
+      "Title Components": 130,
+      "Icon": 1,
+      "Load Shell Integration Automatically": true,
+      "Use Separate Colors for Light and Dark Mode": false,
+      "Foreground Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.67059,
+        "Green Component": 0.69804,
+        "Blue Component": 0.74902
+      },
+      "Background Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.13726,
+        "Green Component": 0.15294,
+        "Blue Component": 0.18039
+      },
+      "Use Bright Bold": false,
+      "Link Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.38039,
+        "Green Component": 0.68627,
+        "Blue Component": 0.93725
+      },
+      "Brighten Bold Text": false,
+      "Selection Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.67059,
+        "Green Component": 0.69803,
+        "Blue Component": 0.74902,
+        "Alpha Component": 0.19
+      },
+      "Ansi 0 Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.24706,
+        "Green Component": 0.26667,
+        "Blue Component": 0.31655
+      },
+      "Ansi 1 Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.87843,
+        "Green Component": 0.33333,
+        "Blue Component": 0.38039
+      },
+      "Ansi 2 Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.54902,
+        "Green Component": 0.76078,
+        "Blue Component": 0.39608
+      },
+      "Ansi 3 Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.81961,
+        "Green Component": 0.56078,
+        "Blue Component": 0.32157
+      },
+      "Ansi 4 Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.2902,
+        "Green Component": 0.64706,
+        "Blue Component": 0.94118
+      },
+      "Ansi 5 Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.75686,
+        "Green Component": 0.38431,
+        "Blue Component": 0.87059
+      },
+      "Ansi 6 Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.25882,
+        "Green Component": 0.70196,
+        "Blue Component": 0.76078
+      },
+      "Ansi 7 Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.84314,
+        "Green Component": 0.8549,
+        "Blue Component": 0.87843
+      },
+      "Ansi 8 Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.3098,
+        "Green Component": 0.33725,
+        "Blue Component": 0.4
+      },
+      "Ansi 9 Color": {
+        "Color Space": "sRGB",
+        "Red Component": 1,
+        "Green Component": 0.38039,
+        "Blue Component": 0.43137
+      },
+      "Ansi 10 Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.64706,
+        "Green Component": 0.87843,
+        "Blue Component": 0.45882
+      },
+      "Ansi 11 Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.94118,
+        "Green Component": 0.64314,
+        "Blue Component": 0.36471
+      },
+      "Ansi 12 Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.30196,
+        "Green Component": 0.76863,
+        "Blue Component": 1
+      },
+      "Ansi 13 Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.87059,
+        "Green Component": 0.45098,
+        "Blue Component": 1
+      },
+      "Ansi 14 Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.29804,
+        "Green Component": 0.81961,
+        "Blue Component": 0.87843
+      },
+      "Ansi 15 Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.90196,
+        "Green Component": 0.90196,
+        "Blue Component": 0.90196
+      },
+      "Smart Cursor Color": true,
+      "Blinking Cursor": true,
+      "Blink Allowed": true,
+      "Normal Font": "FiraCode-Retina 12",
+      "Initial Use Transparency": false,
+      "Sync Title": false
+    }
+  ]
+}

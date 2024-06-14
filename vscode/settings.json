@@ -30,6 +30,7 @@
   "editor.tabSize": 2,
 
   // Diff Editor
+  "diffEditor.codeLens": true,
   "diffEditor.experimental.showMoves": true,
 
   // Files
@@ -44,14 +45,15 @@
   "workbench.colorCustomizations": {
     "[One Dark Pro Darker]": {
       "editorInlayHint.background": "#2d313c", // Equivalent to `editor.lineHighlightBackground`
-      "editorInlayHint.foreground": "#7f848e" // Equivalent to `comments`
+      "editorInlayHint.foreground": "#7f848e", // Equivalent to `comments"
+      "gitblame.inlineMessage": "#5c6370" // Equivalent to `elements to dim`
     }
   },
   "workbench.colorTheme": "One Dark Pro Darker",
   "workbench.commandPalette.experimental.suggestCommands": true,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.experimental.share.enabled": true,
-  "workbench.iconTheme": "helium-icon-theme",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.list.smoothScrolling": true,
   "workbench.productIconTheme": "fluent-icons",
   "workbench.tree.renderIndentGuides": "always",
@@ -81,6 +83,7 @@
   "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.stickyScroll.enabled": true,
   "terminal.integrated.tabs.defaultIcon": "console",
+  "terminal.integrated.tabs.hideCondition": "never", // Always show tabs
 
   // Telemetry
   "telemetry.telemetryLevel": "off",
@@ -107,6 +110,9 @@
     "scminput": "true"
   },
 
+  // Copilot Chat
+  "github.copilot.chat.welcomeMessage": "never",
+
   // CSS
   "css.format.spaceAroundSelectorSeparator": true,
   "css.lint.boxModel": "warning",
@@ -125,9 +131,20 @@
   "git.enableCommitSigning": true,
   "git.enableSmartCommit": true,
   "git.mergeEditor": true,
+  "git.terminalGitEditor": true,
+
+  // Git Blame
+  "gitblame.inlineMessageEnabled": true,
+  "gitblame.inlineMessageFormat": "${author.name}, ${time.ago} • ${commit.summary}",
+  "gitblame.inlineMessageMargin": 3,
+  "gitblame.inlineMessageNoCommit": "Uncommitted changes",
+  "gitblame.parallelBlames": 4,
+  "gitblame.statusBarMessageClickAction": "Open tool URL",
+  "gitblame.statusBarMessageFormat": "${author.name} (${time.ago})",
+  "gitblame.statusBarMessageNoCommit": "Uncommitted changes",
 
   // Prettier
-  "prettier.trailingComma": "all",
+  "prettier.trailingComma": "all", // Default is now `all`, https://prettier.io/docs/en/options#trailing-commas
 
   // Python
   "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
@@ -142,8 +159,14 @@
   "markdown.updateLinksOnFileMove.enabled": "prompt",
   "markdown.validate.enabled": true,
 
+  // Material Icons
+  "material-icon-theme.activeIconPack": "react",
+
   // Npm
   "npm.enableRunFromFolder": true,
+
+  // Npm Intellisense
+  "npm-intellisense.scanDevDependencies": true,
 
   // Tailwind CSS
   "tailwindCSS.classAttributes": ["class", "className", "ngClass", "tw"],
@@ -151,6 +174,7 @@
   // JavaScript
   "javascript.inlayHints.enumMemberValues.enabled": true,
   "javascript.inlayHints.parameterNames.enabled": "literals",
+  "javascript.suggest.completeFunctionCalls": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
 
   // TypeScript

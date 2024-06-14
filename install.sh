@@ -1,24 +1,29 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 
 echo "Starting setup..."
 
-# Set zsh as default shell
-chsh -s `which zsh`
-
 # Check for Homebrew and install if it doesn't exist
-if test ! $(which brew); then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if ! type brew > /dev/null; then
+  echo "Installing Homebrew..."
+  if /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; then
+    echo "Homebrew installed successfully!"
+  else
+    echo "Failed to install Homebrew."
+    exit 1
+  fi
 fi
 
-# Check for Oh My Zsh and install if it doesn't exist
-if test ! $(which omz); then
-  /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)" "" --unattended
-fi
+# Run Oh My Zsh install script
+/bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-# Install all our dependencies with bundle (See file://./Brewfile)
-brew bundle --file ./Brewfile
+# Install dependencies with Homebrew bundle (See file://./homebrew/.Brewfile)
+brew bundle --file ./homebrew/.Brewfile
 
 # Activate symlinks
-stow config git zsh
-# Since the `vscode` directory is not in the HOME directory, manually specify target directory for `stow`
-stow -t "$HOME/Library/Application Support/Code/User" vscode
+echo "Activating symlinks..."
+stow config git homebrew zsh
+
+APPLICATION_SUPPORT="$HOME/Library/Application Support"
+stow -t $APPLICATION_SUPPORT/Code/User vscode
+stow -t $APPLICATION_SUPPORT/iTerm2/DynamicProfiles iterm2
+echo "Symlinks activated successfully!"
