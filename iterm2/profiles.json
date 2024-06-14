@@ -3,6 +3,7 @@
     {
       "Name": "One Dark Pro Darker",
       "Guid": "C6F4549A-6E10-4392-B709-D067DB179AC2",
+      "Tags": ["Dynamic"],
       "Title Components": 130,
       "Icon": 1,
       "Load Shell Integration Automatically": true,
@@ -33,6 +34,20 @@
         "Green Component": 0.69803,
         "Blue Component": 0.74902,
         "Alpha Component": 0.19
+      },
+      "Badge Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.87843,
+        "Green Component": 0.33333,
+        "Blue Component": 0.38039,
+        "Alpha Component": 0.5
+      },
+      "Use Underline Color": true,
+      "Underline Color": {
+        "Color Space": "sRGB",
+        "Red Component": 0.09412,
+        "Green Component": 0.10196,
+        "Blue Component": 0.12157
       },
       "Ansi 0 Color": {
         "Color Space": "sRGB",
@@ -135,7 +150,10 @@
       "Blink Allowed": true,
       "Normal Font": "FiraCode-Retina 12",
       "Initial Use Transparency": false,
-      "Sync Title": false
+      "Unlimited Scrollback": true,
+      "Sync Title": false,
+      "Allow Change Cursor Blink": true,
+      "Reduce Flicker": true
     }
   ]
 }

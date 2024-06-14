@@ -3,6 +3,10 @@
     {
       "fileMatch": ["/vscode/settings.json"],
       "url": "vscode://schemas/settings/user"
+    },
+    {
+      "fileMatch": ["/vscode/snippets/*.json"],
+      "url": "vscode://schemas/snippets"
     }
   ]
 }

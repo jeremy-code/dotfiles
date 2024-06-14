@@ -1,0 +1,14 @@
+{
+  // https://react.dev/reference/rsc/use-client
+  "Use Client Directive": {
+    "prefix": "ucl",
+    "body": ["\"use client\";", "$0"],
+    "description": "Adds 'use client' directive"
+  },
+  // https://react.dev/reference/rsc/use-server
+  "Use Server Directive": {
+    "prefix": "usr",
+    "body": ["\"use server\";", "$0"],
+    "description": "Adds 'use server' directive"
+  }
+}
