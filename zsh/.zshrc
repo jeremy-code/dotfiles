@@ -11,6 +11,7 @@ ZSH_CUSTOM=$HOME/.dotfiles/oh-my-zsh
 
 # Update settings
 zstyle ':omz:update' mode auto
+zstyle ':omz:update' frequency 7
 
 # Completion settings
 ZSH_COMPDUMP="$ZSH_CACHE_DIR/.zcompdump"

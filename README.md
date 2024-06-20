@@ -46,10 +46,10 @@ stow -t "$HOME/Library/Application Support/iTerm2/DynamicProfiles" iterm2
 
 ### Git
 
-The [`git`](git) directory contains:
+The [`git`](git) directory contains `git`-related configuration files that are symlinked to `~/.config/git`:
 
-1.  [`.gitconfig`](git/.gitconfig) for base Git configuration settings (name, email, etc.) and set VS Code as default editor and diff tool
-2.  [`.gitignore_global`](git/.gitignore_global) for global Git ignore rules.
+1.  [`git/.config/git/config`](git/.config/git/config) for base Git configuration settings (name, email, etc.) and to set VS Code as default editor, diff tool, and merge tool.
+2.  [`git/.config/git/ignore`](git/.config/git/ignore) for global Git ignore rules.
 
 ### GNU Stow
 
@@ -65,7 +65,7 @@ Miscellaneous Homebrew environment variables are defined in [`homebrew/.homebrew
 
 ### iTerm2
 
-The [`iterm2`](iterm2) directory contains the iTerm2 dynamic profile configuration file [`profiles.json`](iterm2/profiles.json) for custom color schemes, theming, and other settings, which is symlinked to `~/Library/Application Support/iTerm2/DynamicProfiles`.
+The [`iterm2`](iterm2) directory contains the iTerm2 dynamic profile configuration file [`DynamicProfiles/profiles.json`](iterm2/DynamicProfiles/profiles.json) for custom color schemes, theming, and other settings, which is symlinked to `~/Library/Application Support/iTerm2/DynamicProfiles`. It also contains the [`Scripts`](iterm2/Scripts) directory for custom scripts to be used in iTerm2, such as setting the default profile to the aforementioned dynamic profile in [`Scripts/AutoLaunch/change_default_profile.py`](iterm2/Scripts/AutoLaunch/change_default_profile.py).
 
 ### Visual Studio Code
 
@@ -82,9 +82,8 @@ Additional configuration is in [`oh-my-zsh`](oh-my-zsh) directory (the `ZSH_CUST
 The [`config`](config) directory contains miscellaneous configuration files, namely:
 
 1. [`.npmrc`](config/.npmrc) for NPM configuration settings
-2. [`.vimrc`](config/.vimrc) for Vim configuration settings
-3. [`.editorconfig`](config/.editorconfig) for [EditorConfig](https://editorconfig.org/) settings (matching [Prettier's defaults](https://prettier.io/docs/en/configuration#editorconfig))
-4. [`.gnupg`](config/.gnupg) for GPG signing with the pinetry program [`pinentry-mac`](https://github.com/GPGTools/pinentry).
+2. [`.editorconfig`](config/.editorconfig) for [EditorConfig](https://editorconfig.org/) settings (matching [Prettier's defaults](https://prettier.io/docs/en/configuration#editorconfig))
+3. [`.gnupg`](config/.gnupg) for GPG signing with the pinentry program [`pinentry-mac`](https://github.com/GPGTools/pinentry).
 
 ## License
 

@@ -9,7 +9,6 @@
 
 [core]
   editor = code --wait
-  excludesFile = ~/.gitignore_global
 
 [diff]
   tool = vscode
@@ -25,6 +24,12 @@
 
 [init]
 	defaultBranch = main
+
+[merge]
+  tool = vscode
+
+[mergetool "vscode"]
+  cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
 
 [submodule]
 	recurse = true

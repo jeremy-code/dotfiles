@@ -4,7 +4,7 @@ export LC_ALL="en_US.UTF-8";
 
 export FORCE_COLOR=1 # https://force-color.org
 
-# Required in non-W32 environments, so `pinentry` program is displayed in terminal.
+# Required in non-W32 environments, so `pinentry` program is invoked from terminal.
 # https://www.gnupg.org/documentation/manuals/gnupg/Invoking-GPG_002dAGENT.html
 export GPG_TTY=$(tty);
 

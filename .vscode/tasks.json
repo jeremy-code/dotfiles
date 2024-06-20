@@ -11,7 +11,7 @@
     {
       "label": "Install Brewfile",
       "type": "shell",
-      "command": "brew bundle --file=./Brewfile"
+      "command": "brew bundle --file=homebrew/.Brewfile"
     }
   ]
 }

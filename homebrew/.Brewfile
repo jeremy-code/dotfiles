@@ -5,7 +5,6 @@ brew "gh" # GitHub command-line tool
 brew "git" # Distributed revision control system
 brew "git-lfs" # Git extension for versioning large files
 brew "gnupg" # GNU Pretty Good Privacy (PGP) package
-brew "node" # Platform built on V8 to build network applications
 brew "pinentry-mac" # Pinentry for GPG on Mac
 brew "pkg-config" # Manage compile and link flags for libraries
 brew "python" # Interpreted, interactive, object-oriented programming language
@@ -22,7 +21,6 @@ brew "yt-dlp" # Feature-rich command-line audio/video downloader
 # Casks
 
 ## Development Tools
-cask "devtoys" # Utilities designed to make common development tasks easier
 cask "firefox@developer-edition" # Web browser
 cask "font-fira-code" # Free monospaced font with programming ligatures
 cask "google-chrome" # Web browser
@@ -35,7 +33,7 @@ cask "bartender" # Menu bar icon organiser
 cask "discord" # Voice and text chat software
 cask "iina" # Free and open-source media player
 cask "logi-options-plus" # Software for Logitech devices
-cask "maccy"  # Clipboard manager
+cask "maccy" # Clipboard manager
 cask "meetingbar" # Shows the next meeting in the menu bar
 cask "obsidian" # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "onyx" # Verify system files structure, run miscellaneous maintenance and more
