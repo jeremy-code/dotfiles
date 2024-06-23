@@ -156,7 +156,7 @@
   "markdown.experimental.updateLinksOnPaste": true,
   "markdown.occurrencesHighlight.enabled": true,
   "markdown.preview.typographer": true,
-  "markdown.updateLinksOnFileMove.enabled": "always",
+  "markdown.updateLinksOnFileMove.enabled": "prompt",
   "markdown.validate.enabled": true,
 
   // Material Icons

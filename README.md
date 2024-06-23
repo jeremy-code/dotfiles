@@ -40,6 +40,10 @@ brew bundle --file ./homebrew/.Brewfile
 stow config git homebrew zsh
 stow -t "$HOME/Library/Application Support/Code/User" vscode
 stow -t "$HOME/Library/Application Support/iTerm2/DynamicProfiles" iterm2
+
+# Run extra scripts
+source setup-mac.sh
+source ssh.sh
 ```
 
 ## Configuration

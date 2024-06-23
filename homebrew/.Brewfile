@@ -12,6 +12,7 @@ brew "stow" # Organize software neatly under a single directory tree (e.g. /usr/
 brew "tree" # Display directories as trees (with optional color/HTML output)
 
 ## Utilities
+brew "bitwarden-cli" # Secure and free password manager for all of your devices
 brew "ffmpeg" # Play, record, convert, and stream audio and video
 brew "mas" # Mac App Store command-line interface
 brew "wget" # Internet file retriever
@@ -21,6 +22,7 @@ brew "yt-dlp" # Feature-rich command-line audio/video downloader
 # Casks
 
 ## Development Tools
+
 cask "firefox@developer-edition" # Web browser
 cask "font-fira-code" # Free monospaced font with programming ligatures
 cask "google-chrome" # Web browser

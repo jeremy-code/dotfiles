@@ -7,6 +7,7 @@
       "Title Components": 130,
       "Icon": 1,
       "Load Shell Integration Automatically": true,
+      "Jobs to Ignore": ["rlogin", "ssh", "slogin", "telnet"],
       "Use Separate Colors for Light and Dark Mode": false,
       "Foreground Color": {
         "Color Space": "sRGB",

@@ -710,6 +710,50 @@
             }
           }
         }
+      },
+      "bitwarden-cli": {
+        "version": "2024.6.0",
+        "bottle": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "arm64_sonoma": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/bitwarden-cli/blobs/sha256:fb752136fdb18ceea631e6626e260b6385691af02663e0e31c97ac5a963d59b7",
+              "sha256": "fb752136fdb18ceea631e6626e260b6385691af02663e0e31c97ac5a963d59b7"
+            },
+            "arm64_ventura": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/bitwarden-cli/blobs/sha256:20c64724b8206cbf15c90a05c7d16104ff894215f7941512ded8229994d84f98",
+              "sha256": "20c64724b8206cbf15c90a05c7d16104ff894215f7941512ded8229994d84f98"
+            },
+            "arm64_monterey": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/bitwarden-cli/blobs/sha256:b1ff22ce78035dfcbc6ffb446bc18dcf1d9cc8f3863c2d6f181be32c1fbf36bc",
+              "sha256": "b1ff22ce78035dfcbc6ffb446bc18dcf1d9cc8f3863c2d6f181be32c1fbf36bc"
+            },
+            "sonoma": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/bitwarden-cli/blobs/sha256:2bc9e93b9a543900829ab80f0b8ef6a8c7273e228092203bfaaab88946119296",
+              "sha256": "2bc9e93b9a543900829ab80f0b8ef6a8c7273e228092203bfaaab88946119296"
+            },
+            "ventura": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/bitwarden-cli/blobs/sha256:3133beeb8430b0f86e8fbde85b5fb0c45926b60b790ef86189b425cffd5aced7",
+              "sha256": "3133beeb8430b0f86e8fbde85b5fb0c45926b60b790ef86189b425cffd5aced7"
+            },
+            "monterey": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/bitwarden-cli/blobs/sha256:f434edb274e170149b485f8608dc1659186b693bbf563dc6b2a99332ec0c5be2",
+              "sha256": "f434edb274e170149b485f8608dc1659186b693bbf563dc6b2a99332ec0c5be2"
+            },
+            "x86_64_linux": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/bitwarden-cli/blobs/sha256:f627fb9dd646f59e47d1182aadd9e9f3b4214f220c247adb49c48371f6f9db81",
+              "sha256": "f627fb9dd646f59e47d1182aadd9e9f3b4214f220c247adb49c48371f6f9db81"
+            }
+          }
+        }
       }
     },
     "cask": {
@@ -732,7 +776,7 @@
         }
       },
       "google-chrome": {
-        "version": "126.0.6478.62",
+        "version": "126.0.6478.115",
         "options": {
           "full_name": "google-chrome"
         }
@@ -804,7 +848,7 @@
         }
       },
       "raycast": {
-        "version": "1.77.0",
+        "version": "1.77.1",
         "options": {
           "full_name": "raycast"
         }
@@ -822,7 +866,7 @@
         }
       },
       "spotify": {
-        "version": "1.2.39.578,0ea3f38b,108",
+        "version": "1.2.40.599,606b7f29,602",
         "options": {
           "full_name": "spotify"
         }
@@ -837,7 +881,7 @@
     "mas": {
       "Bitwarden": {
         "id": "1352778147",
-        "version": "2024.5.0"
+        "version": "2024.6.2"
       },
       "Dato": {
         "id": "1470584107",
