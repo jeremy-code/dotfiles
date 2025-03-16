@@ -1,0 +1,14 @@
+# https://docs.npmjs.com/cli/v8/using-npm/config
+
+audit=false
+cache=${XDG_CACHE_HOME}/npm
+fund=false
+init-author-email=nguyen.jeremyt@gmail.com
+init-author-name=Jeremy Nguyen
+init-author-url=https://jeremy.ng
+init-license=MIT
+init-version=0.0.0
+logs-dir=${XDG_STATE_HOME}/npm/logs
+prefer-online=true
+sign-git-commit=true
+sign-git-tag=true

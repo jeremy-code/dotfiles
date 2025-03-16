@@ -1,0 +1,229 @@
+{
+  /* Visit https://code.visualstudio.com/docs/getstarted/settings to read more about this file */
+
+  // Text Editor
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+    // Avoid using "source.organizeImports" since it may conflict with ESLint or Prettier
+  },
+  "editor.cursorBlinking": "phase",
+  "editor.cursorSmoothCaretAnimation": "explicit",
+  "editor.find.autoFindInSelection": "multiline",
+  "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": "'calt', 'cv19', 'cv23', 'ss02', 'ss03', 'ss05'",
+  "editor.fontSize": 14,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.inlayHints.padding": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.linkedEditing": true,
+  "editor.quickSuggestions": {
+    "strings": "on" // for Tailwind CSS classnames https://github.com/tailwindlabs/tailwindcss-intellisense#editorquicksuggestions
+  },
+  "editor.renderFinalNewline": "dimmed",
+  "editor.rulers": [80],
+  "editor.scrollbar.verticalScrollbarSize": 12,
+  "editor.scrollBeyondLastLine": false,
+  "editor.smoothScrolling": true,
+  "editor.suggest.preview": false,
+  "editor.suggestSelection": "recentlyUsedByPrefix",
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+
+  // Diff Editor
+  "diffEditor.codeLens": true,
+  "diffEditor.experimental.showMoves": true,
+
+  // Files
+  "files.autoGuessEncoding": true,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveWhenNoErrors": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+
+  // Workbench
+  "workbench.colorCustomizations": {
+    "[One Dark Pro Darker]": {
+      "editorInlayHint.background": "#2d313c", // Equivalent to `editor.lineHighlightBackground`
+      "editorInlayHint.foreground": "#7f848e", // Equivalent to `comments"
+      "gitblame.inlineMessage": "#5c6370" // Equivalent to `elements to dim`
+    }
+  },
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.commandPalette.experimental.suggestCommands": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.experimental.share.enabled": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.list.smoothScrolling": true,
+  "workbench.productIconTheme": "fluent-icons",
+  "workbench.tree.renderIndentGuides": "always",
+
+  // File Explorer
+  "explorer.compactFolders": false,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.env": "${capture}.env.*",
+    ".eslintrc*": ".eslintignore", // `eslint.config.js` does not support .eslintignore (https://eslint.org/docs/latest/use/configure/ignore)
+    "*.module.ts": "${capture}.controller.ts, ${capture}.resolver.ts, {capture}.service.ts",
+    ".prettierrc*": ".prettierignore",
+    "*.mjs": "${capture}.mjs.map, ${capture}.min.mjs, ${capture}.d.mts",
+    "*.cjs": "${capture}.cjs.map, ${capture}.min.cjs, ${capture}.d.cts",
+    "*.ts": "${capture}.spec.ts, ${capture}.test.ts",
+    "*.tsx": "${capture}.spec.tsx, ${capture}.test.tsx",
+    "Brewfile": "Brewfile.lock.json",
+    "Cargo.toml": "cargo.lock",
+    "Dockerfile": "docker-compose.yml, .dockerignore",
+    "README*": "CITATION.cff, CODEOWNERS*, CODE_OF_CONDUCT*, CONTRIBUTING*, FUNDING*, GOVERNANCE*, LICENSE*, SECURITY*, SUPPORT*, humans.txt",
+    "prettier.config.*": ".prettierignore",
+    "deno.json*": "deno.lock"
+  },
+  "explorer.incrementalNaming": "smart",
+
+  // Search
+  "search.smartCase": true,
+  "search.useGlobalIgnoreFiles": true,
+
+  // Debug
+  "debug.toolBarLocation": "commandCenter",
+
+  // Terminal
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.lineHeight": 1.1,
+  "terminal.integrated.smoothScrolling": true,
+  "terminal.integrated.stickyScroll.enabled": true,
+  "terminal.integrated.tabs.defaultIcon": "console",
+  "terminal.integrated.tabs.hideCondition": "never", // Always show tabs
+
+  // Telemetry
+  "telemetry.telemetryLevel": "off",
+
+  // Security
+  "security.workspace.trust.untrustedFiles": "open",
+
+  /** Extensions **/
+
+  // Carbon
+  "carbon.backgroundColor": "rgba(255,255,255,0)", // Transparent
+  "carbon.dropShadowBlurRadius": 0,
+  "carbon.dropShadowOffset": 0,
+  "carbon.fontFamily": "Fira Code",
+  "carbon.lineNumbers": true,
+  "carbon.paddingHorizontal": 0,
+  "carbon.paddingVertical": 0,
+  "carbon.theme": "one-dark",
+
+  // Copilot
+  "github.copilot.enable": {
+    "plaintext": true,
+    "markdown": true,
+    "scminput": true
+  },
+
+  // CSS
+  "css.format.spaceAroundSelectorSeparator": true,
+  "css.lint.boxModel": "warning",
+  "css.lint.duplicateProperties": "warning",
+  "css.lint.float": "warning",
+  "css.lint.important": "warning",
+  "css.lint.zeroUnits": "warning",
+
+  // ESLint
+  "eslint.lintTask.enable": true,
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+
+  // Even Better TOML
+  "evenBetterToml.formatter.alignComments": true,
+  "evenBetterToml.formatter.alignEntries": true,
+  "evenBetterToml.formatter.allowedBlankLines": 1,
+  "evenBetterToml.formatter.reorderArrays": true,
+  "evenBetterToml.formatter.trailingNewline": true,
+  "evenBetterToml.schema.links": true,
+
+  // Git
+  "git.autofetch": true,
+  "git.autoStash": true,
+  "git.branchRandomName.enable": true,
+  "git.closeDiffOnOperation": true,
+  "git.enableCommitSigning": true,
+  "git.enableSmartCommit": true,
+  "git.mergeEditor": true,
+  "git.terminalGitEditor": true,
+
+  // Git Blame
+  "gitblame.inlineMessageEnabled": true,
+  "gitblame.inlineMessageFormat": "${author.name}, ${time.ago} • ${commit.summary}",
+  "gitblame.inlineMessageMargin": 3,
+  "gitblame.inlineMessageNoCommit": "Uncommitted changes",
+  "gitblame.parallelBlames": 4,
+  "gitblame.statusBarMessageClickAction": "Open tool URL",
+  "gitblame.statusBarMessageFormat": "${author.name} (${time.ago})",
+  "gitblame.statusBarMessageNoCommit": "Uncommitted changes",
+
+  // Prettier
+  "prettier.trailingComma": "all", // Default is now `all`, https://prettier.io/docs/en/options#trailing-commas
+  "prettier.experimentalTernaries": true,
+
+  // Python
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+
+  // Rewrap
+  "rewrap.wrappingColumn": 80,
+
+  // Markdown
+  "markdown.occurrencesHighlight.enabled": true,
+  "markdown.preview.typographer": true,
+  "markdown.updateLinksOnFileMove.enabled": "prompt",
+  "markdown.validate.enabled": true,
+
+  // Material Icons
+  "material-icon-theme.activeIconPack": "react",
+  "material-icon-theme.files.associations": {
+    ".node-version": "nodejs_alt",
+    ".Brewfile": "ruby",
+    "config": "settings",
+    "npmrc": "npm",
+    "vimrc": "vim"
+  },
+  "material-icon-theme.folders.color": "#6fc0f0", // MacOS folder color
+
+  // Npm
+  "npm.enableRunFromFolder": true,
+
+  // Npm Intellisense
+  "npm-intellisense.scanDevDependencies": true,
+
+  // Tailwind CSS
+  "tailwindCSS.classAttributes": ["class", "className", "ngClass", "tw"],
+
+  // JavaScript
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.parameterNames.enabled": "literals",
+  "javascript.suggest.completeFunctionCalls": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  // TypeScript
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "literals",
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "typescript.suggest.completeFunctionCalls": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // Language-Specific Configuration Overrides
+  // Languages supported by Prettier VSCode: https://github.com/prettier/prettier-vscode#format-selection
+  "[graphql][handlebars][javascript][javascriptreact][json][jsonc][markdown][typescript][typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "[terraform][terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  }
+}

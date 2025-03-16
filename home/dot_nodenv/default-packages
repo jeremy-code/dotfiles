@@ -1,0 +1,5 @@
+# https://github.com/nodenv/nodenv-default-packages
+
+turbo
+typescript
+phantomjs

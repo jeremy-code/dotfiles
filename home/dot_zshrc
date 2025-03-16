@@ -1,0 +1,32 @@
+# Main settings
+export ZSH=$XDG_DATA_HOME/oh-my-zsh
+ZSH_THEME=agnoster # https://github.com/agnoster/agnoster-zsh-theme
+plugins=(
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
+ZSH_CUSTOM=$XDG_CONFIG_HOME/oh-my-zsh
+ZSH_CACHE_DIR=$XDG_CACHE_HOME/oh-my-zsh
+
+# Update settings
+zstyle ':omz:update' mode disabled # Defer updates to chezmoi
+
+# Completion settings
+ZSH_COMPDUMP=$ZSH_CACHE_DIR/.zcompdump
+COMPLETION_WAITING_DOTS=true
+
+# Automatic title
+DISABLE_AUTO_TITLE=true
+
+# Library settings
+ENABLE_CORRECTION=true
+HIST_STAMPS=mm/dd/yyyy
+
+# `zsh-autosuggestions` configuration
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+# `zsh-syntax-highlighting` configuration
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+
+source $ZSH/oh-my-zsh.sh

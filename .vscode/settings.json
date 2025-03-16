@@ -1,0 +1,5 @@
+{
+  // Location of iTerm2 Python environment
+  // {@link file://./../../../../Library/Application%20Support/iTerm2/iterm2env/shims/python3}
+  "python.defaultInterpreterPath": "~/Library/Application Support/iTerm2/iterm2env/shims/python3"
+}

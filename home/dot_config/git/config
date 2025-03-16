@@ -1,0 +1,35 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Jeremy Nguyen
+	email = nguyen.jeremyt@gmail.com
+  signingKey = 5220779F2C7D12DD
+
+[commit]
+	gpgsign = true
+
+[core]
+  editor = code --wait
+
+[diff]
+  tool = vscode
+
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[init]
+	defaultBranch = main
+
+[merge]
+  tool = vscode
+
+[mergetool "vscode"]
+  cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+
+[submodule]
+	recurse = true

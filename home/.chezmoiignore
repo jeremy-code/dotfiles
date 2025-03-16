@@ -1,0 +1,6 @@
+{{ if ne .chezmoi.os "darwin" }}
+Library
+Library/Application Support
+{{ end }}
+
+.oh-my-zsh/cache/completions/

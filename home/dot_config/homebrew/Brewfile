@@ -1,0 +1,119 @@
+# Taps
+tap "hashicorp/tap" # Homebrew Tap of HashiCorp products and tools
+tap "nodenv/nodenv" # Homebrew formulae for nodenv plugins
+
+# Formulae
+
+## Development Tools
+
+brew "chezmoi" # Manage your dotfiles across multiple diverse machines, securely
+brew "gh" # GitHub command-line tool
+brew "git" # Distributed revision control system
+brew "git-lfs" # Git extension for versioning large files
+brew "gnupg" # GNU Pretty Good Privacy (PGP) package
+brew "hashicorp/tap/terraform" # Tool to build, change, and version infrastructure
+brew "nodenv" # Manage multiple NodeJS versions
+# Per https://github.com/nodenv/nodenv/issues/183, this seems like the best way to setup global packages
+brew "nodenv/nodenv/nodenv-default-packages" # Auto-installs packages for Node installs
+brew "oci-cli" # Oracle Cloud Infrastructure CLI
+brew "pinentry-mac" # Pinentry for GPG on Mac
+brew "pipx" # Execute binaries from Python packages in isolated environments
+brew "pkg-config" # Manage compile and link flags for libraries
+brew "python" # Interpreted, interactive, object-oriented programming language
+brew "tree" # Display directories as trees (with optional color/HTML output)
+
+## Utilities
+
+brew "bitwarden-cli" # Secure and free password manager for all of your devices
+brew "ffmpeg" # Play, record, convert, and stream audio and video
+brew "mas" # Mac App Store command-line interface
+brew "wget" # Internet file retriever
+brew "webp" # New file format for still image compression
+brew "yt-dlp" # Feature-rich command-line audio/video downloader
+
+# Casks
+
+## Development Tools
+
+cask "docker" # App to build and share containerised applications and microservices
+cask "firefox@developer-edition" # Web browser
+cask "font-fira-code" # Free monospaced font with programming ligatures
+cask "google-chrome" # Web browser
+cask "iterm2" # Terminal emulator as alternative to Apple's Terminal app
+cask "postman" # Collaboration platform for API development
+cask "visual-studio-code" # Open-source code editor
+
+## Utilities & Applications
+
+cask "alfred" # Application launcher and productivity software
+cask "altserver" # iOS App Store alternative
+cask "appcleaner" # Application uninstaller
+cask "bartender" # Menu bar icon organiser
+cask "discord" # Voice and text chat software
+cask "iina" # Free and open-source media player
+cask "inkscape" # Vector graphics editor
+cask "logi-options+" # Software for Logitech devices
+cask "meetingbar" # Shows the next meeting in the menu bar
+cask "obsidian" # Knowledge base that works on top of a local folder of plain text Markdown files
+cask "onyx" # Verify system files structure, run miscellaneous maintenance and more
+cask "replacicon" # App icon replacement utility
+cask "spotify" # Music streaming service
+cask "wireshark" # Network protocol analyzer
+cask "zoom" # Video communication and virtual meeting platform
+
+# Mac App Store
+
+mas "Bitwarden", id: 1_352_778_147
+mas "Dato", id: 1_470_584_107
+mas "Things 3", id: 904_280_696
+
+# VSCode Extensions
+
+## Theming
+
+vscode "miguelsolorio.fluent-icons" # Fluent product icons for VS Code
+vscode "pkief.material-icon-theme" # Material Design Icons for VS Code
+vscode "zhuangtongfa.material-theme" # Atom's iconic One Dark theme
+
+## Language/Library Support
+
+vscode "bierner.markdown-preview-github-styles" # Changes VS Code's built-in markdown preview to match Github's style
+vscode "bradlc.vscode-tailwindcss" # Intelligent Tailwind CSS tooling for VS Code
+vscode "burkeholland.simple-react-snippets" # Dead simple React snippets you will actually use
+vscode "dbaeumer.vscode-eslint" # Integrates ESLint JavaScript into VS Code.
+vscode "editorconfig.editorconfig" # EditorConfig Support for VS Code
+vscode "ericadamski.carbon-now-sh" # A Code package to open the current editor content in carbon.now.sh
+vscode "esbenp.prettier-vscode" # Code formatter using prettier
+vscode "github.vscode-github-actions" # GitHub Actions workflows and runs for github.com hosted repositories
+vscode "hashicorp.terraform" # Syntax highlighting and autocompletion for Terraform
+vscode "mikestead.dotenv" # Support for dotenv file syntax
+vscode "ms-azuretools.vscode-docker" # Makes it easy to create, manage, and debug containerized applications.
+vscode "ms-python.black-formatter" # Formatting support for Python files using the Black formatter.
+vscode "ms-python.debugpy" # Python Debugger extension using debugpy
+vscode "ms-python.python" # Python language support
+vscode "ms-python.vscode-pylance" # A performant, feature-rich language server for Python in VS Code
+vscode "ms-toolsai.jupyter" # Jupyter notebook support, interactive programming and computing that supports Intellisense, debugging and more.
+vscode "ms-vscode.makefile-tools" # Provide makefile support in VS Code
+vscode "ms-vscode-remote.remote-containers" # Open any folder or repository inside a Docker container and take advantage of Visual Studio Code's full feature set.
+vscode "ms-vscode.vscode-js-profile-flame" # Flame graph visualizer for Heap and CPU profiles taken from the JavaScript debugger
+vscode "orta.vscode-jest" # Use Facebook's Jest With Pleasure
+vscode "prisma.prisma" # Adds syntax highlighting, formatting, auto-completion, jump-to-definition and linting for .prisma files
+vscode "tamasfe.even-better-toml" # Fully-featured TOML support
+
+## Utilities
+
+vscode "arcanis.vscode-zipfs" # Easily inspect and modify files stored within zip archives
+vscode "christian-kohler.npm-intellisense" # Autocompletes npm modules in import statements
+vscode "github.copilot" # Your AI pair programmer
+vscode "github.copilot-chat" # AI chat features powered by Copilot
+vscode "gitHub.remotehub" # Remotely browse and edit any GitHub repository
+vscode "github.vscode-pull-request-github" # Pull Request and Issue Provider for GitHub
+vscode "ms-vscode.azure-repos" # Remotely browse and edit any Azure Repos
+vscode "ms-vscode.remote-repositories" # Remotely browse and edit git repositories
+vscode "ms-vsliveshare.vsliveshare" # Real-time collaborative development from the comfort of your favorite tools
+vscode "quicktype.quicktype"# Copy JSON, paste as Go, TypeScript, C#, C++ and more
+vscode "stkb.rewrap" # Hard word wrapping for comments and other text at a given column
+vscode "visualstudioexptteam.intellicode-api-usage-examples" # See relevant code examples from GitHub for over 100K different APIs right in your editor.
+vscode "vscodevim.vim" # Vim emulation for VS Code
+vscode "waderyan.gitblame" # See git blame information in the status bar
+vscode "wayou.vscode-todo-highlight" # TODO Highlight
