@@ -1,6 +1,11 @@
-alias cls="clear"
-alias la="ls -A"
-alias pn="pnpm"
+alias \
+  cls="clear" \
+  brewup="brew update && brew upgrade" \
+  ncp="corepack" \
+  pn="pnpm" \
+  yt="yt-dlp"
 
-hash -d dotfiles="$XDG_DATA_HOME/chezmoi"
-hash -d github="$HOME/Github"
+# Set named directory hash table
+hash -d \
+  dotfiles="$XDG_DATA_HOME/chezmoi" \
+  github="$HOME/Github"

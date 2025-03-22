@@ -1,3 +1,1 @@
-{{ range $ssh_key := fromJson (output "gh" "api" "meta") | jq ".ssh_keys[]" -}}
-github.com {{ $ssh_key }}
-{{ end -}}
+{{ output "gh" "api" "meta" | fromJson | jq "\"github.com \" + .ssh_keys[]" }}

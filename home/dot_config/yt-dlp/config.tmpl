@@ -1,11 +1,11 @@
 # Filesystem Options
 
--o "~/Downloads/%(title)s.%(ext)s"
+--output "~/Downloads/%(title)s.%(ext)s"
 --cookies-from-browser firefox
 
 # Video Format Options
 
--S "ext"
+--format-sort "ext"
 
 # Subtitle Options
 
@@ -18,7 +18,7 @@
 --embed-thumbnail
 --embed-metadata
 --embed-chapters
---ffmpeg-location {{ env "HOMEBREW_PREFIX" }}/ffmpeg
+--ffmpeg-location {{ env "HOMEBREW_PREFIX" }}/bin/ffmpeg
 
 # SponsorBlock Options
 

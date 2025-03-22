@@ -2,6 +2,7 @@
   "Profiles": [
     {
       "Name": "One Dark Pro Darker",
+      "Description": "Default iTerm2 Dynamic Profile",
       "Guid": "C6F4549A-6E10-4392-B709-D067DB179AC2",
       "Tags": ["Dynamic"],
       "Title Components": 130,
@@ -150,6 +151,7 @@
       "Blinking Cursor": true,
       "Blink Allowed": true,
       "Normal Font": "FiraCode-Retina 12",
+      "ASCII Ligatures": true,
       "Initial Use Transparency": false,
       "Unlimited Scrollback": true,
       "Sync Title": false,

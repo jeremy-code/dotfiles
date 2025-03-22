@@ -2,6 +2,7 @@
 export ZSH=$XDG_DATA_HOME/oh-my-zsh
 ZSH_THEME=agnoster # https://github.com/agnoster/agnoster-zsh-theme
 plugins=(
+  colored-man-pages
   git
   zsh-autosuggestions
   zsh-syntax-highlighting

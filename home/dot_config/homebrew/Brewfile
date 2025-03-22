@@ -15,6 +15,7 @@ brew "hashicorp/tap/terraform" # Tool to build, change, and version infrastructu
 brew "nodenv" # Manage multiple NodeJS versions
 # Per https://github.com/nodenv/nodenv/issues/183, this seems like the best way to setup global packages
 brew "nodenv/nodenv/nodenv-default-packages" # Auto-installs packages for Node installs
+brew "nodenv/nodenv/nodenv-nvmrc" # Pick a node version from .nvmrc
 brew "oci-cli" # Oracle Cloud Infrastructure CLI
 brew "pinentry-mac" # Pinentry for GPG on Mac
 brew "pipx" # Execute binaries from Python packages in isolated environments

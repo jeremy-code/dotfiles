@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>application</key>
+		<integer>1</integer>
+		<key>custom</key>
+		<!-- https://github.com/vitorgalvao/custom-alfred-iterm-scripts -->
+		<string>{{ output "gh" "api" "/repos/vitorgalvao/custom-alfred-iterm-scripts/contents/custom_iterm_script.applescript" | fromJson | jq ".content" | join "" | b64dec  }}</string>
+	</dict>
+</plist>

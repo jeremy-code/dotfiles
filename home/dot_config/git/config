@@ -2,20 +2,18 @@
 [user]
 	name = Jeremy Nguyen
 	email = nguyen.jeremyt@gmail.com
-  signingKey = 5220779F2C7D12DD
 
 [commit]
 	gpgsign = true
 
 [core]
-  editor = code --wait
+  editor = code
 
 [diff]
-  tool = vscode
+  guitool = vscode
+  guiDefault = true
 
-[difftool "vscode"]
-  cmd = code --wait --diff $LOCAL $REMOTE
-
+# https://github.com/git-lfs/git-lfs/blob/main/docs/man/git-lfs-install.adoc
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -26,10 +24,11 @@
 	defaultBranch = main
 
 [merge]
-  tool = vscode
+  guitool = vscode
+  guiDefault = true
 
-[mergetool "vscode"]
-  cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+[push]
+  autoSetupRemote = true
 
 [submodule]
 	recurse = true
