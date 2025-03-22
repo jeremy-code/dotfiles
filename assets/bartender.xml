@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>name</key>
+    <string>Preset 1</string>
+    <key>description</key>
+    <string>Default preset to hide most items</string>
+    <!-- <key>icon</key> -->
+    <!-- Value is inserted later -->
+    <key>iconIsTemplate</key>
+    <true/>
+    <key>Show</key>
+    <array>
+      <string>com.sindresorhus.Dato-Dato</string>
+      <string>com.apple.controlcenter-Battery</string>
+      <string>com.apple.controlcenter-WiFi</string>
+      <string>com.apple.controlcenter-Bluetooth</string>
+      <string>pl.maketheweb.cleanshotx-Item-0</string>
+      <string>leits.MeetingBar-Item-0</string>
+      <string>com.surteesstudios.Bartender-statusItem</string>
+    </array>
+    <key>Hide</key>
+    <array>
+      <string>special.AllOtherItems</string>
+    </array>
+    <key>AlwaysHide</key>
+    <array>
+      <string>com.runningwithcrayons.Alfred-Item-0</string>
+      <string>com.malwarebytes.mbam.frontend.agent-Item-0</string>
+      <string>com.apple.controlcenter-NowPlaying</string>
+      <string>com.apple.Spotlight-Item-0</string>
+    </array>
+    <key>BartenderBarStyling</key>
+    <data>bnVsbA==</data>
+    <key>GapItemLabels</key>
+    <dict/>
+    <key>GapItemWidths</key>
+    <dict/>
+    <key>isSpecial</key>
+    <false/>
+    <key>leaveAlwaysHiddenItems</key>
+    <false/>
+    <key>subBarStyling</key>
+    <!-- `e30=` is "{}" in Base64 -->
+    <data>e30=</data>
+    <key>subItemIcons</key>
+    <data>e30=</data>
+    <key>subItemItems</key>
+    <dict/>
+    <key>subItemTitles</key>
+    <dict/>
+  </dict>
+</plist>

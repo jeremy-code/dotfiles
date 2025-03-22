@@ -16,6 +16,14 @@ sudo pmset -a displaysleep 5 \
 sudo pmset -b sleep 10 # Battery
 sudo pmset -c sleep 0 # Charger (wall power)
 
+# Enable /usr/lib/pam/pam_tid.so.2 for Touch ID support in sudo
+sudo tee /etc/pam.d/sudo_local << EOF > /dev/null
+# sudo_local: local config file which survives system update and is included for sudo
+
+# enable Touch ID for sudo
+auth       sufficient     pam_tid.so
+EOF
+
 # Global domain (NSGlobalDomain)
 
 ## Set language and text formats
@@ -92,31 +100,51 @@ defaults write com.apple.dock mineffect -string "scale"
 defaults write com.apple.dock minimize-to-application -bool true # Enables "Minimize windows into application icon."
 defaults write com.apple.dock tilesize -int 64
 
+# Time Machine
+sudo defaults write /Library/Preferences/com.apple.TimeMachine SkipPaths -array ~/Github
+
 # iTerm2
 
-# While a good portion of iTerm2 configuration is handled by {@link
-# file://./../../home/Library/Application%20Support/iTerm2/DynamicProfiles/profiles.json}
-# some settings aren't avaliable. Furthermore, the `.plist` contains keys that
-# would be impossible to sync such as `NoSync_*` or history keys. This script
-# sets some configuration options and when iTerm2 is launched, it merges them
-# with the default options.
+# Some iTerm2 settings must be in a Plist and cannot be set by Dynamic Profiles
+# {@link file://./../../home/Library/Application%20Support/iTerm2/DynamicProfiles/profiles.json}
+# . Furthermore, the `.plist` contains keys that would be impossible to sync
+# such as `NoSync_*` or history keys. This script sets some configuration
+# options and when iTerm2 is launched, it merges them with the default options.
 
+# This is represented as an "OpenStep" dictionary since XML is very verbose
 defaults write -app iTerm '{
-  "DoubleClickPerformsSmartSelection" = 1;
-  "EnableAPIServer" = 1;
-  "ForceKeyboard" = 1;
-  "HideTab" = 0;
-  "KeyboardLocale" = "com.apple.keylayout.US";
-  "NoSyncDoNotWarnBeforeMultilinePaste" = 1;
-  "NoSyncDoNotWarnBeforeMultilinePaste_selection" = 0;
-  "NotifyOnlyForCriticalShellIntegrationUpdates" = 1;
-  "OnlyWhenMoreTabs" = 0;
-  "PreventEscapeSequenceFromClearingHistory" = 0;
-  "PromptOnQuit" = 0;
-  "SavePasteHistory" = 1;
-  "SetCookie" = 1;
-  "SUEnableAutomaticChecks" = 1;
-  "TabStyleWithAutomaticOption" = 5;
-  "ThreeFingerEmulates" = 1;
-  "WindowNumber" = 0;
+  /* General */
+  PromptOnQuit = 0; // Confirm "Quit iTerm2 (⌘Q)"
+  OnlyWhenMoreTabs = 0; // Confirm closing multiple sessions
+  SavePasteHistory = 1; // Save copy/paste and command history to disk
+  EnableAPIServer = 1; // Enable Python API
+  NotifyOnlyForCriticalShellIntegrationUpdates = 0;
+  SUEnableAutomaticChecks = 0; // Check for updates automatically
+  DoubleClickPerformsSmartSelection = 1;
+  ClickToSelectCommand = 0; // Clicking on a command selects it to restrict Find and Filter
+
+  /* Appearance */
+  TabStyleWithAutomaticOption = 5; // Minimal Theme
+  WindowNumber = 0; // Show window number in title bar
+  HideTab = 0; // Show tab bar even when there is only one tab
+
+  /* Keys */
+  ForceKeyboard = 1; // This will force iTerm2 to use the specified keyboard locale instead of the system keyboard
+  KeyboardLocale = "com.apple.keylayout.US";
+
+  /* Pointer */
+  ThreeFingerEmulates = 1; // Three-finger tap emulates middle click
+
+  /* Advanced */
+  AlternateMouseScroll = 1; // Scroll wheel sends arrow keys when in alternate screen mode.
+  SetCookie = 1; // Set ITERM2_COOKIE environment variable, allowing Python scripts to be launched without confirmation?
+  PreventEscapeSequenceFromClearingHistory = 0; // Prevent CSI 3 J from clearing scrollback history?
+  NoSyncDoNotWarnBeforeMultilinePaste = 1; // Suppress warning about multi-line pastes (or a single line ending in a newline).
 }'
+
+# Bartender 5 stores the profile icon as a Base64-encoded TIFF image
+UUID=$(uuidgen)
+PROFILE=$(plutil -insert icon -data "$(base64 --input ./../../assets/icon.tif)" -o - -- ./../../assets/bartender.xml)
+defaults write -app Bartender\ 5 ProfileSettings -dict "$UUID" "$PROFILE"
+defaults write -app Bartender\ 5 LastKnownProfile -string "$UUID"
+defaults write -app Bartender\ 5 PersistLastKnownProfile -bool true
