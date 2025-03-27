@@ -20,13 +20,14 @@ brew "oci-cli" # Oracle Cloud Infrastructure CLI
 brew "pinentry-mac" # Pinentry for GPG on Mac
 brew "pipx" # Execute binaries from Python packages in isolated environments
 brew "pkg-config" # Manage compile and link flags for libraries
-brew "python" # Interpreted, interactive, object-oriented programming language
+brew "pyenv" # Python version management
 brew "tree" # Display directories as trees (with optional color/HTML output)
 
 ## Utilities
 
 brew "bitwarden-cli" # Secure and free password manager for all of your devices
 brew "ffmpeg" # Play, record, convert, and stream audio and video
+brew "exiftool" # Perl lib for reading and writing EXIF metadata
 brew "mas" # Mac App Store command-line interface
 brew "wget" # Internet file retriever
 brew "webp" # New file format for still image compression
@@ -54,7 +55,6 @@ cask "discord" # Voice and text chat software
 cask "iina" # Free and open-source media player
 cask "inkscape" # Vector graphics editor
 cask "logi-options+" # Software for Logitech devices
-cask "meetingbar" # Shows the next meeting in the menu bar
 cask "obsidian" # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "onyx" # Verify system files structure, run miscellaneous maintenance and more
 cask "replacicon" # App icon replacement utility

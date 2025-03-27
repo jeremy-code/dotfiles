@@ -1,0 +1,22 @@
+{
+  "dato": {
+    "losAngelesTimezone": {
+      "id": "EF70FEBC-F119-40B9-BF05-431C3E4ABEDD",
+      "name": "Pacific Time",
+      "timeFormat": "twelveHour",
+      "showInMenu": true,
+      "hide": "sameTimeZone",
+      "notes": "Pacific Time (America/Los_Angeles, PST/PDT, UTC-8/UTC-7)",
+      "isInMenuBar": false,
+      "originalName": "Los Angeles",
+      "menuBarTitle": "",
+      "hideWhenSameAsCurrent": true,
+      "menuBarShowWeekdayWhenInDifferentDay": true,
+      "timeZone": "America/Los_Angeles"
+    },
+    "toggleDatoShortcut": {
+      "carbonModifiers": 2560,
+      "carbonKeyCode": 2
+    }
+  }
+}

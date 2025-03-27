@@ -17,7 +17,7 @@
       <string>com.apple.controlcenter-WiFi</string>
       <string>com.apple.controlcenter-Bluetooth</string>
       <string>pl.maketheweb.cleanshotx-Item-0</string>
-      <string>leits.MeetingBar-Item-0</string>
+      <string>com.sindresorhus.Dato-UpcomingEvent</string>
       <string>com.surteesstudios.Bartender-statusItem</string>
     </array>
     <key>Hide</key>

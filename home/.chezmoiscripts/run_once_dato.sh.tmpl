@@ -1,0 +1,46 @@
+#!/usr/bin/env zsh
+
+# Dato
+
+# On initial setup, Dato will prompt the user to enable permissions and then ask
+# whether to show "Icon" or "Date & time" in the menu bar. Select "Date & time"
+# for reasonable defaults. After running the next commands, then
+# 1. Enable or disable which specific calendars or reminders in Settings >
+#    Events.
+# 2. Repeat the previous step in Settings > Events > Notifications on the
+#    "Customize..." button.
+
+# General
+defaults write -app Dato useGoogleMaps -bool true
+# Events
+defaults write -app Dato showReminders -bool true
+defaults write -app Dato "upcomingEventInMenuBar_isEnabled" -bool true
+defaults write -app Dato "upcomingEventInMenuBar_onlyEventsWithStatus" -string acceptedAndTentativeAndPending
+defaults write -app Dato "upcomingEventInMenuBar_clickMenuItemToJoinVideoCall" -bool true
+defaults write -app Dato "upcomingEventInMenuBar_menuItemAction" -string "showWindowWithEventDetails"
+defaults write -app Dato notifyWhenVideoCallStarts -bool true
+
+# I am not sure why this value is represented this way. Suppose m is the number
+# of minutes. Then, [a, b] = [3m + floor(m/4), (1*10^18 * 60 * m) % 2^64]. 1*10^18
+# * 60 * m represents m minutes in attoseconds. I suspect the value is the
+# remainder of 2^64 because that is the maximum value of an unsigned 64-bit
+# integer.
+defaults write -app Dato notifyForVideoCallsDurationBefore -string "[48,14556284461941522432]" # 15 minutes
+
+defaults write -app Dato menu_eventDetails_showTimeZones -bool true
+defaults write -app Dato eventDetails_showCalendarTitle -bool true
+defaults write -app Dato openGoogleCalendarEventsInGoogleCalendar -bool true
+defaults write -app Dato createNewEventsWith -string "googleCalendar"
+defaults write -app Dato showVideoCallButtonOnlyForUpcomingEvents -bool true
+# Time Zones
+defaults write -app Dato timeZonesInMenu -array \
+  -string '{{ .dato.losAngelesTimezone | toJson }}'
+# Window
+defaults write -app Dato "menu_positionedBelowMenuBarItem" -bool false
+defaults write -app Dato showTimeZoneTimeTravelSliderInMenu -bool false
+# Calendar
+defaults write -app Dato highlightedDaysInCalendar -array -int 6 -int 7
+defaults write -app Dato highlightDaysInCalendarStyle -string "redColor"
+defaults write -app Dato indicateEventsInCalendar -string "one"
+# Shortcuts
+defaults write -app Dato KeyboardShortcuts_toggleDato -string '{{ .dato.toggleDatoShortcut | toJson }}'
