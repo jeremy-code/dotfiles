@@ -22,25 +22,10 @@ HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
 
 source <($HOMEBREW_PREFIX/bin/brew shellenv)
 source <(nodenv init -)
+source <(pyenv init -)
 
 brew nodenv-sync
-
-# Setting `PATH` variable in zsh with `$path` array
-# https://zsh.sourceforge.io/Guide/zshguide02.html#l24
-
-# Remove duplicate entries in `$path` and `$fpath`
-typeset -U path fpath
-
-path=(
-  $(brew --prefix python)/libexec/bin # Enable unversioned symlinks for Python, python-config, pip, etc.
-  $path
-)
-
-fpath=(
-  $HOMEBREW_PREFIX/share/zsh/site-functions # Homebrew completions
-  $HOME/.docker/completions # Docker completions
-  $fpath
-)
+brew pyenv-sync
 
 # https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html#basics
 export XDG_CACHE_HOME=$HOME/.cache
@@ -48,6 +33,24 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 
+# Setting `PATH` variable in zsh with `$path` array
+# https://zsh.sourceforge.io/Guide/zshguide02.html#l24
+
+# Remove duplicate entries in `$path` and `$fpath`
+typeset -U path fpath
+
+fpath=(
+  $XDG_CONFIG_HOME/oh-my-zsh/functions # Custom functions
+  $HOMEBREW_PREFIX/share/zsh/site-functions # Homebrew completions
+  $HOME/.docker/completions # Docker completions
+  $fpath
+)
+
+# Autoload custom functions using `ksh`-style function definitions
+# https://zsh.sourceforge.io/Doc/Release/Functions.html#index-autoloading-functions
+autoload -Uk $XDG_CONFIG_HOME/oh-my-zsh/functions/*
+
+# Manually set some environment variables to XDG Base Directory Specification
 export COREPACK_HOME=$XDG_CACHE_HOME/node/corepack
 export HISTFILE=$XDG_STATE_HOME/zsh/history
 export NODE_REPL_HISTORY=$XDG_DATA_HOME/node_repl_history

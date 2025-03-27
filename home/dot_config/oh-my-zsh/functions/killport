@@ -1,0 +1,21 @@
+#!/usr/bin/env zsh
+
+killport() {
+  if [ $# -eq 0 ]; then
+    echo "usage: killport port ..."
+    return 1
+  fi
+
+  local ports=( "$@" )
+
+  for port in $ports; do
+    local pids=$(lsof -i :"$port" -t)
+
+    if [[ -n $pids ]]; then
+      echo "killport: killing process(es) ${(f)pids} on port(s) $port..."
+      xargs kill -s KILL <<< "$pids"
+    else
+      echo "killport: no process found on port $port"
+    fi
+  done
+}

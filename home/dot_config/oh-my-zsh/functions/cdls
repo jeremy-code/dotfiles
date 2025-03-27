@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+cdls() {
+	local dir="$1"
+	local dir="${dir:=$HOME}"
+	if [[ -d "$dir" ]]; then
+		cd "$dir" >/dev/null || return; ls "${@:2}"
+	else
+		echo "cdls: no such directory: $dir"
+	fi
+}

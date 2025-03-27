@@ -95,6 +95,9 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 	OpenWith -bool true \
 	Privileges -bool true
 
+## Show icon in Window Titlebar
+defaults write com.apple.universalaccess showWindowTitlebarIcons -bool true
+
 # Dock (https://developer.apple.com/documentation/devicemanagement/dock)
 defaults write com.apple.dock mineffect -string "scale"
 defaults write com.apple.dock minimize-to-application -bool true # Enables "Minimize windows into application icon."
@@ -102,6 +105,13 @@ defaults write com.apple.dock tilesize -int 64
 
 # Time Machine
 sudo defaults write /Library/Preferences/com.apple.TimeMachine SkipPaths -array ~/Github
+
+# Clock
+defaults write com.apple.menuextra.clock IsAnalog -bool true # Set the clock to analog mode in the menu bar since it's more compact
+
+# TextEdit
+defaults write -app TextEdit RichText -bool false
+defaults write -app TextEdit SmartQuotes -bool false
 
 # iTerm2
 

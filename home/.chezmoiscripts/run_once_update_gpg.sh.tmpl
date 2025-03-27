@@ -1,0 +1,60 @@
+#!/usr/bin/env zsh
+{{/* https://github.com/gpg/gnupg/blob/master/doc/DETAILS */}}
+{{- range output "gpg" "--list-keys" "--with-colons" | splitList "\n" -}}
+{{-   if hasPrefix "tru:" .  -}}
+{{-     $expirationTimestamp := (split ":" .)._4 -}}
+{{-     $timeUntilExpiration := now | unixEpoch | sub $expirationTimestamp -}}
+{{-     $SixMonthsInSeconds := mul 60 60 24 7 4 6 }}
+{{-     if gt $timeUntilExpiration $SixMonthsInSeconds  -}}
+# Your GPG key is valid and will expire in more than 6 months
+{{-     else -}}
+# Your GPG key is valid and will expire on {{ output "date" "-Idate" "-r"  $expirationTimestamp }}
+{{-     end -}}
+{{-   end -}}
+{{- end }}
+
+function {
+  echo "File has updated. update_gpg.sh will run."
+
+  local EMAIL_ADDRESS="nguyen.jeremyt@gmail.com"
+
+
+  gpg --list-keys --with-fingerprint
+
+  fingerprint=$(
+    gpg --list-keys --list-options show-only-fpr-mbox |
+    grep $EMAIL_ADDRESS |
+    cut -f 1 -w
+  )
+
+  echo "Will update expiration date for key with fingerprint: $fingerprint"
+
+  keys=$(gpg --list-keys --with-colons $fingerprint)
+
+  expiration_timestamp=$(
+    grep "^tru:" <<< "$keys" |
+    cut -f 5 -d ":"
+  )
+
+  uid=$(grep "^uid:" <<< "$keys" | cut -f 10 -d ":")
+
+  echo "$fingerprint is a key for $uid and will expire on $(date -Idate -r $expiration_timestamp)"
+
+  echo "Setting expiration date to 1 year for key $fingerprint and all its subkeys"
+
+  gpg --quick-set-expire $fingerprint "1y" "*"
+
+  echo "Updated expiration date for key $fingerprint and all its subkeys"
+
+  # I am not sure why, but for the first time the command is run, the expiration
+  # date is "1" (1969-12-31) -- hence piping output to `/dev/null`.
+  gpg --list-keys --with-colons $fingerprint > /dev/null 2>&1
+
+  new_expiration_timestamp=$(
+    gpg --list-keys --with-colons $fingerprint |
+    grep "^tru:" |
+    cut -f 5 -d ":"
+  )
+
+  echo "New expiration date for key $fingerprint is $(date -Idate -r $new_expiration_timestamp)"
+}

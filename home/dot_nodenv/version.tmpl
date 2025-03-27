@@ -1,0 +1,2 @@
+{{/* Always set Node.js version to latest Github release */}}
+{{- output "gh" "api" "/repos/nodejs/node/tags" "--jq" ".[0].name" -}}
