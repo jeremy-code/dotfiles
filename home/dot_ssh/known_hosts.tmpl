@@ -1,1 +1,2 @@
-{{ output "gh" "api" "meta" | fromJson | jq "\"github.com \" + .ssh_keys[]" }}
+{{/* Add Github's SSH keys as known hosts */}}
+{{- output "gh" "api" "meta" "--jq" "\"github.com \" + .ssh_keys[]" -}}
