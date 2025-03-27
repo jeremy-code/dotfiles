@@ -154,7 +154,7 @@ defaults write -app iTerm '{
 
 # Bartender 5 stores the profile icon as a Base64-encoded TIFF image
 UUID=$(uuidgen)
-PROFILE=$(plutil -insert icon -data "$(base64 --input ./../../assets/icon.tif)" -o - -- ./../../assets/bartender.xml)
+PROFILE=$(plutil -insert icon -data "$(base64 --input "$HOME/.local/share/chezmoi/assets/icon.tif")" -o - -- "$HOME/.local/share/chezmoi/assets/bartender.xml")
 defaults write -app Bartender\ 5 ProfileSettings -dict "$UUID" "$PROFILE"
 defaults write -app Bartender\ 5 LastKnownProfile -string "$UUID"
 defaults write -app Bartender\ 5 PersistLastKnownProfile -bool true
