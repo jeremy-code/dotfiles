@@ -1,0 +1,33 @@
+#!/bin/zsh
+
+# Extracts the contents of a compressed file based on its extensions. Works with
+# globs and lists of files. Inspired by
+# https://wiki.archlinux.org/title/Bash/Functions#Extract but with minor tweaks
+# (e.g. more descriptive syntax).
+extract() {
+  if (( $# == 0 )); then
+    echo "usage: extract file ..."
+    return 1
+  fi
+
+  local file
+  for file in "$@"; do
+    if [[ -f "${file}" ]]; then
+      case "${file}" in
+        # https://www.gnu.org/software/tar/manual/html_chapter/Formats.html#auto_002dcompress
+        *.(tgz|taz|taZ|tz2|tbz2|tbz|tlz|tzst)) ;& # Short tar suffixes (FALLTHROUGH)
+        *.tar.(gz|Z|bz2|lz|lzma|lzo|xz|zst)) ;& # .tar.* suffixes (FALLTHROUGH)
+        *.tar) tar --extract --file "${file}" ;;
+        *.(bz2|bz|tbz|tbz)) bzip2 --decompress "${file}" ;;
+        *.(lzma|lz|xz)) xz --decompress "${file}" ;;
+        *.gz) gzip --decompress "${file}" ;;
+        *.zip) unzip "${file}" ;;
+        *.zstd) zstd --decompress "${file}" ;;
+        *.Z) uncompress "${file}" ;;
+        *) echo "extract: unrecognized file extension: ${file}" ;;
+      esac
+    else
+      echo "extract: file does not exist: ${file}"
+    fi
+  done
+}
