@@ -1,4 +1,9 @@
-#!/usr/bin/env zsh
+#!/bin/zsh
+#
+# Updates the expiration date of the GPG key for the user with email address
+# $EMAIL_ADDRESS to 1 year if the key will expire in less than 6 months.
+#
+# GPG key status:
 {{/* https://github.com/gpg/gnupg/blob/master/doc/DETAILS */}}
 {{- range output "gpg" "--list-keys" "--with-colons" | splitList "\n" -}}
 {{-   if hasPrefix "tru:" .  -}}
@@ -13,48 +18,73 @@
 {{-   end -}}
 {{- end }}
 
+readonly EMAIL_ADDRESS="nguyen.jeremyt@gmail.com"
+readonly SIX_MONTHS_IN_SECONDS="$((60 * 60 * 24 * 7 * 4 * 6))"
+
+function error() {
+  echo "[$(date "+%Y-%m-%dT%H:%M:%S%z")]: $*" >&2
+}
+
+function get_gpg_key_expiration_date() {
+  local fingerprint="$1"
+
+  if [[ -z "${fingerprint}" ]]; then
+    error "Error: No fingerprint provided"
+    return 1
+  fi
+
+  gpg --list-keys --with-colons "${fingerprint}" \
+    | grep "^tru:" \
+    | cut -f 5 -d ":"
+
+  if (( PIPESTATUS[0] != 0 )); then
+    error "Error: Could not find expiration date for key with fingerprint ${fingerprint}"
+    return 1
+  fi
+}
+
 function {
-  echo "File has updated. update_gpg.sh will run."
+  echo "GPG script file hash has updated. Finding GPG key for user ${EMAIL_ADDRESS}..."
 
-  local EMAIL_ADDRESS="nguyen.jeremyt@gmail.com"
-
-
-  gpg --list-keys --with-fingerprint
-
+  # I am using `gpg --list-keys` with option `show-only-fpr-mbox` to get the
+  # primary GPG key's fingerprint. This may be discouraged as parsing is only
+  # recommended with `--with-colons`, but that would make it difficult to
+  # distinguish between the fingerprints of keys owned by someone else or
+  # subkeys.
+  #
+  # Note: SHA-1 fingerprint is 40 characters long in hexadecimal (160 bits = 20
+  # bytes)
   fingerprint=$(
-    gpg --list-keys --list-options show-only-fpr-mbox |
-    grep $EMAIL_ADDRESS |
-    cut -f 1 -w
+    gpg --list-keys --list-options show-only-fpr-mbox \
+      | grep -E "^[[:xdigit:]]{40} ${EMAIL_ADDRESS}$" \
+      | cut -f 1 -w
   )
 
-  echo "Will update expiration date for key with fingerprint: $fingerprint"
+  echo "Checking expiration date for user ${EMAIL_ADDRESS} key with fingerprint: ${fingerprint}"
 
-  keys=$(gpg --list-keys --with-colons $fingerprint)
+  local -i current_expiration_timestamp
+  current_expiration_timestamp="$(get_gpg_key_expiration_date ${fingerprint})"
 
-  expiration_timestamp=$(
-    grep "^tru:" <<< "$keys" |
-    cut -f 5 -d ":"
-  )
+  echo "${fingerprint} will expire on $(date -Idate -r ${current_expiration_timestamp}). Checking if extending expiration date is necessary..."
 
-  uid=$(grep "^uid:" <<< "$keys" | cut -f 10 -d ":")
+  now=$(date +%s)
+  if (( (now - current_expiration_timestamp) < SIX_MONTHS_IN_SECONDS )); then
+    echo "Key ${fingerprint} will expire in more than 6 months. Confirm script hash is correct. No action required."
+    return 0
+  fi
 
-  echo "$fingerprint is a key for $uid and will expire on $(date -Idate -r $expiration_timestamp)"
+  echo "Key ${fingerprint} will expire in less than 6 months. Setting its expiration date to 1 year from now..."
 
-  echo "Setting expiration date to 1 year for key $fingerprint and all its subkeys"
+  gpg --quick-set-expire "${fingerprint}" "1y"
 
-  gpg --quick-set-expire $fingerprint "1y" "*"
+  echo "Updated expiration date for key ${fingerprint} and all its subkeys"
 
-  echo "Updated expiration date for key $fingerprint and all its subkeys"
+  # I am not sure why, but after updating the expiration date, when this command
+  # is ran for the first time, the expiration date will always be "1"
+  # (formatted to "1969-12-31") -- hence piping output to `/dev/null`.
+  gpg --list-keys --with-colons "${fingerprint}" > /dev/null 2>&1
 
-  # I am not sure why, but for the first time the command is run, the expiration
-  # date is "1" (1969-12-31) -- hence piping output to `/dev/null`.
-  gpg --list-keys --with-colons $fingerprint > /dev/null 2>&1
+  new_expiration_timestamp="$(get_gpg_key_expiration_date ${fingerprint})"
 
-  new_expiration_timestamp=$(
-    gpg --list-keys --with-colons $fingerprint |
-    grep "^tru:" |
-    cut -f 5 -d ":"
-  )
-
-  echo "New expiration date for key $fingerprint is $(date -Idate -r $new_expiration_timestamp)"
+  echo "New expiration date for key ${fingerprint} is $(date -Idate -r ${new_expiration_timestamp})"
 }

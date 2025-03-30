@@ -1,11 +1,12 @@
-#!/usr/bin/env zsh
+#!/bin/zsh
 
+# Changes to the specified directory and lists its contents (cd + ls)
 cdls() {
-	local dir="$1"
-	local dir="${dir:=$HOME}"
-	if [[ -d "$dir" ]]; then
-		cd "$dir" >/dev/null || return; ls "${@:2}"
+	local dir="${1:=${HOME}}"
+
+  if [[ -d "$dir" ]]; then
+		builtin cd "$dir" && ls "${@:2}"
 	else
-		echo "cdls: no such directory: $dir"
+		echo "cdls: no such directory: ${dir}"
 	fi
 }

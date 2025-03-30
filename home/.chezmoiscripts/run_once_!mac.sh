@@ -1,5 +1,5 @@
-#!/usr/bin/env zsh
-
+#!/bin/zsh
+#
 # Inspired by Mathias Bynens's legendary `.macos` script
 # https://mths.be/macos
 

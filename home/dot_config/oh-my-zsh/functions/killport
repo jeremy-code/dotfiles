@@ -1,21 +1,22 @@
-#!/usr/bin/env zsh
+#!/bin/zsh
 
+# Kills the process(es) running on the specified port(s). Ports can be specified
+# as either a single port number or a range of ports separated by a minus sign.
 killport() {
-  if [ $# -eq 0 ]; then
+  if (( $# == 0 )); then
     echo "usage: killport port ..."
     return 1
   fi
 
-  local ports=( "$@" )
-
-  for port in $ports; do
-    local pids=$(lsof -i :"$port" -t)
+  local port
+  for port in "$@"; do
+    local pids=$(lsof -i :"${port}" -t)
 
     if [[ -n $pids ]]; then
-      echo "killport: killing process(es) ${(f)pids} on port(s) $port..."
-      xargs kill -s KILL <<< "$pids"
+      echo "killport: killing process(es) ${(f)pids} on port(s) ${port}..."
+      xargs kill -s KILL <<< "${pids}"
     else
-      echo "killport: no process found on port $port"
+      echo "killport: no process found on port ${port}"
     fi
   done
 }
