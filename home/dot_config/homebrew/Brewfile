@@ -12,6 +12,7 @@ brew "git" # Distributed revision control system
 brew "git-lfs" # Git extension for versioning large files
 brew "gnupg" # GNU Pretty Good Privacy (PGP) package
 brew "hashicorp/tap/terraform" # Tool to build, change, and version infrastructure
+brew "latexindent" # Add indentation to LaTeX files
 brew "nodenv" # Manage multiple NodeJS versions
 # Per https://github.com/nodenv/nodenv/issues/183, this seems like the best way to setup global packages
 brew "nodenv/nodenv/nodenv-default-packages" # Auto-installs packages for Node installs
@@ -38,6 +39,7 @@ brew "yt-dlp" # Feature-rich command-line audio/video downloader
 
 ## Development Tools
 
+cask "basictex" # Compact TeX distribution as alternative to the full TeX Live / MacTeX
 cask "docker" # App to build and share containerised applications and microservices
 cask "firefox@developer-edition" # Web browser
 cask "font-fira-code" # Free monospaced font with programming ligatures
@@ -87,6 +89,7 @@ vscode "ericadamski.carbon-now-sh" # A Code package to open the current editor c
 vscode "esbenp.prettier-vscode" # Code formatter using prettier
 vscode "github.vscode-github-actions" # GitHub Actions workflows and runs for github.com hosted repositories
 vscode "hashicorp.terraform" # Syntax highlighting and autocompletion for Terraform
+vscode "james-yu.latex-workshop" # Boost LaTeX typesetting efficiency with preview, compile, autocomplete, colorize, and more
 vscode "mikestead.dotenv" # Support for dotenv file syntax
 vscode "ms-azuretools.vscode-docker" # Makes it easy to create, manage, and debug containerized applications.
 vscode "ms-python.black-formatter" # Formatting support for Python files using the Black formatter.

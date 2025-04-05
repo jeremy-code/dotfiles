@@ -1,0 +1,16 @@
+# http://git.savannah.nongnu.org/cgit/chktex.git/tree/chktex/chktexrc.in
+
+QuoteStyle = Traditional
+TabSize = 2
+
+CmdLine {
+  --warnon all
+  --erroron 16 # Mathmode still on at end of LaTeX file.
+  --nowarn 22 # Comment displayed
+  --nowarn 30 # Multiple spaces detected in output
+  --quiet # Shuts up about copyright information
+}
+
+HyphDash = { 1 3 }
+NumDash = { 2 }
+WordDash = { 1 }

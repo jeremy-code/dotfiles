@@ -52,6 +52,7 @@ Additional root scripts are located in the [`home/.chezmoiscripts`](home/.chezmo
 - [`run_once_00-install_homebrew.sh`](home/.chezmoiscripts/run_once_00-install_homebrew.sh) - Installs Homebrew for the first time either using the signed-`.pkg` file for MacOS or running a Bash installation shell script for Linux
 - [`run_once_40-mac.sh`](home/.chezmoiscripts/run_once_40-mac.sh) - Configures some macOS settings that must be done imperatively (namely using the `defaults` to configure `.plist` files). Some assets needed for this script are located in the [`$HOME/.local/share/chezmoi/assets`](assets) directory in the source directory
 - [`run_once_dato.sh.tmpl`](home/.chezmoiscripts/run_once_dato.sh.tmpl) - Configures some settings for the [Dato](https://sindresorhus.com/dato) app, which must be a `.tmpl` file due to containing some JSON data stored in the [`home/.chezmoidata/dato.json`](home/.chezmoidata/dato.json) file
+- [`run_once_latex.sh`](home/.chezmoiscripts/run_once_latex.sh) - Self-updates [`tlmgr`](https://www.tug.org/texlive/tlmgr.html) and installs the LaTeX packages defined in the array `PACKAGES`
 - [`run_once_update_gpg.sh.tmpl`](home/.chezmoiscripts/run_once_update_gpg.sh.tmpl) - Updates the GPG key expiration date to 1 year from the current date if the key is set to expire within 6 months
 
 ### Homebrew

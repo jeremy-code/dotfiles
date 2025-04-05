@@ -162,6 +162,16 @@
   "gitblame.statusBarMessageFormat": "${author.name} (${time.ago})",
   "gitblame.statusBarMessageNoCommit": "Uncommitted changes",
 
+  // LaTeX
+  "latex-workshop.bibtex-fields.sort.enabled": true,
+  "latex-workshop.bibtex-format.sort.enabled": true,
+  "latex-workshop.bibtex-format.trailingComma": true,
+  "latex-workshop.formatting.latex": "latexindent",
+  "latex-workshop.intellisense.subsuperscript.enabled": true,
+  "latex-workshop.linting.chktex.enabled": true,
+  "latex-workshop.linting.chktex.exec.args": [],
+  "latex-workshop.view.autoFocus.enabled": true,
+
   // Prettier
   "prettier.trailingComma": "all", // Default is now `all`, https://prettier.io/docs/en/options#trailing-commas
   "prettier.experimentalTernaries": true,
@@ -216,6 +226,9 @@
   // Languages supported by Prettier VSCode: https://github.com/prettier/prettier-vscode#format-selection
   "[graphql][handlebars][javascript][javascriptreact][json][jsonc][markdown][typescript][typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
   },
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
