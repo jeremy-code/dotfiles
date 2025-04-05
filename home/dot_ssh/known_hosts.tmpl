@@ -1,2 +1,9 @@
-{{/* Add Github's SSH keys as known hosts */}}
-{{- output "gh" "api" "meta" "--jq" "\"github.com \" + .ssh_keys[]" -}}
+{{/* Add Github's SSH keys as known hosts for `github.com` and `[ssh.github.com]:443` */}}
+{{-
+  output
+  "gh"
+  "api"
+  "meta"
+  "--jq"
+  "[\"github.com\", \"[ssh.github.com]:443\"][] as $host | $host + \" \" + .ssh_keys[]"
+-}}

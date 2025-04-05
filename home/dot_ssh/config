@@ -1,0 +1,11 @@
+Host github.com
+    Hostname github.com
+    PreferredAuthentications publickey
+    User git
+
+# https://docs.github.com/en/authentication/troubleshooting-ssh/using-ssh-over-the-https-port
+Host ssh.github.com
+    Hostname ssh.github.com
+    Port 443
+    PreferredAuthentications publickey
+    User git
