@@ -1,12 +1,22 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
-# Extracts the contents of a compressed file based on its extensions. Works with
-# globs and lists of files. Inspired by
+# Extracts the contents of a compressed file, list of files, and/or globs based
+# on its extensions. Inspired by
 # https://wiki.archlinux.org/title/Bash/Functions#Extract but with minor tweaks
 # (e.g. more descriptive syntax).
-extract() {
+#
+# Note this function attempts to only extract specialized file formats with
+# their specific extraction tool. For example, per libarchive-formats(5),
+# `libarchive`, which is used in `bsdtar`, can read the following extensions:
+# .cab, .lzh, .lha, .rar, .warc, .warc.gz, .xar, .pkg, and .xip. Notably, it
+# includes `.rar`, which its appropriate CLI tool `unrar` was removed in
+# Homebrew/homebrew-core#66609 for "incompatible license".
+#
+# Hence, if this function fails to extract a file, try running `tar -xf file`,
+# `7zz x file`, or some other general purpose archive tool.
+function extract() {
   if (( $# == 0 )); then
-    echo "usage: extract file ..."
+    echo "usage: $0 file ..."
     return 1
   fi
 
@@ -15,19 +25,24 @@ extract() {
     if [[ -f "${file}" ]]; then
       case "${file}" in
         # https://www.gnu.org/software/tar/manual/html_chapter/Formats.html#auto_002dcompress
-        *.(tgz|taz|taZ|tz2|tbz2|tbz|tlz|tzst)) ;& # Short tar suffixes (FALLTHROUGH)
+        *.(tgz|taz|taZ|tz2|tbz2|tbz|tlz|tzst)) ;k # Short tar suffixes (FALLTHROUGH)
         *.tar.(gz|Z|bz2|lz|lzma|lzo|xz|zst)) ;& # .tar.* suffixes (FALLTHROUGH)
         *.tar) tar --extract --file "${file}" ;;
+        *.7z) 7z x "${file}" ;;
         *.(bz2|bz|tbz|tbz)) bzip2 --decompress "${file}" ;;
         *.(lzma|lz|xz)) xz --decompress "${file}" ;;
         *.gz) gzip --decompress "${file}" ;;
         *.zip) unzip "${file}" ;;
         *.zstd) zstd --decompress "${file}" ;;
         *.Z) uncompress "${file}" ;;
-        *) echo "extract: unrecognized file extension: ${file}" ;;
+        *) echo "$0: unrecognized file extension: ${file}" ;;
       esac
+    elif [[ -d "${file}" ]]; then
+      echo "$0: file is a directory: ${file}"
+    elif [[ -e "${file}" ]]; then
+      echo "$0: file is not a regular file: ${file}"
     else
-      echo "extract: file does not exist: ${file}"
+      echo "$0: file does not exist: ${file}"
     fi
   done
 }

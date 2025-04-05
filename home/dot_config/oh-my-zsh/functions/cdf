@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh
+
+# Changes to the specified directory of a given file
+#
+# Note that if you accidentally run `cd file` you can run `cdf !*` to change
+# to the intended directory.
+function cdf() {
+  local file="${1:=${HOME}}"
+
+  if [[ -f "${file}" ]]; then
+    local dir
+    dir="$(dirname "${file}")"
+    builtin cd "${dir}"
+  else
+    echo "$0: no such file: ${file}"
+  fi
+}

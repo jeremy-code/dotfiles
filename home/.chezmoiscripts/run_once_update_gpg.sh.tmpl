@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 #
 # Updates the expiration date of the GPG key for the user with email address
 # $EMAIL_ADDRESS to 1 year if the key will expire in less than 6 months.
@@ -19,7 +19,7 @@
 {{- end }}
 
 readonly EMAIL_ADDRESS="nguyen.jeremyt@gmail.com"
-readonly SIX_MONTHS_IN_SECONDS="$((60 * 60 * 24 * 7 * 4 * 6))"
+readonly -i SIX_MONTHS_IN_SECONDS="$((60 * 60 * 24 * 7 * 4 * 6))"
 
 function error() {
   echo "[$(date "+%Y-%m-%dT%H:%M:%S%z")]: $*" >&2
@@ -82,7 +82,7 @@ function {
   # I am not sure why, but after updating the expiration date, when this command
   # is ran for the first time, the expiration date will always be "1"
   # (formatted to "1969-12-31") -- hence piping output to `/dev/null`.
-  gpg --list-keys --with-colons "${fingerprint}" > /dev/null 2>&1
+  gpg --list-keys --with-colons "${fingerprint}" &> /dev/null
 
   new_expiration_timestamp="$(get_gpg_key_expiration_date ${fingerprint})"
 

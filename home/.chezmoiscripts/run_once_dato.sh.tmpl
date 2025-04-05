@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 #
 # Configures Dato's settings. Dato is a menu bar app that displays the current
 # date and time, upcoming events, and time zones
@@ -20,6 +20,10 @@ defaults write -app Dato "upcomingEventInMenuBar_onlyEventsWithStatus" -string a
 defaults write -app Dato "upcomingEventInMenuBar_clickMenuItemToJoinVideoCall" -bool true
 defaults write -app Dato "upcomingEventInMenuBar_menuItemAction" -string "showWindowWithEventDetails"
 defaults write -app Dato notifyWhenVideoCallStarts -bool true
+
+# This is just how the Swift `Duration` type encodes itself to JSON. In short, it's an Int128 encoded as two parts.
+
+# https://github.com/swiftlang/swift/blob/main/stdlib/public/core/Duration.swift#L37-L41
 
 # I am not sure why this value is represented this way. Suppose m is the number
 # of minutes. Then, [a, b] = [3m + floor(m/4), (1*10^18 * 60 * m) % 2^64]. 1*10^18

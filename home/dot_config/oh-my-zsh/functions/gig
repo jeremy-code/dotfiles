@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+# gitignore.io command-line client
+# https://docs.gitignore.io/install/command-line
+function gig() {
+  curl --silent --location "https://www.toptal.com/developers/gitignore/api/$@"
+}

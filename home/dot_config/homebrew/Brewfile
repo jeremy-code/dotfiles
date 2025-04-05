@@ -19,7 +19,6 @@ brew "nodenv/nodenv/nodenv-nvmrc" # Pick a node version from .nvmrc
 brew "oci-cli" # Oracle Cloud Infrastructure CLI
 brew "pinentry-mac" # Pinentry for GPG on Mac
 brew "pipx" # Execute binaries from Python packages in isolated environments
-brew "pkg-config" # Manage compile and link flags for libraries
 brew "pyenv" # Python version management
 brew "tree" # Display directories as trees (with optional color/HTML output)
 
@@ -28,9 +27,11 @@ brew "tree" # Display directories as trees (with optional color/HTML output)
 brew "bitwarden-cli" # Secure and free password manager for all of your devices
 brew "ffmpeg" # Play, record, convert, and stream audio and video
 brew "exiftool" # Perl lib for reading and writing EXIF metadata
+brew "imagemagick" # Tools and libraries to manipulate images in many formats
 brew "mas" # Mac App Store command-line interface
+brew "pngcrush" # Optimizer for PNG files
+brew "sevenzip" # 7-Zip is a file archiver with a high compression ratio
 brew "wget" # Internet file retriever
-brew "webp" # New file format for still image compression
 brew "yt-dlp" # Feature-rich command-line audio/video downloader
 
 # Casks
@@ -51,20 +52,19 @@ cask "alfred" # Application launcher and productivity software
 cask "altserver" # iOS App Store alternative
 cask "appcleaner" # Application uninstaller
 cask "bartender" # Menu bar icon organiser
+cask "bitwarden" # Desktop password and login vault
 cask "discord" # Voice and text chat software
 cask "iina" # Free and open-source media player
 cask "inkscape" # Vector graphics editor
 cask "logi-options+" # Software for Logitech devices
 cask "obsidian" # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "onyx" # Verify system files structure, run miscellaneous maintenance and more
-cask "replacicon" # App icon replacement utility
 cask "spotify" # Music streaming service
 cask "wireshark" # Network protocol analyzer
 cask "zoom" # Video communication and virtual meeting platform
 
 # Mac App Store
 
-mas "Bitwarden", id: 1_352_778_147
 mas "Dato", id: 1_470_584_107
 mas "Things 3", id: 904_280_696
 

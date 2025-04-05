@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 #
 # Inspired by Mathias Bynens's legendary `.macos` script
 # https://mths.be/macos
@@ -14,7 +14,7 @@ sudo pmset -a displaysleep 5 \
   autorestart 1 \
   lidwake 1
 sudo pmset -b sleep 10 # Battery
-sudo pmset -c sleep 0 # Charger (wall power)
+sudo pmset -c sleep 0  # Charger (wall power)
 
 # Enable /usr/lib/pam/pam_tid.so.2 for Touch ID support in sudo
 sudo tee /etc/pam.d/sudo_local << EOF > /dev/null
@@ -54,13 +54,13 @@ defaults write -g NSUserKeyEquivalents -dict-add \
   '\033Window\033Move & Resize\033Top Right' '~^i' \
   '\033Window\033Move & Resize\033Return to Previous Size' '~^\U008'
 
-defaults write -g AppleFontSmoothing -int 1 # Enable light subpixel font rendering on non-Apple LCDs
-defaults write -g AppleKeyboardUIMode -int 3 # Enable full keyboard access for all controls
-defaults write -g ApplePressAndHoldEnabled -bool false # Disable press-and-hold for character accents menu and enable key repeat
-defaults write -g AppleShowAllExtensions -bool true # Show all filename extensions
-defaults write -g NSDisableAutomaticTermination -bool true # Disable automatic termination of inactive apps
+defaults write -g AppleFontSmoothing -int 1                     # Enable light subpixel font rendering on non-Apple LCDs
+defaults write -g AppleKeyboardUIMode -int 3                    # Enable full keyboard access for all controls
+defaults write -g ApplePressAndHoldEnabled -bool false          # Disable press-and-hold for character accents menu and enable key repeat
+defaults write -g AppleShowAllExtensions -bool true             # Show all filename extensions
+defaults write -g NSDisableAutomaticTermination -bool true      # Disable automatic termination of inactive apps
 defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false # Save to disk and not iCloud by default
-defaults write -g NSTextShowsControlCharacters -bool true # Display ASCII control characters using caret notation in standard text views
+defaults write -g NSTextShowsControlCharacters -bool true       # Display ASCII control characters using caret notation in standard text views
 
 # Finder
 
@@ -71,9 +71,9 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false # If false, the sys
 
 chflags nohidden ~/Library # Show the ~/Library folder
 
-defaults write com.apple.finder AppleShowAllFiles true # Show hidden files by default
+defaults write com.apple.finder AppleShowAllFiles true                     # Show hidden files by default
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false # Disable warning when changing file extension
-defaults write com.apple.finder FXPreferredViewStyle -string "clmv" # Column view
+defaults write com.apple.finder FXPreferredViewStyle -string "clmv"        # Column view
 defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder ShowStatusBar -bool true
 
@@ -91,9 +91,9 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 ## Expand File Info panes: “General”, “Open with”, “Sharing & Permissions”
 defaults write com.apple.finder FXInfoPanesExpanded -dict \
-	General -bool true \
-	OpenWith -bool true \
-	Privileges -bool true
+  General -bool true \
+  OpenWith -bool true \
+  Privileges -bool true
 
 ## Show icon in Window Titlebar
 defaults write com.apple.universalaccess showWindowTitlebarIcons -bool true
@@ -154,7 +154,7 @@ defaults write -app iTerm '{
 
 # Bartender 5 stores the profile icon as a Base64-encoded TIFF image
 UUID=$(uuidgen)
-PROFILE=$(plutil -insert icon -data "$(base64 --input "$HOME/.local/share/chezmoi/assets/icon.tif")" -o - -- "$HOME/.local/share/chezmoi/assets/bartender.xml")
-defaults write -app Bartender\ 5 ProfileSettings -dict "$UUID" "$PROFILE"
-defaults write -app Bartender\ 5 LastKnownProfile -string "$UUID"
+PROFILE=$(plutil -insert icon -data "$(base64 --input "${HOME}/.local/share/chezmoi/assets/icon.tif")" -o - -- "${HOME}/.local/share/chezmoi/assets/bartender.xml")
+defaults write -app Bartender\ 5 ProfileSettings -dict "${UUID}" "${PROFILE}"
+defaults write -app Bartender\ 5 LastKnownProfile -string "${UUID}"
 defaults write -app Bartender\ 5 PersistLastKnownProfile -bool true
