@@ -32,3 +32,6 @@ set autoindent            " automatically set the indent of a new line
 
 " 24 multi-byte characters
 set encoding=utf8         " character encoding used in Vim
+
+" 25 various
+set viminfo+=n${XDG_STATE_HOME}/vim/viminfo

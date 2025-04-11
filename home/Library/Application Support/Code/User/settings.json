@@ -182,6 +182,10 @@
   // Rewrap
   "rewrap.wrappingColumn": 80,
 
+  // shell-format configuration
+  "shellformat.path": "/opt/homebrew/bin/shfmt",
+  "shellformat.useEditorConfig": true,
+
   // Markdown
   "markdown.occurrencesHighlight.enabled": true,
   "markdown.preview.typographer": true,
@@ -224,10 +228,13 @@
 
   // Language-Specific Configuration Overrides
   // Languages supported by Prettier VSCode: https://github.com/prettier/prettier-vscode#format-selection
-  "[graphql][handlebars][javascript][javascriptreact][json][jsonc][markdown][typescript][typescriptreact]": {
+  "[bats][dockerfile][dotenv][hosts][ignore][jvmoptions][properties][shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[graphql][handlebars][javascript][javascriptreact][json][jsonc][jsonl][markdown][typescript][typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[latex]": {
+  "[latex][tex]": {
     "editor.defaultFormatter": "James-Yu.latex-workshop"
   },
   "[python]": {

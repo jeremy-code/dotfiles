@@ -1,4 +1,7 @@
+setopt autocd # https://zsh.sourceforge.io/Doc/Release/Options.html#index-AUTOCD
+
 alias \
+  7z="7zz" \
   cls="clear" \
   brewup="brew update && brew upgrade" \
   exif="exiftool" \

@@ -18,10 +18,12 @@ brew "nodenv" # Manage multiple NodeJS versions
 brew "nodenv/nodenv/nodenv-default-packages" # Auto-installs packages for Node installs
 brew "nodenv/nodenv/nodenv-nvmrc" # Pick a node version from .nvmrc
 brew "oci-cli" # Oracle Cloud Infrastructure CLI
-brew "pinentry-mac" # Pinentry for GPG on Mac
+brew "pinentry-mac" if OS.mac? # Pinentry for GPG on Mac
 brew "pipx" # Execute binaries from Python packages in isolated environments
 brew "pyenv" # Python version management
+brew "shfmt" # Autoformat shell script source code
 brew "tree" # Display directories as trees (with optional color/HTML output)
+brew "zsh-completions" # Additional completion definitions for zsh
 
 ## Utilities
 
@@ -61,6 +63,7 @@ cask "inkscape" # Vector graphics editor
 cask "logi-options+" # Software for Logitech devices
 cask "obsidian" # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "onyx" # Verify system files structure, run miscellaneous maintenance and more
+cask "protonvpn" # VPN client focusing on security
 cask "spotify" # Music streaming service
 cask "wireshark" # Network protocol analyzer
 cask "zoom" # Video communication and virtual meeting platform
@@ -87,6 +90,7 @@ vscode "dbaeumer.vscode-eslint" # Integrates ESLint JavaScript into VS Code.
 vscode "editorconfig.editorconfig" # EditorConfig Support for VS Code
 vscode "ericadamski.carbon-now-sh" # A Code package to open the current editor content in carbon.now.sh
 vscode "esbenp.prettier-vscode" # Code formatter using prettier
+vscode "foxundermoon.shell-format" # A formatter for shell scripts, Dockerfile, gitignore, dotenv, /etc/hosts, jvmoptions, and other file types
 vscode "github.vscode-github-actions" # GitHub Actions workflows and runs for github.com hosted repositories
 vscode "hashicorp.terraform" # Syntax highlighting and autocompletion for Terraform
 vscode "james-yu.latex-workshop" # Boost LaTeX typesetting efficiency with preview, compile, autocomplete, colorize, and more

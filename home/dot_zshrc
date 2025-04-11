@@ -1,3 +1,8 @@
+# While $HISTFILE should be set in .zprofile, macOS by default overwrites
+# $HISTFILE to be $HOME/.zsh_history in /etc/zshrc
+# https://github.com/apple-oss-distributions/zsh/blob/main/zshrc
+export HISTFILE="${XDG_STATE_HOME}/zsh/history"
+
 # Oh My Zsh settings
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings
 
@@ -8,6 +13,7 @@ plugins=(
   colored-man-pages
   git
   zsh-autosuggestions
+  zsh-history-substring-search
   zsh-syntax-highlighting
 )
 ZSH_CUSTOM="${XDG_CONFIG_HOME}/oh-my-zsh"
@@ -29,6 +35,10 @@ HIST_STAMPS=mm/dd/yyyy
 
 # `zsh-autosuggestions` configuration
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+# `zsh-history-substring-search` configuration
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # `zsh-syntax-highlighting` configuration
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)

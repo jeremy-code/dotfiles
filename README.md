@@ -1,4 +1,11 @@
-# dotfiles [![License](https://img.shields.io/github/license/jeremy-code/dotfiles?logo=data:image/svg+xml;base64,PHN2ZyByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+Q2VydGlmaWNhdGU8L3RpdGxlPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik00IDZ2MTRhMiAyIDAgMCAwIDIgMmgxMnY2bDMtMiAzIDJ2LTZoNGEyIDIgMCAwIDAgMi0yVjZhMiAyIDAgMCAwLTItMkg2YTIgMiAwIDAgMC0yIDJabTIgMGg4djJINlptMCA0aDZ2Mkg2Wm0wIDRoOHYySDZabTEwIDZINnYtMmgxMFptOC02djRsLTMtMi0zIDJ2LTRsLTQtMiA0LTJWNmwzIDIgMy0ydjQuMmw0IDEuOFoiLz48L3N2Zz4K)](LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/jeremy-code/dotfiles?logo=git&logoColor=%23fff)](https://github.com/jeremy-code/dotfiles/commit/main)
+<!-- Link references -->
+
+[license-badge]: https://img.shields.io/github/license/jeremy-code/dotfiles?logo=data:image/svg+xml;base64,PHN2ZyByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+Q2VydGlmaWNhdGU8L3RpdGxlPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik00IDZ2MTRhMiAyIDAgMCAwIDIgMmgxMnY2bDMtMiAzIDJ2LTZoNGEyIDIgMCAwIDAgMi0yVjZhMiAyIDAgMCAwLTItMkg2YTIgMiAwIDAgMC0yIDJabTIgMGg4djJINlptMCA0aDZ2Mkg2Wm0wIDRoOHYySDZabTEwIDZINnYtMmgxMFptOC02djRsLTMtMi0zIDJ2LTRsLTQtMiA0LTJWNmwzIDIgMy0ydjQuMmw0IDEuOFoiLz48L3N2Zz4K&color=%23ff1423
+[last-commit-badge]: https://img.shields.io/github/last-commit/jeremy-code/dotfiles?logo=git&logoColor=white&color=f05033
+
+# jeremy-code/dotfiles
+
+[![License][license-badge]](LICENSE) [![Last Commit][last-commit-badge]](https://github.com/jeremy-code/dotfiles/commit/main)
 
 This is my dotfiles repository. There are [many](https://dotfiles.github.io) like it, but this one is mine.
 
@@ -14,9 +21,10 @@ Intended to be a mainly [macOS](https://www.apple.com/macos) (but also [GNU](htt
   - [colored-man-pages](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages) - Adds colors to man pages
   - [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git) - Many git aliases and a few useful functions
   - [zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like fast/unobtrusive autosuggestions for `zsh`
+  - [zsh-users/zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search) - ZSHH port of Fish history search (up arrow)
   - [zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - Fish shell-like syntax highlighting for Zsh
 - [Visual Studio Code](https://code.visualstudio.com) - Source-code editor
-- [`zsh`](https://www.zsh.org) - Unix shell
+- [Z Shell (zsh)](https://zsh.sourceforge.io) - Unix shell
 
 ## Installation
 
@@ -27,7 +35,7 @@ Using a chezmoi-first approach:
 brew install chezmoi --adopt
 ```
 
-Otherwise, with a Homebrew-first approach (see [`run_once_install_00-homebrew.sh`](home/.chezmoiscripts/run_once_00-install_homebrew.sh) for more details):
+Or with a Homebrew-first approach (see [`run_once_install_00-homebrew.sh`](home/.chezmoiscripts/run_once_00-install_homebrew.sh) for more details):
 
 ```shell
 # Install Homebrew with either the signed-.pkg file at Homebrew's GitHub
@@ -39,7 +47,7 @@ brew install chezmoi
 chezmoi init jeremy-code --apply
 ```
 
-Ideally, inspect either shell script before running them to ensure they are safe to run. This will be the easiest attack vector since afterwards, packages installed in [`homebrew-core`](https://github.com/Homebrew/homebrew-core) will be verified using cryptographic attestations of build provenance due to the enabled `$HOMEBREW_VERIFY_ATTESTATIONS` environment variable in [`home/dot_config/homebrew/brew.env.tmpl`](home/dot_config/homebrew/brew.env.tmpl) (see [Homebrew](#homebrew) for more details).
+Ideally, inspect either shell script before running them to ensure they are safe to run. This will be the easiest attack vector since afterwards, packages installed in [`homebrew-core`](https://github.com/Homebrew/homebrew-core) will be verified using cryptographic attestations of build provenance since `$HOMEBREW_VERIFY_ATTESTATIONS` is enabled in [`home/dot_config/homebrew/brew.env.tmpl`](home/dot_config/homebrew/brew.env.tmpl) (see [Homebrew](#homebrew) for more details).
 
 ## Configuration
 
@@ -47,10 +55,10 @@ Ideally, inspect either shell script before running them to ensure they are safe
 
 [chezmoi](https://www.chezmoi.io) is used to manage the dotfiles in this repository. The source directory is the [`$HOME/.local/share/chezmoi/home`](home) directory (declared in [`.chezmoiroot`](.chezmoiroot)) and the destination directory is correspondingly the user's home directory or `$HOME`. The other configuration files are stored in the source directory, such as [`home/.chezmoiexternal.toml`](home/.chezmoiexternal.toml).
 
-Additional root scripts are located in the [`home/.chezmoiscripts`](home/.chezmoiscripts) directory. These scripts are intended to be indempotent (can be run multiple times without altering the whole system). Since chezmoi runs scripts in ASCII-defined order, the scripts are prefixed with a two-digit number `XX-` to define the order in which they are run if it is relevant, a convention used commonly in Debian-based system using [`run-parts`](https://manpages.debian.org/testing/debianutils/run-parts.8.html) or those inspired by Unix System V `init` design (see [sysvinit/debian](https://salsa.debian.org/debian/sysvinit/-/blob/master/debian/src/sysv-rc/doc/README.runlevels)).
+Additional root scripts are located in the [`home/.chezmoiscripts`](home/.chezmoiscripts) directory. These scripts are intended to be indempotent (can be run multiple times without altering the whole system). Since chezmoi runs scripts in ASCII-defined order, the scripts are prefixed with a two-digit number `XX-` to define the order in which they are run if it is relevant, a convention used commonly in Debian-based systems using [`run-parts`](https://manpages.debian.org/testing/debianutils/run-parts.8.html) or those inspired by Unix System V's `init` design (see [Debian/sysvinit](https://salsa.debian.org/debian/sysvinit/-/blob/master/debian/src/sysv-rc/doc/README.runlevels)).
 
-- [`run_once_00-install_homebrew.sh`](home/.chezmoiscripts/run_once_00-install_homebrew.sh) - Installs Homebrew for the first time either using the signed-`.pkg` file for MacOS or running a Bash installation shell script for Linux
-- [`run_once_40-mac.sh`](home/.chezmoiscripts/run_once_40-mac.sh) - Configures some macOS settings that must be done imperatively (namely using the `defaults` to configure `.plist` files). Some assets needed for this script are located in the [`$HOME/.local/share/chezmoi/assets`](assets) directory in the source directory
+- [`run_once_00-install_homebrew.sh`](home/.chezmoiscripts/run_once_00-install_homebrew.sh) - Installs Homebrew for the first time either by (1) installing the signed-`.pkg` file on macOS or (2) running a Bash installation shell script on Linux
+- [`run_once_40-mac.sh`](home/.chezmoiscripts/run_once_40-mac.sh) - Configures some macOS settings that must be done imperatively (namely using the `defaults` to configure `.plist` files). Some assets needed for this script are located in the directory [`$HOME/.local/share/chezmoi/assets`](assets)
 - [`run_once_dato.sh.tmpl`](home/.chezmoiscripts/run_once_dato.sh.tmpl) - Configures some settings for the [Dato](https://sindresorhus.com/dato) app, which must be a `.tmpl` file due to containing some JSON data stored in the [`home/.chezmoidata/dato.json`](home/.chezmoidata/dato.json) file
 - [`run_once_latex.sh`](home/.chezmoiscripts/run_once_latex.sh) - Self-updates [`tlmgr`](https://www.tug.org/texlive/tlmgr.html) and installs the LaTeX packages defined in the array `PACKAGES`
 - [`run_once_update_gpg.sh.tmpl`](home/.chezmoiscripts/run_once_update_gpg.sh.tmpl) - Updates the GPG key expiration date to 1 year from the current date if the key is set to expire within 6 months
@@ -75,7 +83,7 @@ The configuration files of [Visual Studio Code](https://code.visualstudio.com) a
 
 ### `zsh` and Oh My Zsh
 
-The default shell is [`zsh`](https://www.zsh.org) using the framework [Oh My Zsh](https://ohmyz.sh). The base `zsh` configuration files [`home/dot_zshrc`](home/dot_zshrc) and [`home/dot_zprofile.tmpl`](home/dot_zprofile.tmpl) configure Oh My Zsh and set up some necessary startup environment variables respectively. Shell scripts attempt to follow the [Google Shell Style Guide](https://google.github.io/styleguide/shellguide.html) as closely as possible.
+The default shell is [`zsh`](https://www.zsh.org) using the framework [Oh My Zsh](https://ohmyz.sh). The base `zsh` configuration files [`home/dot_zshrc`](home/dot_zshrc) and [`home/dot_zprofile`](home/dot_zprofile) configure Oh My Zsh and set up some necessary startup environment variables respectively. Shell scripts attempt to follow the [Google Shell Style Guide](https://google.github.io/styleguide/shellguide.html) as closely as possible.
 
 Additional `.sh` shell scripts are stored in [`home/dot_config/oh-my-zsh`](home/dot_config/oh-my-zsh) directory (the `$ZSH_CUSTOM` directory) which contains:
 
@@ -85,8 +93,8 @@ Additional `.sh` shell scripts are stored in [`home/dot_config/oh-my-zsh`](home/
 
 Furthermore, this directory contains a [functions](home/dot_config/oh-my-zsh/functions) directory for additional functions for `zsh` that are [autoloaded](https://zsh.sourceforge.io/Doc/Release/Functions.html#index-autoloading-functions) in the aforementioned `home/dot_zprofile.tmpl` file.
 
-The plugins [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git) and [colored-man-pages](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages) are bundled with Oh My Zsh and are enabled in the `.zshrc` file. Additionally, the external plugins [zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) and [zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) are installed to the corresponding `$ZSH_CUSTOM/plugins` directory. These external plugins along Oh My Zsh are defined in [`home/.chezmoiexternal.toml`](home/.chezmoiexternal.toml) as external Git repositories to be installed by chezmoi.
+The plugins [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git) and [colored-man-pages](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages) are bundled with Oh My Zsh and are enabled in the `.zshrc` file. Additionally, the external plugins [zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions), [zsh-users/zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search), [zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) are installed to the corresponding `$ZSH_CUSTOM/plugins` directory. These external plugins along Oh My Zsh are defined in [`home/.chezmoiexternal.toml`](home/.chezmoiexternal.toml) as external Git repositories to be installed by chezmoi.
 
 ## License
 
-This project is licensed under the [MIT license](LICENSE).
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

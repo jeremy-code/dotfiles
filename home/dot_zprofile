@@ -47,18 +47,18 @@ path=(
 )
 
 fpath=(
-  "${XDG_CONFIG_HOME}/oh-my-zsh/functions" # Custom functions
-  "${HOME}/.docker/completions" # Docker completions
+  "${XDG_CONFIG_HOME}/oh-my-zsh/functions"   # Custom functions
+  "${HOMEBREW_PREFIX}/share/zsh-completions" # `zsh-completions`
   "${fpath[@]}"
 )
 
 # Autoload custom functions using `ksh`-style function definitions
 # https://zsh.sourceforge.io/Doc/Release/Functions.html#index-autoloading-functions
-# autoload -Uk "${XDG_CONFIG_HOME}/oh-my-zsh/functions/"*
+# https://zsh.sourceforge.io/Doc/Release/Shell-Builtin-Commands.html#index-autoload
+autoload -Uk "${XDG_CONFIG_HOME}/oh-my-zsh/functions/"*
 
 # Manually set some environment variables to XDG Base Directory Specification
 export COREPACK_HOME="${XDG_CACHE_HOME}/node/corepack"
-export HISTFILE="${XDG_STATE_HOME}/zsh/history"
 export NODE_REPL_HISTORY="${XDG_DATA_HOME}/node_repl_history"
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}/npm/npmrc"
 export PYTHON_HISTORY="${XDG_STATE_HOME}/python/history"
