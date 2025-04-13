@@ -2,6 +2,7 @@ setopt autocd # https://zsh.sourceforge.io/Doc/Release/Options.html#index-AUTOCD
 
 alias \
   7z="7zz" \
+  cafe="caffeinate" \
   cls="clear" \
   brewup="brew update && brew upgrade" \
   exif="exiftool" \
@@ -13,6 +14,7 @@ alias \
   resudo="sudo !!" \
   rmrf="rm -f -R --" \
   symlink="ln -s" \
+  sysinfo="sw_vers" \
   tf="terraform" \
   wh="builtin where" \
   whereami="builtin pwd " \

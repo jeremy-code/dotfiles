@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #
-# Installs Homebrew package manager on MacOS and Linux if it is not already
-# installed.
+# Installs Homebrew package manager on macOS and Linux if it is not already
+# installed
 
 readonly HOMEBREW_PKG_PATH="/tmp/homebrew.pkg"
 readonly SEMVAR_CORE_REGEX="(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)"

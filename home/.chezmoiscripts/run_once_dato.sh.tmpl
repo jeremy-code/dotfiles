@@ -1,15 +1,23 @@
 #!/usr/bin/env zsh
 #
-# Configures Dato's settings. Dato is a menu bar app that displays the current
-# date and time, upcoming events, and time zones
+# Configures Dato's settings. Dato is a macOS menu bar app that displays the
+# current date and time, upcoming events, and time zones
 
-# On initial setup, Dato will prompt the user to enable permissions and then ask
-# whether to show "Icon" or "Date & time" in the menu bar. Select "Date & time"
-# for reasonable defaults. After running the next commands, then
+# On initial setup after installation, Dato will prompt the user to enable
+# permissions and then will ask whether to show "Icon" or "Date & time" in the
+# menu bar. Select "Date & time" for reasonable defaults. After running this
+# script, the user should:
 # 1. Enable or disable which specific calendars or reminders in Settings >
 #    Events.
 # 2. Repeat the previous step in Settings > Events > Notifications on the
 #    "Customize..." button.
+
+# Sets the system clock "Style" to "Analog" in the menu bar since it's more
+# compact and its functionality is replaced by Dato.
+#
+# System Settings > Control Center > Clock Options > Style: Analog
+# (x-apple.systempreferences:com.apple.ControlCenter-Settings?Clock)
+defaults write com.apple.menuextra.clock IsAnalog -bool true
 
 # General
 defaults write -app Dato useGoogleMaps -bool true
@@ -21,15 +29,11 @@ defaults write -app Dato "upcomingEventInMenuBar_clickMenuItemToJoinVideoCall" -
 defaults write -app Dato "upcomingEventInMenuBar_menuItemAction" -string "showWindowWithEventDetails"
 defaults write -app Dato notifyWhenVideoCallStarts -bool true
 
-# This is just how the Swift `Duration` type encodes itself to JSON. In short, it's an Int128 encoded as two parts.
-
+# The value represents a `Duration` in Swift, which is represented as a 128-bit
+# signed integer (Int128) counting attoseconds split into upper and lower 64-bit
+# integers
 # https://github.com/swiftlang/swift/blob/main/stdlib/public/core/Duration.swift#L37-L41
-
-# I am not sure why this value is represented this way. Suppose m is the number
-# of minutes. Then, [a, b] = [3m + floor(m/4), (1*10^18 * 60 * m) % 2^64]. 1*10^18
-# * 60 * m represents m minutes in attoseconds. I suspect the value is the
-# remainder of 2^64 because that is the maximum value of an unsigned 64-bit
-# integer.
+# https://developer.apple.com/documentation/swift/duration
 defaults write -app Dato notifyForVideoCallsDurationBefore -string "[48,14556284461941522432]" # 15 minutes
 
 defaults write -app Dato menu_eventDetails_showTimeZones -bool true

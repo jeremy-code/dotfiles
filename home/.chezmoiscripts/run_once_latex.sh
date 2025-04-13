@@ -62,21 +62,23 @@ function {
   fi
 
   noninstalled_packages=(
-    "${(f)$(jq -r -c 'keys[]' <<< "${noninstalled_package_json}")}"
+    "${(f)$(jq -r -c 'keys[]' <<< ${noninstalled_package_json})}"
   )
 
   echo "The following LaTeX packages are not installed or not available: ${noninstalled_packages[@]}"
 
   for package in "${noninstalled_packages[@]}"; do
     echo "Checking availability of LaTeX package: ${package}..."
-    package_info="$(jq -r ".${package}" <<< "${noninstalled_package_json}")"
+    package_info="$(
+      jq -r ".${package}" <<< "${noninstalled_package_json}"
+    )"
 
-    if [[ $(jq -r ".available" <<< "$package_info") == false ]]; then
+    if [[ $(jq -r ".available" <<< "${package_info}") == false ]]; then
       echo "Package ${package} is not available. Skipping installation..."
       continue
     fi
 
-    package_version="$(jq -r '.cataloguedata.version' <<< "$package_info")"
+    package_version="$(jq -r '.cataloguedata.version' <<< "${package_info}")"
 
     echo "Package ${package} version ${package_version} is available. Installing..."
 
