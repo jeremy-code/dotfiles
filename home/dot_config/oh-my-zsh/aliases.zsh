@@ -2,9 +2,10 @@ setopt autocd # https://zsh.sourceforge.io/Doc/Release/Options.html#index-AUTOCD
 
 alias \
   7z="7zz" \
+  brewup="brew update && brew upgrade" \
   cafe="caffeinate" \
   cls="clear" \
-  brewup="brew update && brew upgrade" \
+  dockerprune="docker system prune --all --force --volumes" \
   exif="exiftool" \
   localip="ipconfig getifaddr en0" \
   mimetype="file --brief --mime-type" \
@@ -18,7 +19,9 @@ alias \
   tf="terraform" \
   wh="builtin where" \
   whereami="builtin pwd " \
-  yt="yt-dlp"
+  yt="yt-dlp" \
+  yt-mp4="yt-dlp --remux-video mp4" \
+  yt-mp3="yt-dlp --format 'bestaudio*' --no-write-subs --extract-audio --audio-format mp3 --audio-quality 0 --no-embed-chapters"
 
 # Get public IP address. Website created by the wonderful Major Hayden and is now
 # managed by Cloudflare: https://major.io/p/a-new-future-for-icanhazip/
@@ -27,18 +30,21 @@ alias \
   ipv4="curl --silent --location --fail --show-error https://ipv4.icanhazip.com" \
   ipv6="curl --silent --location --fail --show-error https://ipv6.icanhazip.com"
 
-# `now` uses ISO 8601 date format since `date -Iseconds` is not technically
-# correct
+# `now` uses `date` with specific format to get current instant as ISO 8601 date
+# since `date -Iseconds` is not technically correct (+00:00 instead of Z)
 alias \
-  now="date +%Y-%m-%dT%H:%M:%S%z" \
+  now="date -u +%Y-%m-%dT%H:%M:%SZ" \
+  nowtz="date -Iseconds" \
+  rfc2822="date -R" \
   timestamp="date +%s" \
-  timestampms="node --print 'Date.now()'"
+  timestampms="FORCE_COLOR=0 node --print 'Date.now()'"
 
 # These are technically longer but it's easier to remember. Note that if no
 # files are passed to `wc`, it will read from stdin.
 alias \
-  wordcount="wc -w" \
-  charcount="wc -m"
+  linecount="wc -l" \
+  charcount="wc -m" \
+  wordcount="wc -w"
 
 # Flushes the entire Directory Service cache and send a hangup signal to DNS
 # daemon

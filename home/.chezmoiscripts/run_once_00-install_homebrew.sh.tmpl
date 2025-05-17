@@ -4,8 +4,6 @@
 # installed
 
 readonly HOMEBREW_PKG_PATH="/tmp/homebrew.pkg"
-readonly SEMVAR_CORE_REGEX="(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)"
-readonly HOMEBREW_RELEASE_PKG_REGEX="^https:\/\/github\.com\/Homebrew\/brew\/releases\/download\/${SEMVAR_CORE_REGEX}\/Homebrew-\1\.\2\.\3\.pkg$"
 
 function error() {
   echo "[$(date "+%Y-%m-%dT%H:%M:%S%z")]: $*" >&2
@@ -25,19 +23,19 @@ function {
         # Apple requires by default that all software installed via `installer`
         # is signed by a developer certificate issued by Apple, I consider this
         # method more secure than running the convenience script.
-        echo "Detected macOS, installing Homebrew with .pkg from Homebrew/brew..."
+        echo "Detected macOS, installing Homebrew with Homebrew-{{ (gitHubLatestTag "Homebrew/brew").Name }}.pkg from Homebrew/brew..."
 
-        # Note that this requires `jq`, which is installed by default on macOS
-        # Sequoia (15) at `/usr/bin/jq`. Since the RegEx is already verbose
-        # enough to find the URL without parsing the JSON, using `jq` is not
-        # strictly necessary
-        curl --fail --location --show-error --silent "https://api.github.com/repos/Homebrew/brew/releases/latest" \
-          | jq --raw-output ".assets[].browser_download_url" \
-          | grep -E "${HOMEBREW_RELEASE_PKG_REGEX}" \
-          | xargs curl --fail --location --show-error --silent --output "${HOMEBREW_PKG_PATH}"
+        # While `((gitHubLatestRelease "Homebrew/brew").Assets | first).BrowserDownloadURL`
+        # would be less complex, it may fail in the case additional assets are
+        # added to Homebrew releases in the future.
+        homebrew_pkg_download_url="{{ (gitHubLatestTag "Homebrew/brew").Name | toString | printf "Homebrew-%s.pkg" | gitHubLatestReleaseAssetURL "Homebrew/brew" }}"
 
-        if ((PIPESTATUS[0] != 0)); then
-          error "Homebrew package installer download failed. Exiting..."
+        curl --fail --location --show-error --silent --output "${HOMEBREW_PKG_PATH}" \
+          "${homebrew_pkg_download_url}"
+
+        if (( $? != 0 )); then
+          error "Failed to download Homebrew package installer from \
+${homebrew_pkg_download_url}. Exiting..."
           return 1
         fi
 

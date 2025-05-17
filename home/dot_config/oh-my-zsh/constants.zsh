@@ -29,6 +29,3 @@ fi
 
 # Disable Open Collective postinstall scripts (https://github.com/opencollective/opencollective-postinstall)
 export DISABLE_OPENCOLLECTIVE=1
-
-# Enable verification of Docker images (https://docs.docker.com/reference/cli/docker/#environment-variables)
-export DOCKER_CONTENT_TRUST=1

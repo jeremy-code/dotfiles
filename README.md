@@ -58,7 +58,7 @@ Ideally, inspect either shell script before running them to ensure they are safe
 Additional root scripts are located in the [`home/.chezmoiscripts`](home/.chezmoiscripts) directory. These scripts are intended to be indempotent (can be run multiple times without altering the whole system). Since chezmoi runs scripts in ASCII-defined order, the scripts are prefixed with a two-digit number `XX-` to define the order in which they are run if it is relevant, a convention used commonly in Debian-based systems using [`run-parts`](https://manpages.debian.org/testing/debianutils/run-parts.8.html) or those inspired by Unix System V's `init` design (see [Debian/sysvinit](https://salsa.debian.org/debian/sysvinit/-/blob/master/debian/src/sysv-rc/doc/README.runlevels)).
 
 - [`run_once_00-install_homebrew.sh`](home/.chezmoiscripts/run_once_00-install_homebrew.sh) - Installs Homebrew for the first time either by (1) installing the signed-`.pkg` file on macOS or (2) running a Bash installation shell script on Linux
-- [`run_once_40-mac.sh`](home/.chezmoiscripts/run_once_40-mac.sh) - Configures some macOS settings that must be done imperatively (namely using the `defaults` to configure `.plist` files). Some assets needed for this script are located in the directory [`$HOME/.local/share/chezmoi/assets`](assets)
+- [`run_once_40-mac.sh.tmpl`](home/.chezmoiscripts/run_once_40-mac.sh.tmpl) - Configures some macOS settings that must be done imperatively (namely using the `defaults` to configure `.plist` files). Some assets needed for this script are located in the directory [`$HOME/.local/share/chezmoi/assets`](assets)
 - [`run_once_dato.sh.tmpl`](home/.chezmoiscripts/run_once_dato.sh.tmpl) - Configures some settings for the [Dato](https://sindresorhus.com/dato) app, which must be a `.tmpl` file due to containing some JSON data stored in the [`home/.chezmoidata/dato.json`](home/.chezmoidata/dato.json) file
 - [`run_once_latex.sh`](home/.chezmoiscripts/run_once_latex.sh) - Self-updates [`tlmgr`](https://www.tug.org/texlive/tlmgr.html) and installs the LaTeX packages defined in the array `PACKAGES`
 - [`run_once_update_gpg.sh.tmpl`](home/.chezmoiscripts/run_once_update_gpg.sh.tmpl) - Updates the GPG key expiration date to 1 year from the current date if the key is set to expire within 6 months
@@ -75,7 +75,7 @@ Additional root scripts are located in the [`home/.chezmoiscripts`](home/.chezmo
 
 The configuration of [iTerm2](https://iterm2.com) is defined mainly in [`home/Library/Application Support/iTerm2`](<home/Library/Application Support/iTerm2>). The dynamic profile [`DynamicProfiles/profiles.json`](<home/Library/Application Support/iTerm2/DynamicProfiles/profiles.json>) has custom color schemes, theming, and other settings. The directory also contains the [`Scripts`](<home/Library/Application Support/iTerm2/Scripts>) directory for custom scripts to be used in iTerm2, such as [`Scripts/AutoLaunch/change_default_profile.py`](<home/Library/Application Support/iTerm2/Scripts/AutoLaunch/change_default_profile.py>) which sets the default profile to the aforementioned dynamic profile on launch.
 
-Some additional configuration is installed in [`home/.chezmoiscripts/run_once_40-mac.sh`](home/.chezmoiscripts/run_once_40-mac.sh#L125-L153) to set non-profile settings.
+Some additional configuration is installed in [`home/.chezmoiscripts/run_once_40-mac.sh.tmpl`](home/.chezmoiscripts/run_once_40-mac.sh.tmpl#L125-L153) to set non-profile settings.
 
 ### Visual Studio Code
 
