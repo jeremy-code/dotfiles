@@ -403,3 +403,40 @@ PROFILE=$(
 defaults write -app Bartender\ 5 ProfileSettings -dict "${UUID}" "${PROFILE}"
 defaults write -app Bartender\ 5 LastKnownProfile -string "${UUID}"
 defaults write -app Bartender\ 5 PersistLastKnownProfile -bool true
+
+#######################################
+# CleanShot X
+#######################################
+
+# General
+defaults write -app CleanShot\ X captureWithoutDesktopIcons -bool true
+defaults write -app CleanShot\ X playSounds -bool true
+defaults write -app CleanShot\ X showMenubarIcon -bool true
+
+# Wallpaper
+defaults write -app CleanShot\ X overlayType -int 0
+defaults write -app CleanShot\ X transparentWindowBackground -bool true
+defaults write -app CleanShot\ X windowBackgroundPadding -int 0
+defaults write -app CleanShot\ X captureWindowShadow -bool false
+
+# Shortcuts
+defaults write -app CleanShot\ X LAVAtakeOCR -data {{ dict "carbonModifiers" 768 "carbonKey" 31 | toJson | b64enc }} # Command (⌘) + Shift (⇧) + O
+
+# Quick Access
+defaults write -app CleanShot\ X autoClosePopup -bool true
+
+# Recording
+## General
+defaults write -app CleanShot\ X showKeystrokes -bool true
+
+# Screenshots
+defaults write -app CleanShot\ X screenshotFormat -string "png"
+defaults write -app CleanShot\ X freezeScreen -bool true
+defaults write -app CleanShot\ X crosshairMode -int 0
+
+# Advanced
+defaults write -app CleanShot\ X add2xRetinaSuffix -bool true
+defaults write -app CleanShot\ X mediaNameTemplate -array "screenshot_" "%y" "-" "%m" "-" "%d" "%H" "-" "%M" "_" "%i"
+
+# About
+defaults write -app CleanShot\ X analyticsAllowed -bool false
