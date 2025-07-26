@@ -213,7 +213,6 @@
   "tailwindCSS.classAttributes": ["class", "className", "ngClass", "tw"],
 
   // JavaScript
-  "javascript.inlayHints.enumMemberValues.enabled": true,
   "javascript.inlayHints.parameterNames.enabled": "literals",
   "javascript.suggest.completeFunctionCalls": true,
   "javascript.updateImportsOnFileMove.enabled": "always",

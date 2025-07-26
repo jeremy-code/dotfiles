@@ -33,6 +33,7 @@ brew "exiftool" # Perl lib for reading and writing EXIF metadata
 brew "imagemagick" # Tools and libraries to manipulate images in many formats
 brew "mas" # Mac App Store command-line interface
 brew "pngcrush" # Optimizer for PNG files
+brew "rclone" # Rsync for cloud storage
 brew "sevenzip" # 7-Zip is a file archiver with a high compression ratio
 brew "wget" # Internet file retriever
 brew "yt-dlp" # Feature-rich command-line audio/video downloader
@@ -70,6 +71,7 @@ cask "zoom" # Video communication and virtual meeting platform
 
 # Mac App Store
 
+mas "Brother iPrint&Scan", id:1_193_539_993
 mas "Dato", id: 1_470_584_107
 mas "Things 3", id: 904_280_696
 
@@ -100,6 +102,7 @@ vscode "ms-python.black-formatter" # Formatting support for Python files using t
 vscode "ms-python.debugpy" # Python Debugger extension using debugpy
 vscode "ms-python.python" # Python language support
 vscode "ms-python.vscode-pylance" # A performant, feature-rich language server for Python in VS Code
+vscode "ms-python.vscode-python-envs" # Provides a unified python environment experience
 vscode "ms-toolsai.jupyter" # Jupyter notebook support, interactive programming and computing that supports Intellisense, debugging and more.
 vscode "ms-vscode.makefile-tools" # Provide makefile support in VS Code
 vscode "ms-vscode-remote.remote-containers" # Open any folder or repository inside a Docker container and take advantage of Visual Studio Code's full feature set.
@@ -107,6 +110,7 @@ vscode "ms-vscode.vscode-js-profile-flame" # Flame graph visualizer for Heap and
 vscode "orta.vscode-jest" # Use Facebook's Jest With Pleasure
 vscode "prisma.prisma" # Adds syntax highlighting, formatting, auto-completion, jump-to-definition and linting for .prisma files
 vscode "tamasfe.even-better-toml" # Fully-featured TOML support
+vscode "vitest.explorer" # A Vite-native testing framework. It's fast!
 
 ## Utilities
 

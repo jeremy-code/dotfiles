@@ -10,5 +10,25 @@
     "prefix": "usr",
     "body": ["\"use server\";", "$0"],
     "description": "Adds 'use server' directive"
-  }
+  },
+  "JSX Fragment": {
+    "prefix": "frag",
+    "body": ["<>", "\t$0", "</>"],
+    "description": "Creates a JSX fragment"
+  },
+  "JSX Function Component": {
+    "prefix": "fc",
+    "body": [
+      "type ${1:ComponentName}Props = {};",
+      "",
+      "const ${1:ComponentName} = (${2:props}: ${1:ComponentName}Props) => {",
+      "\treturn (",
+      "\t\t$0",
+      "\t);",
+      "};",
+      "",
+      "export { type ${1:ComponentName}Props, ${1:ComponentName}};"
+    ],
+    "description": "Creates a functional component in React"
+  },
 }

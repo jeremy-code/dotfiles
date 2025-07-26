@@ -1,0 +1,6 @@
+[webdav]
+type = webdav
+url = {{ (first (bitwarden "item" "rclone.conf/webdav").login.uris).uri }}
+vendor = rclone
+user = {{ (bitwarden "item" "rclone.conf/webdav").login.username }}
+pass = {{ (bitwarden "item" "rclone.conf/webdav").login.password }}
