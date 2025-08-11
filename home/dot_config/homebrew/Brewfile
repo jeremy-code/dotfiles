@@ -28,14 +28,18 @@ brew "zsh-completions" # Additional completion definitions for zsh
 ## Utilities
 
 brew "bitwarden-cli" # Secure and free password manager for all of your devices
+brew "dezoomify-rs" # Tiled image downloader
 brew "ffmpeg" # Play, record, convert, and stream audio and video
 brew "exiftool" # Perl lib for reading and writing EXIF metadata
+brew "internetarchive" # Python wrapper for the various Internet Archive APIs
 brew "imagemagick" # Tools and libraries to manipulate images in many formats
-brew "mas" # Mac App Store command-line interface
+brew "mas" if OS.mac? # Mac App Store command-line interface
+brew "poppler" # PDF rendering library (based on the xpdf-3.0 code base)
 brew "pngcrush" # Optimizer for PNG files
 brew "rclone" # Rsync for cloud storage
 brew "sevenzip" # 7-Zip is a file archiver with a high compression ratio
 brew "wget" # Internet file retriever
+brew "whisper-cpp" # Port of OpenAI's Whisper model in C/C++
 brew "yt-dlp" # Feature-rich command-line audio/video downloader
 
 # Casks
@@ -43,7 +47,6 @@ brew "yt-dlp" # Feature-rich command-line audio/video downloader
 ## Development Tools
 
 cask "basictex" # Compact TeX distribution as alternative to the full TeX Live / MacTeX
-cask "docker" # App to build and share containerised applications and microservices
 cask "firefox@developer-edition" # Web browser
 cask "font-fira-code" # Free monospaced font with programming ligatures
 cask "google-chrome" # Web browser
@@ -59,6 +62,7 @@ cask "appcleaner" # Application uninstaller
 cask "bartender" # Menu bar icon organiser
 cask "bitwarden" # Desktop password and login vault
 cask "discord" # Voice and text chat software
+cask "docker-desktop" # App to build and share containerised applications and microservices
 cask "iina" # Free and open-source media player
 cask "inkscape" # Vector graphics editor
 cask "logi-options+" # Software for Logitech devices
@@ -68,10 +72,11 @@ cask "protonvpn" # VPN client focusing on security
 cask "spotify" # Music streaming service
 cask "wireshark" # Network protocol analyzer
 cask "zoom" # Video communication and virtual meeting platform
+cask "zotero" # Collect, organise, cite, and share research sources
 
 # Mac App Store
 
-mas "Brother iPrint&Scan", id:1_193_539_993
+mas "Brother iPrint&Scan", id: 1_193_539_993
 mas "Dato", id: 1_470_584_107
 mas "Things 3", id: 904_280_696
 
@@ -122,6 +127,7 @@ vscode "gitHub.remotehub" # Remotely browse and edit any GitHub repository
 vscode "github.vscode-pull-request-github" # Pull Request and Issue Provider for GitHub
 vscode "ms-vscode.azure-repos" # Remotely browse and edit any Azure Repos
 vscode "ms-vscode.remote-repositories" # Remotely browse and edit git repositories
+vscode "ms-azuretools.vscode-containers" # Makes it easy to create, manage, and debug containerized applications
 vscode "ms-vsliveshare.vsliveshare" # Real-time collaborative development from the comfort of your favorite tools
 vscode "quicktype.quicktype"# Copy JSON, paste as Go, TypeScript, C#, C++ and more
 vscode "stkb.rewrap" # Hard word wrapping for comments and other text at a given column

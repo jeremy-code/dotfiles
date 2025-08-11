@@ -19,6 +19,7 @@ alias \
   tf="terraform" \
   wh="builtin where" \
   whereami="builtin pwd " \
+  whisper-cli="whisper-cli --model $XDG_DATA_HOME/whisper/ggml-small.bin" \
   yt="yt-dlp" \
   yt-mp4="yt-dlp --remux-video mp4" \
   yt-mp3="yt-dlp --format 'bestaudio*' --no-write-subs --extract-audio --audio-format mp3 --audio-quality 0 --no-embed-chapters"
