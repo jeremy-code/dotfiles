@@ -19,7 +19,7 @@ echo "Chezmoi: Your GPG key is valid and will expire on {{ $dateOfExpiration }}"
 {{-   end -}}
 {{- end }}
 
-readonly EMAIL_ADDRESS="nguyen.jeremyt@gmail.com"
+readonly EMAIL_ADDRESS={{ .emailAddress }}
 readonly -i SIX_MONTHS_IN_SECONDS="$((60 * 60 * 24 * 7 * 4 * 6))"
 
 function error() {
