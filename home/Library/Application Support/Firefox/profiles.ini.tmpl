@@ -1,3 +1,5 @@
+{{ $installId := mozillaInstallHash "/Applications/Firefox Developer Edition.app/Contents/MacOS" -}}
+
 [Profile0]
 Name=Default User
 IsRelative=0
@@ -8,6 +10,6 @@ Default=1
 StartWithLastProfile=1
 Version=2
 
-[Install1F42C145FFDD4120]
+[Install{{ $installId }}]
 Default={{ env "XDG_CONFIG_HOME" }}/firefox/Profiles/tr96a7ps.dev-edition-default
 Locked=1

@@ -23,12 +23,15 @@ function {
         # Apple requires by default that all software installed via `installer`
         # is signed by a developer certificate issued by Apple, I consider this
         # method more secure than running the convenience script.
-        echo "Detected macOS, installing Homebrew with Homebrew-{{ (gitHubLatestTag "Homebrew/brew").Name }}.pkg from Homebrew/brew..."
+        {{- $HOMEBREW_REPO := "Homebrew/brew" -}}
+        {{- $homebrewLatestTagName := (gitHubLatestTag $HOMEBREW_REPO).Name -}}
+        {{- $homebrewLatestPkgFile := $homebrewLatestTagName | toString | printf "Homebrew-%s.pkg" }}
+        echo "Detected macOS, installing Homebrew with {{ $homebrewLatestPkgFile }} from {{ $HOMEBREW_REPO }}..."
 
-        # While `((gitHubLatestRelease "Homebrew/brew").Assets | first).BrowserDownloadURL`
+        # While `((gitHubLatestRelease $HOMEBREW_REPO).Assets | first).BrowserDownloadURL`
         # would be less complex, it may fail in the case additional assets are
         # added to Homebrew releases in the future.
-        homebrew_pkg_download_url="{{ (gitHubLatestTag "Homebrew/brew").Name | toString | printf "Homebrew-%s.pkg" | gitHubLatestReleaseAssetURL "Homebrew/brew" }}"
+        homebrew_pkg_download_url="{{ gitHubLatestReleaseAssetURL $HOMEBREW_REPO $homebrewLatestPkgFile }}"
 
         curl --fail --location --show-error --silent --output "${HOMEBREW_PKG_PATH}" \
           "${homebrew_pkg_download_url}"
@@ -56,7 +59,7 @@ found at ${HOMEBREW_PKG_PATH}. Exiting..."
         else
           error "Homebrew installation failed. Please confirm that the file at \
 ${HOMEBREW_PKG_PATH} is a valid package. You may download the .pkg file \
-manually at https://github.com/Homebrew/brew/releases/latest."
+manually at https://github.com/{{ $HOMEBREW_REPO }}/releases/latest."
           return 1
         fi
         ;;
