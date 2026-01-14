@@ -391,18 +391,18 @@ defaults write -app iTerm '{
 }'
 
 #######################################
-# Bartender 5
+# Bartender 6
 #######################################
 
-# Bartender 5 stores the profile icon as a Base64 encoded TIFF image
+# Bartender 6 stores the profile icon as a Base64 encoded TIFF image
 UUID=$(uuidgen)
 ICON=$(base64 --input "{{ .chezmoi.workingTree }}/assets/icon.tif")
 PROFILE=$(
   plutil -insert icon -data "${ICON}" -o - -- "{{ .chezmoi.workingTree }}/assets/bartender.xml"
 )
-defaults write -app Bartender\ 5 ProfileSettings -dict "${UUID}" "${PROFILE}"
-defaults write -app Bartender\ 5 LastKnownProfile -string "${UUID}"
-defaults write -app Bartender\ 5 PersistLastKnownProfile -bool true
+defaults write -app Bartender\ 6 ProfileSettings -dict "${UUID}" "${PROFILE}"
+defaults write -app Bartender\ 6 LastKnownProfile -string "${UUID}"
+defaults write -app Bartender\ 6 PersistLastKnownProfile -bool true
 
 #######################################
 # CleanShot X

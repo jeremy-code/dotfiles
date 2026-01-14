@@ -30,5 +30,5 @@ refreshPeriod   = "72h"
 [".local/share/whisper/ggml-small.bin"]
 type            = "file"
 url             = "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.bin"
-refreshPeriod   = "72h"
+refreshPeriod   = "672h"
 checksum.sha256 = "1be3a9b2063867b937e64e2ec7483364a79917e157fa98c5d94b5c1fffea987b"

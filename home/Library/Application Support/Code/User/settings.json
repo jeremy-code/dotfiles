@@ -230,7 +230,7 @@
   "[bats][dockerfile][dotenv][hosts][ignore][jvmoptions][properties][shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "[graphql][handlebars][javascript][javascriptreact][json][jsonc][jsonl][markdown][typescript][typescriptreact]": {
+  "[astro][graphql][handlebars][javascript][javascriptreact][json][jsonc][jsonl][markdown][typescript][typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[latex][tex]": {
