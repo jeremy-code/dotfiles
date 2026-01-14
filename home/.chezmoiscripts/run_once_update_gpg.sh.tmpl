@@ -10,10 +10,11 @@
 {{-     $expirationTimestamp := (split ":" .)._4 -}}
 {{-     $timeUntilExpiration := now | unixEpoch | sub $expirationTimestamp -}}
 {{-     $SixMonthsInSeconds := mul 60 60 24 7 4 6 }}
+{{-     $dateOfExpiration :=  now | dateModify (duration $timeUntilExpiration) | date "Mon Jan 2, 2006 MST" -}}
 {{-     if gt $timeUntilExpiration $SixMonthsInSeconds  -}}
-# Your GPG key is valid and will expire in more than 6 months
+echo "Chezmoi: Your GPG key is valid and will expire in more than 6 months ({{ $dateOfExpiration }})"
 {{-     else -}}
-# Your GPG key is valid and will expire on {{ output "date" "-Idate" "-r"  $expirationTimestamp }}
+echo "Chezmoi: Your GPG key is valid and will expire on {{ $dateOfExpiration }}"
 {{-     end -}}
 {{-   end -}}
 {{- end }}
@@ -68,7 +69,8 @@ function {
   echo "${fingerprint} will expire on $(date -Idate -r ${current_expiration_timestamp}). Checking if extending expiration date is necessary..."
 
   now=$(date +%s)
-  if (( (now - current_expiration_timestamp) < SIX_MONTHS_IN_SECONDS )); then
+  seconds_until_expiration=$((current_expiration_timestamp - now ))
+  if (( seconds_until_expiration > SIX_MONTHS_IN_SECONDS )); then
     echo "Key ${fingerprint} will expire in more than 6 months. Confirm script hash is correct. No action required."
     return 0
   fi
