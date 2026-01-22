@@ -7,6 +7,7 @@ alias \
   cls="clear" \
   dockerprune="docker system prune --all --force --volumes" \
   exif="exiftool" \
+  git-stash-changed="git stash push --keep-index --include-untracked" \
   localip="ipconfig getifaddr en0" \
   mimetype="file --brief --mime-type" \
   mkdirp="mkdir -p" \
