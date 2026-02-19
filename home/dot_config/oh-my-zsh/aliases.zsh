@@ -18,6 +18,7 @@ alias \
   symlink="ln -s" \
   sysinfo="sw_vers" \
   tf="terraform" \
+  unquarantine="xattr -d com.apple.quarantine" \
   wh="builtin where" \
   whereami="builtin pwd " \
   whisper-cli="whisper-cli --model $XDG_DATA_HOME/whisper/ggml-small.bin" \
