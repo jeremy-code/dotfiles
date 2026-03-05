@@ -213,18 +213,13 @@
   // Tailwind CSS
   "tailwindCSS.classAttributes": ["class", "className", "ngClass", "tw"],
 
-  // JavaScript
-  "javascript.inlayHints.parameterNames.enabled": "literals",
-  "javascript.suggest.completeFunctionCalls": true,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-
-  // TypeScript
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "typescript.inlayHints.enumMemberValues.enabled": true,
-  "typescript.inlayHints.parameterNames.enabled": "literals",
-  "typescript.preferences.preferTypeOnlyAutoImports": true,
-  "typescript.suggest.completeFunctionCalls": true,
-  "typescript.updateImportsOnFileMove.enabled": "always",
+  // JavaScript/TypeScript
+  "js/ts.preferences.preferTypeOnlyAutoImports": true,
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  "js/ts.suggest.completeFunctionCalls": true,
+  "js/ts.inlayHints.enumMemberValues.enabled": true,
+  "js/ts.inlayHints.parameterNames.enabled": "literals",
+  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
 
   // Language-Specific Configuration Overrides
   // Languages supported by Prettier VSCode: https://github.com/prettier/prettier-vscode#format-selection
