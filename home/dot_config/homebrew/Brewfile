@@ -1,6 +1,6 @@
 # Taps
-tap "hashicorp/tap" # Homebrew Tap of HashiCorp products and tools
-tap "nodenv/nodenv" # Homebrew formulae for nodenv plugins
+tap "hashicorp/tap", trusted: true # Homebrew Tap of HashiCorp products and tools
+tap "nodenv/nodenv", trusted: true # Homebrew formulae for nodenv plugins
 
 # Formulae
 
@@ -100,7 +100,6 @@ vscode "bradlc.vscode-tailwindcss" # Intelligent Tailwind CSS tooling for VS Cod
 vscode "burkeholland.simple-react-snippets" # Dead simple React snippets you will actually use
 vscode "dbaeumer.vscode-eslint" # Integrates ESLint JavaScript into VS Code.
 vscode "editorconfig.editorconfig" # EditorConfig Support for VS Code
-vscode "ericadamski.carbon-now-sh" # A Code package to open the current editor content in carbon.now.sh
 vscode "esbenp.prettier-vscode" # Code formatter using prettier
 vscode "foxundermoon.shell-format" # A formatter for shell scripts, Dockerfile, gitignore, dotenv, /etc/hosts, jvmoptions, and other file types
 vscode "github.vscode-github-actions" # GitHub Actions workflows and runs for github.com hosted repositories
@@ -125,7 +124,6 @@ vscode "vitest.explorer" # A Vite-native testing framework. It's fast!
 ## Utilities
 
 vscode "arcanis.vscode-zipfs" # Easily inspect and modify files stored within zip archives
-vscode "christian-kohler.npm-intellisense" # Autocompletes npm modules in import statements
 vscode "github.copilot" # Your AI pair programmer
 vscode "github.copilot-chat" # AI chat features powered by Copilot
 vscode "gitHub.remotehub" # Remotely browse and edit any GitHub repository
@@ -134,7 +132,6 @@ vscode "ms-vscode.azure-repos" # Remotely browse and edit any Azure Repos
 vscode "ms-vscode.remote-repositories" # Remotely browse and edit git repositories
 vscode "ms-azuretools.vscode-containers" # Makes it easy to create, manage, and debug containerized applications
 vscode "ms-vsliveshare.vsliveshare" # Real-time collaborative development from the comfort of your favorite tools
-vscode "quicktype.quicktype"# Copy JSON, paste as Go, TypeScript, C#, C++ and more
 vscode "stkb.rewrap" # Hard word wrapping for comments and other text at a given column
 vscode "vscodevim.vim" # Vim emulation for VS Code
 vscode "waderyan.gitblame" # See git blame information in the status bar
