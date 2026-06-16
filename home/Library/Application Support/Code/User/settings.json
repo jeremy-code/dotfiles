@@ -34,6 +34,7 @@
   // Diff Editor
   "diffEditor.codeLens": true,
   "diffEditor.experimental.showMoves": true,
+  "diffEditor.ignoreTrimWhitespace": false,
 
   // Files
   "files.autoGuessEncoding": true,
