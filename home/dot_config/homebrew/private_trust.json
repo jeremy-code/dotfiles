@@ -1,0 +1,11 @@
+{
+  "trustedtaps": [
+    "hashicorp/tap",
+    "nodenv/nodenv"
+  ],
+  "trustedformulae": [
+    "hashicorp/tap/terraform",
+    "nodenv/nodenv/nodenv-default-packages",
+    "nodenv/nodenv/nodenv-nvmrc"
+  ]
+}

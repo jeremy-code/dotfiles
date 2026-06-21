@@ -1,7 +1,3 @@
-# Taps
-tap "hashicorp/tap", trusted: true # Homebrew Tap of HashiCorp products and tools
-tap "nodenv/nodenv", trusted: true # Homebrew formulae for nodenv plugins
-
 # Formulae
 
 ## Development Tools
@@ -11,12 +7,12 @@ brew "gh" # GitHub command-line tool
 brew "git" # Distributed revision control system
 brew "git-lfs" # Git extension for versioning large files
 brew "gnupg" # GNU Pretty Good Privacy (PGP) package
-brew "hashicorp/tap/terraform" # Tool to build, change, and version infrastructure
+brew "hashicorp/tap/terraform", trusted: true # Tool to build, change, and version infrastructure
 brew "latexindent" # Add indentation to LaTeX files
 brew "nodenv" # Manage multiple NodeJS versions
 # Per https://github.com/nodenv/nodenv/issues/183, this seems like the best way to setup global packages
-brew "nodenv/nodenv/nodenv-default-packages" # Auto-installs packages for Node installs
-brew "nodenv/nodenv/nodenv-nvmrc" # Pick a node version from .nvmrc
+brew "nodenv/nodenv/nodenv-default-packages", trusted: true # Auto-installs packages for Node installs
+brew "nodenv/nodenv/nodenv-nvmrc", trusted: true # Pick a node version from .nvmrc
 brew "oci-cli" # Oracle Cloud Infrastructure CLI
 brew "pinentry-mac" if OS.mac? # Pinentry for GPG on Mac
 brew "pipx" # Execute binaries from Python packages in isolated environments
@@ -47,36 +43,43 @@ brew "yt-dlp" # Feature-rich command-line audio/video downloader
 
 # Casks
 
+# Since some casks (e.g. google-chrome) do not have a SHA-256 checksum because
+# their download URLs are not versioned, --require-sha is manually set here
+# instead of HOMEBREW_CASK_OPTS.
+
 ## Development Tools
 
-cask "basictex" # Compact TeX distribution as alternative to the full TeX Live / MacTeX
-cask "firefox@developer-edition" # Web browser
-cask "font-fira-code" # Free monospaced font with programming ligatures
-cask "font-liberation" # The Liberation Fonts is font collection which aims to provide document layout compatibility
+cask "basictex", args: { require_sha: true } # Compact TeX distribution as alternative to the full TeX Live / MacTeX
+cask "firefox@developer-edition", args: { require_sha: true } # Web browser
+cask "font-fira-code", args: { require_sha: true } # Free monospaced font with programming ligatures
+cask "font-liberation", args: { require_sha: true } # The Liberation Fonts is font collection which aims to provide document layout compatibility
+# https://github.com/Homebrew/homebrew-cask/blob/main/Casks/g/google-chrome.rb#L3
 cask "google-chrome" # Web browser
-cask "iterm2" # Terminal emulator as alternative to Apple's Terminal app
-cask "postman" # Collaboration platform for API development
-cask "visual-studio-code" # Open-source code editor
+cask "iterm2", args: { require_sha: true } # Terminal emulator as alternative to Apple's Terminal app
+cask "postman", args: { require_sha: true } # Collaboration platform for API development
+cask "visual-studio-code", args: { require_sha: true } # Open-source code editor
 
 ## Utilities & Applications
 
-cask "alfred" # Application launcher and productivity software
-cask "altserver" # iOS App Store alternative
-cask "appcleaner" # Application uninstaller
-cask "bartender" # Menu bar icon organiser
-cask "bitwarden" # Desktop password and login vault
-cask "discord" # Voice and text chat software
-cask "docker-desktop" # App to build and share containerised applications and microservices
-cask "iina" # Free and open-source media player
-cask "inkscape" # Vector graphics editor
-cask "logi-options+" # Software for Logitech devices
-cask "naps2" # Document scanning application
-cask "obsidian" # Knowledge base that works on top of a local folder of plain text Markdown files
+cask "alfred", args: { require_sha: true } # Application launcher and productivity software
+cask "altserver", args: { require_sha: true } # iOS App Store alternative
+cask "appcleaner", args: { require_sha: true } # Application uninstaller
+cask "bartender", args: { require_sha: true } # Menu bar icon organiser
+cask "bitwarden", args: { require_sha: true } # Desktop password and login vault
+cask "discord", args: { require_sha: true } # Voice and text chat software
+cask "docker-desktop", args: { require_sha: true } # App to build and share containerised applications and microservices
+cask "iina", args: { require_sha: true } # Free and open-source media player
+cask "inkscape", args: { require_sha: true } # Vector graphics editor
+cask "logi-options+", args: { require_sha: true } # Software for Logitech devices
+cask "naps2", args: { require_sha: true } # Document scanning application
+cask "obsidian", args: { require_sha: true } # Knowledge base that works on top of a local folder of plain text Markdown files
+# https://github.com/Homebrew/homebrew-cask/blob/main/Casks/o/onyx.rb#L2
 cask "onyx" # Verify system files structure, run miscellaneous maintenance and more
-cask "protonvpn" # VPN client focusing on security
+cask "protonvpn", args: { require_sha: true } # VPN client focusing on security
+# https://github.com/Homebrew/homebrew-cask/blob/main/Casks/s/spotify.rb#L5
 cask "spotify" # Music streaming service
-cask "zoom" # Video communication and virtual meeting platform
-cask "zotero" # Collect, organise, cite, and share research sources
+cask "zoom", args: { require_sha: true } # Video communication and virtual meeting platform
+cask "zotero", args: { require_sha: true } # Collect, organise, cite, and share research sources
 
 # Mac App Store
 
@@ -124,8 +127,6 @@ vscode "vitest.explorer" # A Vite-native testing framework. It's fast!
 ## Utilities
 
 vscode "arcanis.vscode-zipfs" # Easily inspect and modify files stored within zip archives
-vscode "github.copilot" # Your AI pair programmer
-vscode "github.copilot-chat" # AI chat features powered by Copilot
 vscode "gitHub.remotehub" # Remotely browse and edit any GitHub repository
 vscode "github.vscode-pull-request-github" # Pull Request and Issue Provider for GitHub
 vscode "ms-vscode.azure-repos" # Remotely browse and edit any Azure Repos
