@@ -45,7 +45,7 @@ brew "yt-dlp" # Feature-rich command-line audio/video downloader
 
 # Since some casks (e.g. google-chrome) do not have a SHA-256 checksum because
 # their download URLs are not versioned, --require-sha is manually set here
-# instead of HOMEBREW_CASK_OPTS.
+# instead of HOMEBREW_CASK_OPTS. See Homebrew/homebrew-cask#147305
 
 ## Development Tools
 
@@ -70,7 +70,8 @@ cask "discord", args: { require_sha: true } # Voice and text chat software
 cask "docker-desktop", args: { require_sha: true } # App to build and share containerised applications and microservices
 cask "iina", args: { require_sha: true } # Free and open-source media player
 cask "inkscape", args: { require_sha: true } # Vector graphics editor
-cask "logi-options+", args: { require_sha: true } # Software for Logitech devices
+# https://github.com/Homebrew/homebrew-cask/blob/36dcd5e306210e65a0be1db131a8bf0313003b15/Casks/l/logi-options%2B.rb#L35
+cask "logi-options+" # Software for Logitech devices
 cask "naps2", args: { require_sha: true } # Document scanning application
 cask "obsidian", args: { require_sha: true } # Knowledge base that works on top of a local folder of plain text Markdown files
 # https://github.com/Homebrew/homebrew-cask/blob/main/Casks/o/onyx.rb#L2
