@@ -4,30 +4,54 @@
  * Equivalents in about:config
  */
 
-// General
-user_pref("browser.warnOnQuitShortcut", false); // Disable "Ask before quitting with ⌘Q"
-user_pref("browser.tabs.groups.smart.userEnabled", false); // Disable "Use AI to suggest tabs and a name for tab groups"
-user_pref("browser.download.useDownloadDir", false); // Enable "Always ask you where to save files"
-user_pref("general.smoothScroll", true); // Enable "Use smooth scrolling"
-user_pref("intl.accept_languages", ["en-us", "en"].join()); // Choose your preferred language for displaying pages
-
-// Home
+// Home and startup
+user_pref("browser.startup.homepage", "chrome://browser/content/blanktab.html");
 user_pref("browser.newtabpage.activity-stream.showSponsored", false); // Disable "Support Firefox"
 user_pref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false); // Disable "Sponsored shortcuts"
 user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false); // Disable "Sponsored stories"
+user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", true); // Enable "Recent Activity"
+
+// Search
+user_pref("browser.urlbar.placeholderName", "Google"); // Set "Default search engine" to Google
+user_pref("browser.urlbar.placeholderName.private", "Google"); // Set "Default search engine" to Google
+
+// Privacy and Security
+user_pref("browser.contentblocking.category", "standard"); // Set "Enhanced Tracking Protection" to Standard
+user_pref("privacy.globalprivacycontrol.enabled", true); // Enable "Tell websites not to sell or share my data
+user_pref("privacy.globalprivacycontrol.was_ever_enabled", true);
+
+// Passwords and autofill
+user_pref("signon.rememberSignons", false); // Disable "Ask to save passwords"
+user_pref("extensions.formautofill.creditCards.enabled", false); // Disable "Save and autofill payment info"
+user_pref("signon.management.page.breach-alerts.enabled", false); // Disable "Show alerts about passwords for breached websites"
+
+// Downloads
+user_pref("browser.download.useDownloadDir", false); // Enable "Ask where to save files before downloading"
+
+// Tabs and browsing
+user_pref("browser.warnOnQuitShortcut", false); // Disable "Ask before quitting with ⌘Q"
 
 // Search
 user_pref("browser.urlbar.suggest.trending", false); // Disable "Show trending search suggestions"
 user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false); // Disable "Suggestions from sponsors"
 
 // Privacy & Security
-user_pref("privacy.globalprivacycontrol.enabled", true); // Enable "Tell websites not to sell or share my data
-user_pref("privacy.globalprivacycontrol.was_ever_enabled", true);
-user_pref("signon.rememberSignons", false); // Disable "Ask to save passwords"
-user_pref("signon.management.page.breach-alerts.enabled", false); // Disable "Show alerts about passwords for breached websites"
-user_pref("extensions.formautofill.creditCards.enabled", false); // Disable "Save and autofill payment info"
-user_pref("datareporting.healthreport.uploadEnabled", false); // Disable "Send technical and interaction data to Mozilla"
 user_pref("browser.preferences.experimental.hidden", true); // Disable "Install and run studies"
+
+// Accessibility
+user_pref("general.smoothScroll", true); // Enable "Use smooth scrolling"
+
+// Languages
+user_pref("intl.accept_languages", "en-us, en"); // Set "Website language"
+
+// AI controls
+user_pref("browser.ai.control.sidebarChatbot", "blocked"); // Set "Chatbot in sidebar" to Blocked
+user_pref("browser.ml.chat.enabled", false);
+user_pref("browser.ml.chat.page", false);
+
+// Permissions and data
+user_pref("datareporting.healthreport.uploadEnabled", false); // Disable "Send technical and interaction data to Mozilla"
+user_pref("nimbus.rollouts.enabled", false); // Disable "Allow Firefox Developer Edition to improve features, performance, and stability between undates"
 user_pref("datareporting.usage.uploadEnabled", false); // Disable "Send daily usage ping to Mozilla"
 
 /**
