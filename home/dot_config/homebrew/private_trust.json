@@ -1,11 +1,16 @@
 {
   "trustedtaps": [
     "hashicorp/tap",
-    "nodenv/nodenv"
+    "nodenv/nodenv",
+    "terraform-linters/tap"
   ],
   "trustedformulae": [
     "hashicorp/tap/terraform",
     "nodenv/nodenv/nodenv-default-packages",
-    "nodenv/nodenv/nodenv-nvmrc"
+    "nodenv/nodenv/nodenv-nvmrc",
+    "terraform-linters/tap/tflint"
+  ],
+  "trustedcasks": [
+    "terraform-linters/tap/tflint"
   ]
 }

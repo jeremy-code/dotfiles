@@ -79,6 +79,7 @@ cask "onyx" # Verify system files structure, run miscellaneous maintenance and m
 cask "protonvpn", args: { require_sha: true } # VPN client focusing on security
 # https://github.com/Homebrew/homebrew-cask/blob/main/Casks/s/spotify.rb#L5
 cask "spotify" # Music streaming service
+cask "terraform-linters/tap/tflint", trusted: true # Pluggable Terraform linter
 cask "zoom", args: { require_sha: true } # Video communication and virtual meeting platform
 cask "zotero", args: { require_sha: true } # Collect, organise, cite, and share research sources
 
