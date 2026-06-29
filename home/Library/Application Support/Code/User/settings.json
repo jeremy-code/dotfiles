@@ -3,7 +3,7 @@
 
   // Text Editor
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
+    "source.fixAll.eslint": "explicit"
     // Avoid using "source.organizeImports" since it may conflict with ESLint or Prettier
   },
   "editor.cursorBlinking": "phase",
@@ -19,7 +19,7 @@
   "editor.inlineSuggest.enabled": true,
   "editor.linkedEditing": true,
   "editor.quickSuggestions": {
-    "strings": "on", // for Tailwind CSS classnames https://github.com/tailwindlabs/tailwindcss-intellisense#editorquicksuggestions
+    "strings": "on" // for Tailwind CSS classnames https://github.com/tailwindlabs/tailwindcss-intellisense#editorquicksuggestions
   },
   "editor.renderFinalNewline": "dimmed",
   "editor.rulers": [80],
@@ -49,8 +49,8 @@
     "[One Dark Pro Darker]": {
       "editorInlayHint.background": "#2d313c", // Equivalent to `editor.lineHighlightBackground`
       "editorInlayHint.foreground": "#7f848e", // Equivalent to `comments"
-      "gitblame.inlineMessage": "#5c6370", // Equivalent to `elements to dim`
-    },
+      "gitblame.inlineMessage": "#5c6370" // Equivalent to `elements to dim`
+    }
   },
   "workbench.colorTheme": "One Dark Pro Darker",
   "workbench.commandPalette.experimental.suggestCommands": true,
@@ -79,7 +79,7 @@
     "Dockerfile": "docker-compose.yml, .dockerignore",
     "README*": "CITATION.cff, CODEOWNERS*, CODE_OF_CONDUCT*, CONTRIBUTING*, FUNDING*, GOVERNANCE*, LICENSE*, SECURITY*, SUPPORT*, humans.txt",
     "prettier.config.*": ".prettierignore",
-    "deno.json*": "deno.lock",
+    "deno.json*": "deno.lock"
   },
   "explorer.incrementalNaming": "smart",
 
@@ -107,21 +107,11 @@
 
   /** Extensions **/
 
-  // Carbon
-  "carbon.backgroundColor": "rgba(255,255,255,0)", // Transparent
-  "carbon.dropShadowBlurRadius": 0,
-  "carbon.dropShadowOffset": 0,
-  "carbon.fontFamily": "Fira Code",
-  "carbon.lineNumbers": true,
-  "carbon.paddingHorizontal": 0,
-  "carbon.paddingVertical": 0,
-  "carbon.theme": "one-dark",
-
   // Copilot
   "github.copilot.enable": {
     "plaintext": true,
     "markdown": true,
-    "scminput": true,
+    "scminput": true
   },
 
   // CSS
@@ -179,7 +169,9 @@
   "prettier.experimentalTernaries": true,
 
   // Python
+  "python.analysis.typeCheckingMode": "standard",
   "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+  "python.terminal.useEnvFile": true,
 
   // Rewrap
   "rewrap.wrappingColumn": 80,
@@ -201,7 +193,7 @@
     ".Brewfile": "ruby",
     "config": "settings",
     "npmrc": "npm",
-    "vimrc": "vim",
+    "vimrc": "vim"
   },
   "material-icon-theme.folders.color": "#6fc0f0", // MacOS folder color
 
@@ -223,23 +215,23 @@
   "js/ts.tsdk.promptToUseWorkspaceVersion": true,
 
   // Language-Specific Configuration Overrides
-  // Languages supported by Prettier VSCode: https://github.com/prettier/prettier-vscode#format-selection
   "[bats][dockerfile][dotenv][hosts][ignore][jvmoptions][properties][shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
+  // Languages supported by Prettier VSCode: https://github.com/prettier/prettier-vscode#format-selection
   "[astro][graphql][handlebars][javascript][javascriptreact][json][jsonc][jsonl][markdown][typescript][typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[latex][tex]": {
-    "editor.defaultFormatter": "James-Yu.latex-workshop",
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
   },
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.defaultFormatter": "ms-python.black-formatter"
   },
   "[terraform][terraform-vars]": {
-    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.defaultFormatter": "hashicorp.terraform"
   },
   "[toml]": {
-    "editor.defaultFormatter": "tamasfe.even-better-toml",
-  },
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  }
 }
