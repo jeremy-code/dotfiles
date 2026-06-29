@@ -15,7 +15,6 @@ brew "nodenv/nodenv/nodenv-default-packages", trusted: true # Auto-installs pack
 brew "nodenv/nodenv/nodenv-nvmrc", trusted: true # Pick a node version from .nvmrc
 brew "oci-cli" # Oracle Cloud Infrastructure CLI
 brew "pinentry-mac" if OS.mac? # Pinentry for GPG on Mac
-brew "pipx" # Execute binaries from Python packages in isolated environments
 brew "pyenv" # Python version management
 brew "shfmt" # Autoformat shell script source code
 brew "tree" # Display directories as trees (with optional color/HTML output)
@@ -79,7 +78,7 @@ cask "onyx" # Verify system files structure, run miscellaneous maintenance and m
 cask "protonvpn", args: { require_sha: true } # VPN client focusing on security
 # https://github.com/Homebrew/homebrew-cask/blob/main/Casks/s/spotify.rb#L5
 cask "spotify" # Music streaming service
-cask "terraform-linters/tap/tflint", trusted: true # Pluggable Terraform linter
+cask "terraform-linters/tap/tflint", trusted: true, args: { require_sha: true } # Pluggable Terraform linter
 cask "zoom", args: { require_sha: true } # Video communication and virtual meeting platform
 cask "zotero", args: { require_sha: true } # Collect, organise, cite, and share research sources
 
