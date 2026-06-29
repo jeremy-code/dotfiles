@@ -18,6 +18,7 @@ alias \
   symlink="ln -s" \
   sysinfo="sw_vers" \
   tf="terraform" \
+  unrebase="rm -rf ./.git/rebase-merge" \
   unquarantine="xattr -d com.apple.quarantine" \
   wh="builtin where" \
   whereami="builtin pwd " \
