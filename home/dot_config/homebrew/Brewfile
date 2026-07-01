@@ -84,9 +84,10 @@ cask "zotero", args: { require_sha: true } # Collect, organise, cite, and share 
 
 # Mac App Store
 
-mas "Brother iPrint&Scan", id: 1_193_539_993
-mas "Dato", id: 1_470_584_107
-mas "Things 3", id: 904_280_696
+mas "Brother iPrint&Scan", id: 1_193_539_993 # https://apps.apple.com/us/app/brother-iprint-scan/id1193539993
+mas "Dato", id: 1_470_584_107 # https://apps.apple.com/us/app/dato/id1470584107
+mas "Things 3", id: 904_280_696 # https://apps.apple.com/us/app/things-3/id904280696
+mas "Wireguard", id: 1_451_685_025 # https://apps.apple.com/us/app/wireguard/id1451685025
 
 # VSCode Extensions
 
