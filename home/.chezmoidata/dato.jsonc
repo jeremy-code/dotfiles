@@ -15,8 +15,8 @@
       "timeZone": "America/Los_Angeles"
     },
     "toggleDatoShortcut": {
-      "carbonModifiers": 2560,
-      "carbonKeyCode": 2
+      "carbonModifiers": 2560, // 0x800 (Shift ⇧) + 0x200 (Option ⌥)
+      "carbonKeyCode": 2 // 0x02 (D)
     }
   }
 }
