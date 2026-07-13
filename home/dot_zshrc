@@ -12,6 +12,7 @@ ZSH_THEME=agnoster # https://github.com/agnoster/agnoster-zsh-theme
 plugins=(
   colored-man-pages
   git
+  urltools # Adds urlencode, urldecode
   zsh-autosuggestions
   zsh-history-substring-search
   zsh-syntax-highlighting
