@@ -124,6 +124,7 @@ vscode "ms-vscode-remote.remote-containers" # Open any folder or repository insi
 vscode "ms-vscode.vscode-js-profile-flame" # Flame graph visualizer for Heap and CPU profiles taken from the JavaScript debugger
 vscode "orta.vscode-jest" # Use Facebook's Jest With Pleasure
 vscode "prisma.prisma" # Adds syntax highlighting, formatting, auto-completion, jump-to-definition and linting for .prisma files
+vscode "redis.redis-for-vscode" # Visually interact with data and build queries in Redis
 vscode "tamasfe.even-better-toml" # Fully-featured TOML support
 vscode "vitest.explorer" # A Vite-native testing framework. It's fast!
 
