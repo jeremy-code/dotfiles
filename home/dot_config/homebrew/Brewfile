@@ -108,6 +108,7 @@ vscode "editorconfig.editorconfig" # EditorConfig Support for VS Code
 vscode "esbenp.prettier-vscode" # Code formatter using prettier
 vscode "foxundermoon.shell-format" # A formatter for shell scripts, Dockerfile, gitignore, dotenv, /etc/hosts, jvmoptions, and other file types
 vscode "github.vscode-github-actions" # GitHub Actions workflows and runs for github.com hosted repositories
+vscode "grafana.grafana-alloy" # Grafana Alloy support
 vscode "hashicorp.terraform" # Syntax highlighting and autocompletion for Terraform
 vscode "james-yu.latex-workshop" # Boost LaTeX typesetting efficiency with preview, compile, autocomplete, colorize, and more
 vscode "mikestead.dotenv" # Support for dotenv file syntax
