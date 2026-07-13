@@ -1,3 +1,4 @@
+# "${XDG_DATA_HOME}/oh-my-zsh"
 [".local/share/oh-my-zsh"]
 type            = "archive"
 url             = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
@@ -5,6 +6,7 @@ exact           = true
 stripComponents = 1
 refreshPeriod   = "72h"
 
+# "${ZSH_CUSTOM}/plugins/zsh-autosuggestions"
 [".config/oh-my-zsh/plugins/zsh-autosuggestions"]
 type            = "archive"
 url             = "https://github.com/zsh-users/zsh-autosuggestions/archive/master.tar.gz"
@@ -12,6 +14,7 @@ exact           = true
 stripComponents = 1
 refreshPeriod   = "72h"
 
+# "${ZSH_CUSTOM}/plugins/zsh-history-substring-search"
 [".config/oh-my-zsh/plugins/zsh-history-substring-search"]
 type            = "archive"
 url             = "https://github.com/zsh-users/zsh-history-substring-search/archive/master.tar.gz"
@@ -19,6 +22,7 @@ exact           = true
 stripComponents = 1
 refreshPeriod   = "72h"
 
+# "${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting"
 [".config/oh-my-zsh/plugins/zsh-syntax-highlighting"]
 type            = "archive"
 url             = "https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.tar.gz"
@@ -27,6 +31,7 @@ stripComponents = 1
 refreshPeriod   = "72h"
 
 # See https://huggingface.co/ggerganov/whisper.cpp/blob/main/ggml-small.bin for more information
+# "${XDG_DATA_HOME}/whisper/ggml-small.bin"
 [".local/share/whisper/ggml-small.bin"]
 type            = "file"
 url             = "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.bin"
