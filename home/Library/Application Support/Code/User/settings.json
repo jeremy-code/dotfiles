@@ -3,13 +3,13 @@
 
   // Text Editor
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": "explicit",
     // Avoid using "source.organizeImports" since it may conflict with ESLint or Prettier
   },
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "explicit",
   "editor.find.autoFindInSelection": "multiline",
-  "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "'Fira Code', 'Liberation Mono', 'Courier New', monospace",
   "editor.fontLigatures": "'calt', 'cv19', 'cv23', 'ss02', 'ss03', 'ss05'",
   "editor.fontSize": 14,
   "editor.formatOnPaste": true,
@@ -19,7 +19,7 @@
   "editor.inlineSuggest.enabled": true,
   "editor.linkedEditing": true,
   "editor.quickSuggestions": {
-    "strings": "on" // for Tailwind CSS classnames https://github.com/tailwindlabs/tailwindcss-intellisense#editorquicksuggestions
+    "strings": "on", // for Tailwind CSS classnames https://github.com/tailwindlabs/tailwindcss-intellisense#editorquicksuggestions
   },
   "editor.renderFinalNewline": "dimmed",
   "editor.rulers": [80],
@@ -49,8 +49,8 @@
     "[One Dark Pro Darker]": {
       "editorInlayHint.background": "#2d313c", // Equivalent to `editor.lineHighlightBackground`
       "editorInlayHint.foreground": "#7f848e", // Equivalent to `comments"
-      "gitblame.inlineMessage": "#5c6370" // Equivalent to `elements to dim`
-    }
+      "gitblame.inlineMessage": "#5c6370", // Equivalent to `elements to dim`
+    },
   },
   "workbench.colorTheme": "One Dark Pro Darker",
   "workbench.commandPalette.experimental.suggestCommands": true,
@@ -79,7 +79,7 @@
     "Dockerfile": "docker-compose.yml, .dockerignore",
     "README*": "CITATION.cff, CODEOWNERS*, CODE_OF_CONDUCT*, CONTRIBUTING*, FUNDING*, GOVERNANCE*, LICENSE*, SECURITY*, SUPPORT*, humans.txt",
     "prettier.config.*": ".prettierignore",
-    "deno.json*": "deno.lock"
+    "deno.json*": "deno.lock",
   },
   "explorer.incrementalNaming": "smart",
 
@@ -111,7 +111,7 @@
   "github.copilot.enable": {
     "plaintext": true,
     "markdown": true,
-    "scminput": true
+    "scminput": true,
   },
 
   // CSS
@@ -193,15 +193,12 @@
     ".Brewfile": "ruby",
     "config": "settings",
     "npmrc": "npm",
-    "vimrc": "vim"
+    "vimrc": "vim",
   },
   "material-icon-theme.folders.color": "#6fc0f0", // MacOS folder color
 
   // Npm
   "npm.enableRunFromFolder": true,
-
-  // Npm Intellisense
-  "npm-intellisense.scanDevDependencies": true,
 
   // Tailwind CSS
   "tailwindCSS.classAttributes": ["class", "className", "ngClass", "tw"],
@@ -216,22 +213,23 @@
 
   // Language-Specific Configuration Overrides
   "[bats][dockerfile][dotenv][hosts][ignore][jvmoptions][properties][shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
+    "editor.defaultFormatter": "foxundermoon.shell-format",
   },
   // Languages supported by Prettier VSCode: https://github.com/prettier/prettier-vscode#format-selection
-  "[astro][graphql][handlebars][javascript][javascriptreact][json][jsonc][jsonl][markdown][typescript][typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[astro][dockercompose][graphql][handlebars][javascript][javascriptreact][json][jsonc][jsonl][markdown][typescript][typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[latex][tex]": {
-    "editor.defaultFormatter": "James-Yu.latex-workshop"
+    "editor.defaultFormatter": "James-Yu.latex-workshop",
   },
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter"
+    "editor.defaultFormatter": "ms-python.black-formatter",
   },
-  "[terraform][terraform-vars]": {
-    "editor.defaultFormatter": "hashicorp.terraform"
+  // https://github.com/hashicorp/vscode-terraform/tree/main#formatting
+  "[terraform][terraform-deploy][terraform-mock][terraform-search][terraform-stack][terraform-test][terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
   },
   "[toml]": {
-    "editor.defaultFormatter": "tamasfe.even-better-toml"
-  }
+    "editor.defaultFormatter": "tamasfe.even-better-toml",
+  },
 }

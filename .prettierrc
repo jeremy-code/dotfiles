@@ -1,0 +1,8 @@
+{
+  "overrides": [
+    {
+      "files": "**/Code/User/settings.json",
+      "options": { "parser": "jsonc" }
+    }
+  ]
+}
