@@ -1,7 +1,11 @@
 {
   // Location of iTerm2 Python environment
-  // {@link file://./../../../../Library/Application%20Support/iTerm2/iterm2env/shims/python3}
-  "python.defaultInterpreterPath": "${userHome}/Library/ApplicationSupport/iTerm2/iterm2env/shims/python3",
+  // Get location by Scripts > Manage > Open Python REPLs:
+  // >>> import sys
+  // >>> sys.executable
+  //
+  // {@link file://./../../../../.config/iterm2/AppSupport/iterm2env-79/versions/3.14.0/bin/python3.14}
+  "python.defaultInterpreterPath": "~/.config/iterm2/AppSupport/iterm2env-79/versions/3.14.0/bin/python3.14",
   "files.associations": {
     "dot_zprofile": "shellscript",
     "dot_zshrc": "shellscript"
