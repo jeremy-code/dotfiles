@@ -7,6 +7,7 @@
   // {@link file://./../../../../.config/iterm2/AppSupport/iterm2env-79/versions/3.14.0/bin/python3.14}
   "python.defaultInterpreterPath": "~/.config/iterm2/AppSupport/iterm2env-79/versions/3.14.0/bin/python3.14",
   "files.associations": {
+    "dot_editorconfig": "editorconfig",
     "dot_zprofile": "shellscript",
     "dot_zshrc": "shellscript"
   }
