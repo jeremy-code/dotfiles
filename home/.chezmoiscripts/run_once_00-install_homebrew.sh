@@ -23,22 +23,28 @@ function {
         # Apple requires by default that all software installed via `installer`
         # is signed by a developer certificate issued by Apple, I consider this
         # method more secure than running the convenience script.
-        {{- $HOMEBREW_REPO := "Homebrew/brew" -}}
-        {{- $homebrewLatestTagName := (gitHubLatestTag $HOMEBREW_REPO).Name -}}
-        {{- $homebrewLatestPkgFile := $homebrewLatestTagName | toString | printf "Homebrew-%s.pkg" }}
-        echo "Detected macOS, installing Homebrew with {{ $homebrewLatestPkgFile }} from {{ $HOMEBREW_REPO }}..."
+        echo "Detected macOS, installing Homebrew with homebrew.pkg from Homebrew/brew..."
 
-        # While `((gitHubLatestRelease $HOMEBREW_REPO).Assets | first).BrowserDownloadURL`
-        # would be less complex, it may fail in the case additional assets are
-        # added to Homebrew releases in the future.
-        homebrew_pkg_download_url="{{ gitHubLatestReleaseAssetURL $HOMEBREW_REPO $homebrewLatestPkgFile }}"
-
+       release_json=$(
+          curl \
+            --fail \
+            --location \
+            --show-error \
+            --silent \
+            --header "Accept: application/vnd.github+json" \
+            --header "X-GitHub-Api-Version: 2026-03-10" \
+            https://api.github.com/repos/Homebrew/brew/releases/latest
+        )
+        browser_download_url=$(
+          jq '.assets[] | select(.name | endswith ("pkg"))' <<< $release_json \
+            | jq '.browser_download_url' --raw-output
+        )
         curl --fail --location --show-error --silent --output "${HOMEBREW_PKG_PATH}" \
-          "${homebrew_pkg_download_url}"
+          "${browser_download_url}"
 
         if (( $? != 0 )); then
           error "Failed to download Homebrew package installer from \
-${homebrew_pkg_download_url}. Exiting..."
+${browser_download_url}. Exiting..."
           return 1
         fi
 
@@ -51,15 +57,15 @@ found at ${HOMEBREW_PKG_PATH}. Exiting..."
         fi
 
         echo "Installing Homebrew at root volume mount point /..."
-        sudo installer -package "${HOMEBREW_PKG_DIR}" -target "/"
+        sudo installer -package "${HOMEBREW_PKG_PATH}" -target "/"
 
         if command pkgutil --pkg-info "sh.brew.homebrew" &> /dev/null; then
           echo "Homebrew installed successfully to $(builtin where brew)."
-          rm -f -v "${HOMEBREW_PKG_PATH}"
+          rm -f "${HOMEBREW_PKG_PATH}"
         else
           error "Homebrew installation failed. Please confirm that the file at \
 ${HOMEBREW_PKG_PATH} is a valid package. You may download the .pkg file \
-manually at https://github.com/{{ $HOMEBREW_REPO }}/releases/latest."
+manually at https://github.com/homebrew/brew/releases/latest."
           return 1
         fi
         ;;
