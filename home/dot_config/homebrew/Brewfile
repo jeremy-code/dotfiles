@@ -1,3 +1,8 @@
+# Taps
+tap "hashicorp/tap", trusted: true
+tap "nodenv/nodenv", trusted: true
+tap "terraform-linters/tap", trusted: true
+
 # Formulae
 
 ## Development Tools
@@ -9,6 +14,7 @@ brew "git-lfs" # Git extension for versioning large files
 brew "gnupg" # GNU Pretty Good Privacy (PGP) package
 brew "hashicorp/tap/terraform", trusted: true # Tool to build, change, and version infrastructure
 brew "latexindent" # Add indentation to LaTeX files
+brew "markdownlint-cli" # CLI for Node.js style checker and lint tool for Markdown files
 brew "nodenv" # Manage multiple NodeJS versions
 # Per https://github.com/nodenv/nodenv/issues/183, this seems like the best way to setup global packages
 brew "nodenv/nodenv/nodenv-default-packages", trusted: true # Auto-installs packages for Node installs
@@ -18,6 +24,7 @@ brew "pinentry-mac" if OS.mac? # Pinentry for GPG on Mac
 brew "pyenv" # Python version management
 brew "shfmt" # Autoformat shell script source code
 brew "tree" # Display directories as trees (with optional color/HTML output)
+brew "yamllint" # Linter for YAML files
 brew "zsh-completions" # Additional completion definitions for zsh
 
 ## Utilities
@@ -30,6 +37,7 @@ brew "internetarchive" # Python wrapper for the various Internet Archive APIs
 brew "imagemagick" # Tools and libraries to manipulate images in many formats
 brew "librsvg" # Library to render SVG files using Cairo
 brew "mas" if OS.mac? # Mac App Store command-line interface
+brew "netcat" # Utility for managing network connections
 brew "ocrmypdf" # Adds an OCR text layer to scanned PDF files
 brew "pdfgrep" # Search PDFs for strings matching a regular expression
 brew "pngcrush" # Optimizer for PNG files
