@@ -1,0 +1,25 @@
+# https://ghostty.org/docs/config/reference
+
+font-family = Fira Code
+font-size = 12
+
+theme = One Dark Pro Darker
+
+cursor-style = block
+
+shell-integration = detect
+shell-integration-features = no-cursor
+
+macos-titlebar-style = tabs
+macos-titlebar-proxy-icon = visible
+macos-auto-secure-input = true
+macos-secure-input-indication = true
+macos-icon = custom-style
+macos-icon-frame = plastic
+macos-icon-ghost-color = #69E248
+macos-icon-screen-color = #151C1F
+
+gtk-toolbar-style = flat
+gtk-titlebar-style = tabs
+
+auto-update = off

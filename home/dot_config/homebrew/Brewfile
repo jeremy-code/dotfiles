@@ -60,9 +60,9 @@ cask "basictex", args: { require_sha: true } # Compact TeX distribution as alter
 cask "firefox@developer-edition", args: { require_sha: true } # Web browser
 cask "font-fira-code", args: { require_sha: true } # Free monospaced font with programming ligatures
 cask "font-liberation", args: { require_sha: true } # The Liberation Fonts is font collection which aims to provide document layout compatibility
+cask "ghostty", args: { require_sha: true } # Terminal emulator that uses platform-native UI and GPU acceleration
 # https://github.com/Homebrew/homebrew-cask/blob/main/Casks/g/google-chrome.rb#L3
 cask "google-chrome" # Web browser
-cask "iterm2", args: { require_sha: true } # Terminal emulator as alternative to Apple's Terminal app
 cask "postman", args: { require_sha: true } # Collaboration platform for API development
 cask "visual-studio-code", args: { require_sha: true } # Open-source code editor
 

@@ -1,0 +1,49 @@
+# https://ghostty.org/docs/config/reference
+# https://github.com/Binaryify/OneDark-Pro/blob/master/themes/OneDark-Pro-darker.json
+
+# terminal.background
+background = #23272e
+# terminal.foreground
+foreground = #abb2bf
+
+# While terminal.selectionBackground and terminal.foreground are #abb2bf30 and
+# #abb2bf, respectively, since selection does not support transparency, using
+# the effective colors
+selection-foreground = #acb1bd
+selection-background = #3d4149
+
+# terminal.ansiBlack
+palette = 0=#3F4451
+# terminal.ansiRed
+palette = 1=#E05561
+# terminal.ansiGreen
+palette = 2=#8CC265
+# terminal.ansiYellow
+palette = 3=#D18F52
+palette = 4=#4AA5F0
+# terminal.ansiMagenta
+palette = 5=#C162DE
+# terminal.ansiCyan
+palette = 6=#42B3C2
+# terminal.ansiWhite
+palette = 7=#D7DAE0
+# terminal.ansiBrightBlack
+palette = 8=#4F5666
+# terminal.ansiBrightRed
+palette = 9=#FF616E
+# terminal.ansiBrightGreen
+palette = 10=#A5E075
+# terminal.ansiBrightYellow
+palette = 11=#F0A45D
+# terminal.ansiBrightBlue
+palette = 12=#4DC4FF
+# terminal.ansiBrightMagenta
+palette = 13=#DE73FF
+# terminal.ansiBrightCyan
+palette = 14=#4CD1E0
+# terminal.ansiBrightWhite
+palette = 15=#E6E6E6
+palette-generate = true
+
+cursor-color = #acb2be
+cursor-text = #24272d

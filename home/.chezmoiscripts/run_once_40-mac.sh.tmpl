@@ -350,48 +350,6 @@ defaults write -app TextEdit SmartLinks -bool true
 defaults write -app TextEdit SmartSubstitutionsEnabledInRichTextOnly -bool false # Disable "Smart quotes and dashes in rich text documents only"
 
 #######################################
-# MARK: iTerm2
-#######################################
-
-# While most iTerm settings are stored in the JSON file for Dynamic Profiles,
-# {@link file://./../../home/Library/Application%20Support/iTerm2/DynamicProfiles/profiles.json}
-# some settings must be set in the iTerm2 `.plist` file. Furthermore, the
-# `.plist` contains keys that would be impossible to sync such as `NoSync_*` or
-# keys storing terminal history. After this command is run, the `.plist` file
-# will be merged with the default settings when iTerm2 is launched.
-
-# This is represented as an OpenStep p-list dictionary since XML is very verbose
-defaults write -app iTerm '{
-  /* General */
-  PromptOnQuit = 0; // Confirm "Quit iTerm2 (⌘Q)"
-  OnlyWhenMoreTabs = 0; // Confirm closing multiple sessions
-  SavePasteHistory = 1; // Save copy/paste and command history to disk
-  EnableAPIServer = 1; // Enable Python API
-  NotifyOnlyForCriticalShellIntegrationUpdates = 0;
-  SUEnableAutomaticChecks = 0; // Check for updates automatically
-  DoubleClickPerformsSmartSelection = 1;
-  ClickToSelectCommand = 0; // Clicking on a command selects it to restrict Find and Filter
-
-  /* Appearance */
-  TabStyleWithAutomaticOption = 5; // Minimal Theme
-  WindowNumber = 0; // Show window number in title bar
-  HideTab = 0; // Show tab bar even when there is only one tab
-
-  /* Keys */
-  ForceKeyboard = 1; // This will force iTerm2 to use the specified keyboard locale instead of the system keyboard
-  KeyboardLocale = "com.apple.keylayout.US";
-
-  /* Pointer */
-  ThreeFingerEmulates = 1; // Three-finger tap emulates middle click
-
-  /* Advanced */
-  AlternateMouseScroll = 1; // Scroll wheel sends arrow keys when in alternate screen mode.
-  SetCookie = 1; // Set ITERM2_COOKIE environment variable, allowing Python scripts to be launched without confirmation?
-  PreventEscapeSequenceFromClearingHistory = 0; // Prevent CSI 3 J from clearing scrollback history?
-  NoSyncDoNotWarnBeforeMultilinePaste = 1; // Suppress warning about multi-line pastes (or a single line ending in a newline).
-}'
-
-#######################################
 # CleanShot X
 #######################################
 

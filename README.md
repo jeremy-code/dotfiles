@@ -16,7 +16,7 @@ Intended to be a mainly [macOS](https://www.apple.com/macos) (but also [GNU](htt
 - [chezmoi](https://www.chezmoi.io) - Dotfiles manager
 - [Homebrew](https://brew.sh) - Package manager
   - [`brew bundle`](https://docs.brew.sh/Brew-Bundle-and-Brewfile) - Bundler for Homebrew, Homebrew Cask, [Mac App Store](https://www.apple.com/app-store/) and Visual Studio Code
-- [iTerm2](https://iterm2.com) - Terminal emulator
+- [Ghostty](https://ghostty.org/) - Terminal emulator
 - [Oh My Zsh](https://ohmyz.sh) - `zsh` configuration framework
   - [colored-man-pages](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages) - Adds colors to man pages
   - [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git) - Many git aliases and a few useful functions
@@ -71,11 +71,9 @@ Additional root scripts are located in the [`home/.chezmoiscripts`](home/.chezmo
 - When the aforementioned file is updated, `brew bundle install` is automatically ran with the script [`run_once_after_Brewfile.sh.tmpl`](home/dot_config/homebrew/run_once_after_Brewfile.sh.tmpl)
 - The [`brew.env.tmpl`](home/dot_config/homebrew/brew.env.tmpl) file defines additional Homebrew environment variables (`$HOMEBREW_*`)
 
-### iTerm2
+### Ghostty
 
-The configuration of [iTerm2](https://iterm2.com) is defined mainly in [`home/Library/Application Support/iTerm2`](<home/Library/Application Support/iTerm2>). The dynamic profile [`DynamicProfiles/profiles.json`](<home/Library/Application Support/iTerm2/DynamicProfiles/profiles.json>) has custom color schemes, theming, and other settings. The directory also contains the [`Scripts`](<home/Library/Application Support/iTerm2/Scripts>) directory for custom scripts to be used in iTerm2, such as [`Scripts/AutoLaunch/change_default_profile.py`](<home/Library/Application Support/iTerm2/Scripts/AutoLaunch/change_default_profile.py>) which sets the default profile to the aforementioned dynamic profile on launch.
-
-Some additional configuration is installed in [`home/.chezmoiscripts/run_once_40-mac.sh.tmpl`](home/.chezmoiscripts/run_once_40-mac.sh.tmpl#L125-L153) to set non-profile settings.
+The configuration of [Ghostty](https://ghostty.org/) is defined mainly in [`home/dot_config/ghostty`](home/dot_config/ghostty). The config [`config.ghostty`](home/dot_config/ghostty/config.ghostty) sets the theme and some other settings. The directory also contains the [`themes`](home/dot_config/ghostty/themes) directory for custom themes, such as [`One Dark Pro Darker`](home/dot_config/ghostty/themes/One%20Dark%20Pro%20Darker) which is based on the Visual Studio Code theme "One Dark Pro Darker."
 
 ### Visual Studio Code
 
