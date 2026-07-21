@@ -8,7 +8,7 @@ sudo --validate # Authenticate the user and extends the sudo timeout for another
 
 # Enable /usr/lib/pam/pam_tid.so.2 for Touch ID authentication in `sudo`
 # https://github.com/apple-oss-distributions/pam_modules/blob/main/modules/pam_tid/pam_tid.c
-sudo tee /etc/pam.d/sudo_local << EOF > /dev/null
+sudo tee /etc/pam.d/sudo_local <<EOF >/dev/null
 # sudo_local: local config file which survives system update and is included for sudo
 
 # enable Touch ID authentication for sudo
@@ -51,35 +51,6 @@ sudo defaults write /Library/Preferences/com.apple.TimeMachine SkipPaths -array 
   "${HOME}/Github" \
   "${HOME}/.cache"
 
-## Appearance (x-apple.systempreferences:com.apple.Appearance-Settings)
-defaults write -g AppleInterfaceStyle -string "Dark"       # Dark mode
-defaults write -g NSTableViewDefaultSizeMode -int 2        # Set "Sidebar icon size" to "Medium"
-defaults write -g AppleReduceDesktopTinting -bool true     # Disable "Allow wallpaper tinting in windows"
-defaults write -g AppleShowScrollBars -string "Automatic;" # Show scroll bars automatically based on mouse or trackpad
-defaults write -g AppleScrollerPagingBehavior -bool true   # Click in the scroll bar to "Jump to the spot that's clicked"
-
-## Apple Intelligence & Siri (x-apple.systempreferences:com.apple.Siri-Settings)
-defaults write com.apple.CloudSubscriptionFeatures.optIn auto_opt_in -bool false # Disable "Apple Intelligence"
-defaults write com.apple.assistant.support "Assistant Enabled" -bool false       # Disable "Siri"
-
-## Control Center (x-apple.systempreferences:com.apple.ControlCenter-Settings)
-defaults write com.apple.controlcenter "NSStatusItem Visible WiFi" -bool true
-defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool true
-defaults write com.apple.controlcenter "NSStatusItem Visible AirDrop" -bool true
-defaults write com.apple.controlcenter "NSStatusItem Visible FocusModes" -bool false
-defaults write com.apple.controlcenter "NSStatusItem Visible StageManager" -bool false
-defaults write com.apple.controlcenter "NSStatusItem Visible ScreenMirroring" -bool false
-defaults write com.apple.controlcenter "NSStatusItem Visible Display" -bool false
-defaults write com.apple.controlcenter "NSStatusItem Visible Sound" -bool false
-defaults write com.apple.controlcenter "NSStatusItem Visible NowPlaying" -bool false
-
-defaults write com.apple.controlcenter "NSStatusItem Visible Battery" -bool true # Show "Battery" in Menu Bar
-defaults write com.apple.weather.menu "NSStatusItem Visible Item-0" -bool true   # Show "Weather" in Menu Bar
-
-### Menu Bar Only
-defaults write -g AppleMenuBarVisibleInFullscreen -bool false # Set "Automatically hide and show the menu bar" to "In Full Screen Only"
-defaults write -g "_HIHideMenuBar" -bool false                # See above
-
 ## Accessibility (x-apple.systempreferences:com.apple.Accessibility)
 
 ### Display
@@ -95,6 +66,18 @@ defaults write com.apple.Accessibility FaceTimeCaptions -bool false # Disable "L
 # defaults write -g com.apple.mouse.doubleClickThreshold -float 1.7 -- Set in "Mouse"
 defaults write -g com.apple.springing.enabled -bool true # Enable "Spring-loading"
 defaults write -g com.apple.springing.delay -float 0     # Set "Spring-loading speed" to fastest (7/7)
+
+## Appearance (x-apple.systempreferences:com.apple.Appearance-Settings)
+defaults write -g AppleInterfaceStyle -string "Dark"       # Dark mode
+defaults write -g NSGlassDiffusionSetting -bool true       # Set "Liquid Glass" to "Tinted"
+defaults write -g NSTableViewDefaultSizeMode -int 2        # Set "Sidebar icon size" to "Medium"
+defaults write -g AppleReduceDesktopTinting -bool true     # Disable "Tint window background with wallpaper color"
+defaults write -g AppleShowScrollBars -string "Automatic;" # Show scroll bars automatically based on mouse or trackpad
+defaults write -g AppleScrollerPagingBehavior -bool true   # Click in the scroll bar to "Jump to the spot that's clicked"
+
+## Apple Intelligence & Siri (x-apple.systempreferences:com.apple.Siri-Settings)
+defaults write com.apple.CloudSubscriptionFeatures.optIn auto_opt_in -bool false # Disable "Apple Intelligence"
+defaults write com.apple.assistant.support "Assistant Enabled" -bool false       # Disable "Siri"
 
 ## Desktop & Dock (x-apple.systempreferences:com.apple.Desktop-Settings)
 
@@ -131,7 +114,7 @@ defaults write com.apple.WindowManager EnableTopTilingByEdgeDrag -bool true     
 defaults write com.apple.WindowManager EnableTilingOptionAccelerator -bool true # Enable "Hold ⌥ key while dragging windows to tile"
 defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false     # Disable "Tiled windows have margins"
 
-### Stage Manager
+### Mission Control
 
 defaults write com.apple.dock mru-spaces -bool true                          # Enable "Automatically rearrange Spaces based on most recent use"
 defaults write -g AppleSpacesSwitchOnActivate -bool true                     # Enable "When switching to an application, switch to a Space with open windows for the application"
@@ -139,14 +122,37 @@ defaults write com.apple.dock expose-group-apps -bool true                   # E
 defaults write com.apple.spaces spans-displays -bool false                   # Enable "Displays have separate Spaces"
 defaults write com.apple.dock enterMissionControlByTopWindowDrag -bool false # Disable "Drag windows to top of screen to enter Mission Control"
 
+## Menu Bar (x-apple.systempreferences:com.apple.ControlCenter-Settings)
+defaults write com.apple.controlcenter "NSStatusItem Visible WiFi" -bool true
+defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool true
+defaults write com.apple.controlcenter "NSStatusItem Visible AirDrop" -bool true
+defaults write com.apple.controlcenter "NSStatusItem Visible FocusModes" -bool false
+defaults write com.apple.controlcenter "NSStatusItem Visible StageManager" -bool false
+defaults write com.apple.controlcenter "NSStatusItem Visible ScreenMirroring" -bool false
+defaults write com.apple.controlcenter "NSStatusItem Visible Display" -bool false
+defaults write com.apple.controlcenter "NSStatusItem Visible Sound" -bool false
+defaults write com.apple.controlcenter "NSStatusItem Visible NowPlaying" -bool false
+
+defaults write com.apple.controlcenter "NSStatusItem Visible Battery" -bool true # Show "Battery" in Menu Bar
+defaults write com.apple.weather.menu "NSStatusItem Visible Item-0" -bool true   # Show "Weather" in Menu Bar
+
+### Menu Bar Only
+defaults write -g AppleMenuBarVisibleInFullscreen -bool false # Set "Automatically hide and show the menu bar" to "In Full Screen Only"
+defaults write -g "_HIHideMenuBar" -bool false                # See above
+
 ## Spotlight (x-apple.systempreferences:com.apple.Spotlight-Settings)
-defaults write com.apple.assistant.support "Search Queries Data Sharing Status" -int 2 # Disable "Help Apple Improve Search"
+defaults write com.apple.Spotlight EnabledPreferenceRules -array "Custom.relatedContents" # Disable "Show Related Content"
+defaults write com.apple.assistant.support "Search Queries Data Sharing Status" -int 2    # Disable "Help Apple Improve Search"
+defaults write com.apple.Spotlight PasteboardHistoryEnabled -bool true                    # Enable "PasteboardHistoryEnabled"
 
 ## Notifications (x-apple.systempreferences:com.apple.preference.notifications)
-defaults write com.apple.ncprefs content_visibility -int 2 # Set "Show previews" to "When Unlocked"
+defaults write com.apple.ncprefs content_visibility -int 2                           # Set "Show previews" to "When Unlocked"
+defaults write com.apple.usernotificationsd RemoteNotifications.isEnabled -bool true # Enable "Allow notifications from iPhone"
 
 ## Sound (x-apple.systempreferences:com.apple.preference.sound)
-sudo nvram StartupMute=%01 # Disable "Play sound on startup"
+
+defaults write -g com.apple.sound.beep.sound -string "/System/Library/Sounds/Tink.aiff" # Set "Alert Sound" to "Boop"
+sudo nvram StartupMute=%01                                                              # Disable "Play sound on startup"
 
 ## Lock Screen (x-apple.systempreferences:com.apple.Lock-Screen-Settings)
 sudo pmset -a proximitywake 1 autorestart 1 lidwake 1 # All
@@ -365,7 +371,7 @@ defaults write -app CleanShot\ X windowBackgroundPadding -int 0
 defaults write -app CleanShot\ X captureWindowShadow -bool false
 
 # Shortcuts
-defaults write -app CleanShot\ X LAVAtakeOCR -data {{ dict "carbonModifiers" 768 "carbonKey" 31 | toJson | b64enc }} # Command (⌘) + Shift (⇧) + O
+# defaults write -app CleanShot\ X LAVAtakeOCR -data {{ dict "carbonModifiers" 768 "carbonKey" 31 | toJson | hexEncode }} # Command (⌘) + Shift (⇧) + O
 
 # Quick Access
 defaults write -app CleanShot\ X autoClosePopup -bool true
@@ -385,4 +391,4 @@ defaults write -app CleanShot\ X mediaNameTemplate -array "screenshot_" "%y" "-"
 
 # About
 defaults write -app CleanShot\ X analyticsAllowed -bool false
-{{ end -}}
+# {{ end -}}
