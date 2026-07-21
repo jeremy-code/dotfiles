@@ -25,7 +25,7 @@ function {
         # method more secure than running the convenience script.
         echo "Detected macOS, installing Homebrew with homebrew.pkg from Homebrew/brew..."
 
-       release_json=$(
+        release_json=$(
           curl \
             --fail \
             --location \
@@ -35,16 +35,18 @@ function {
             --header "X-GitHub-Api-Version: 2026-03-10" \
             https://api.github.com/repos/Homebrew/brew/releases/latest
         )
-        browser_download_url=$(
-          jq '.assets[] | select(.name | endswith ("pkg"))' <<< $release_json \
-            | jq '.browser_download_url' --raw-output
-        )
-        curl --fail --location --show-error --silent --output "${HOMEBREW_PKG_PATH}" \
-          "${browser_download_url}"
+        release_asset_json=$(jq '.assets[] | select(.name | endswith ("pkg"))' <<< $release_json)
+        asset_name=$(jq '.name' --raw-output <<< $release_asset_json)
+        asset_browser_download_url=$(jq '.browser_download_url' --raw-output <<< $release_asset_json)
+        echo "Downloading ${asset_name}..."
+        echo "-> ${asset_browser_download_url}"
 
-        if (( $? != 0 )); then
+        curl --fail --location --show-error --silent --output "${HOMEBREW_PKG_PATH}" \
+          "${asset_browser_download_url}"
+
+        if (($? != 0)); then
           error "Failed to download Homebrew package installer from \
-${browser_download_url}. Exiting..."
+${asset_browser_download_url}. Exiting..."
           return 1
         fi
 
