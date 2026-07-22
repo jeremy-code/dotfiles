@@ -131,6 +131,7 @@ vscode "ms-vscode.makefile-tools" # Provide makefile support in VS Code
 vscode "ms-vscode-remote.remote-containers" # Open any folder or repository inside a Docker container and take advantage of Visual Studio Code's full feature set.
 vscode "ms-vscode.vscode-js-profile-flame" # Flame graph visualizer for Heap and CPU profiles taken from the JavaScript debugger
 vscode "orta.vscode-jest" # Use Facebook's Jest With Pleasure
+vscode "oxc.oxc-vscode" # Oxlint and Oxfmt editor integration
 vscode "prisma.prisma" # Adds syntax highlighting, formatting, auto-completion, jump-to-definition and linting for .prisma files
 vscode "redis.redis-for-vscode" # Visually interact with data and build queries in Redis
 vscode "tamasfe.even-better-toml" # Fully-featured TOML support
