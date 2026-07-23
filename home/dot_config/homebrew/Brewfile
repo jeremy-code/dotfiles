@@ -46,6 +46,7 @@ brew "rclone" # Rsync for cloud storage
 brew "sevenzip" # 7-Zip is a file archiver with a high compression ratio
 brew "wget" # Internet file retriever
 brew "whisper-cpp" # Port of OpenAI's Whisper model in C/C++
+brew "yq" # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yt-dlp" # Feature-rich command-line audio/video downloader
 
 # Casks
