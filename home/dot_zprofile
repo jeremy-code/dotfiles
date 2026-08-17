@@ -43,6 +43,7 @@ typeset -U path fpath
 
 path=(
   "${HOME}/.local/bin" # User-specific executable files may be stored in "${HOME}/.local/bin"
+  "${XDG_DATA_HOME}/cargo/bin"
   "${path[@]}"
 )
 
@@ -58,10 +59,12 @@ fpath=(
 autoload -Uk "${XDG_CONFIG_HOME}/oh-my-zsh/functions/"*
 
 # Manually set some environment variables to XDG Base Directory Specification
+export CARGO_HOME="${XDG_DATA_HOME}/cargo"
 export COREPACK_HOME="${XDG_CACHE_HOME}/node/corepack"
 export NODE_REPL_HISTORY="${XDG_DATA_HOME}/node_repl_history"
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}/npm/npmrc"
 export PYTHON_HISTORY="${XDG_STATE_HOME}/python/history"
 export PYTHONPYCACHEPREFIX="${XDG_CACHE_HOME}/python"
 export PYTHONUSERBASE="${XDG_DATA_HOME}/python"
+export RUSTUP_HOME="${XDG_DATA_HOME}/rustup"
 export WGETRC="${XDG_CONFIG_HOME}/wget/wgetrc"

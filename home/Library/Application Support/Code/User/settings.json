@@ -127,11 +127,6 @@
   "eslint.workingDirectories": [{ "mode": "auto" }],
 
   // Even Better TOML
-  "evenBetterToml.formatter.alignComments": true,
-  "evenBetterToml.formatter.alignEntries": true,
-  "evenBetterToml.formatter.allowedBlankLines": 1,
-  "evenBetterToml.formatter.reorderArrays": true,
-  "evenBetterToml.formatter.trailingNewline": true,
   "evenBetterToml.schema.links": true,
 
   // Git
@@ -248,6 +243,9 @@
   },
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
   },
   // https://github.com/hashicorp/vscode-terraform/tree/main#formatting
   "[terraform][terraform-deploy][terraform-mock][terraform-search][terraform-stack][terraform-test][terraform-vars]": {
