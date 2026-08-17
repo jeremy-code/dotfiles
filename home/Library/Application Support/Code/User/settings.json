@@ -235,7 +235,7 @@
     "editor.defaultFormatter": "foxundermoon.shell-format",
   },
   // Languages supported by Prettier VSCode: https://github.com/prettier/prettier-vscode#format-selection
-  "[astro][dockercompose][graphql][handlebars][javascript][javascriptreact][json][jsonc][jsonl][markdown][typescript][typescriptreact]": {
+  "[astro][css][dockercompose][graphql][handlebars][html][javascript][javascriptreact][json][jsonc][jsonl][less][markdown][scss][tailwindcss][typescript][typescriptreact][vue][yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[latex][tex]": {
