@@ -1,0 +1,11 @@
+{{- $cpu := dig .chezmoi.arch .chezmoi.arch (dict "arm64" "aarch64" "amd64" "x86_64" "386" "i386") -}}
+{{- $vendor := dig .chezmoi.os "unknown" (dict "darwin" "apple" "windows" "pc") -}}
+{{- $os := dig .chezmoi.os .chezmoi.os (dict "linux" "linux-gnu" "windows" "windows-gnu") -}}
+{{- $defaultHostTriple := list $cpu $vendor $os | join "-" -}}
+{{- $defaultToolchain := list "stable" $defaultHostTriple | join "-" -}}
+version = "12"
+default_host_triple = "{{ $defaultHostTriple }}"
+default_toolchain = "{{ $defaultToolchain }}"
+profile = "default"
+
+[overrides]
