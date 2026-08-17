@@ -211,6 +211,30 @@
   "js/ts.inlayHints.parameterNames.enabled": "literals",
   "js/ts.tsdk.promptToUseWorkspaceVersion": true,
 
+  // JSON
+  "json.schemaDownload.enable": true,
+  "json.schemaDownload.trustedDomains": {
+    "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://developer.microsoft.com/json-schemas/": true,
+    // Defaults above
+    "https://esm.sh/": true,
+    "https://unpkg.com/": true,
+  },
+  "json.schemas": [
+    {
+      "fileMatch": ["*.jsonc"],
+      "schema": {
+        // Prettier defaults to trailing comma, which is permitted in JSONC
+        "allowTrailingCommas": true,
+      },
+    },
+  ],
+
   // Language-Specific Configuration Overrides
   "[bats][dockerfile][dotenv][hosts][ignore][jvmoptions][properties][shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format",
