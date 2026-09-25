@@ -44,6 +44,9 @@
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
 
+  // Window
+  "window.density.layout": "compact",
+
   // Workbench
   "workbench.colorCustomizations": {
     "[One Dark Pro Darker]": {
@@ -56,6 +59,7 @@
   "workbench.commandPalette.experimental.suggestCommands": true,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.experimental.share.enabled": true,
+  "workbench.experimental.modernUI": true,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.list.smoothScrolling": true,
   "workbench.productIconTheme": "fluent-icons",
