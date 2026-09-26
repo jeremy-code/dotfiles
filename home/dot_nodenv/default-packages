@@ -1,4 +1,5 @@
 # https://github.com/nodenv/nodenv-default-packages
 
+corepack
 turbo
 typescript
